@@ -1,0 +1,21 @@
+[project]
+name = "weaver"
+version = "0.1.0"
+description = "Deterministic triage tooling for a personal knowledge wiki."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.26.7",
+]
+
+[project.scripts]
+weaver = "weaver.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.11.6,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
