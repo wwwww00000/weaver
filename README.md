@@ -24,6 +24,16 @@ metadata and low-signal bulk directories: `.obsidian/`, `.trash/`, `.git/`,
 By default, the command writes `ops/triage/obsidian.md` and
 `ops/manifests/obsidian.csv`.
 
+After marking decisions in the triage document, apply selected notes with:
+
+```bash
+weaver triage apply ops/triage/obsidian.md
+```
+
+By default, `apply` copies notes marked `include` or `extract-insights` into
+`raw/obsidian/` and writes per-note intermediate artifacts plus an index under
+`ops/artifacts/obsidian/`.
+
 ## Development
 
 ```bash

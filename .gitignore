@@ -11,3 +11,8 @@ build/
 
 # Raw exports and vault copies may contain private material.
 raw/
+ops/artifacts/
+ops/triage/*.md
+ops/manifests/*.csv
+!ops/triage/.gitkeep
+!ops/manifests/.gitkeep
