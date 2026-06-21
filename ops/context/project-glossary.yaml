@@ -1,0 +1,41 @@
+projects:
+  obelisk:
+    status: archive-mode
+    description: Old crypto trading project.
+    synthesis_notes:
+      - Treat as historical context unless a note has durable reusable trading or modeling ideas.
+  p12n:
+    status: active
+    description: Active crypto trading project with a machine learning focus.
+    synthesis_notes:
+      - Prioritize current experimental direction and reusable ML/trading research ideas.
+  accretion:
+    status: active
+    description: Personal finance and wealth accumulation.
+    synthesis_notes:
+      - Separate durable finance principles from short-lived task or account status.
+  whetstone:
+    status: active
+    description: Cognition improvement.
+    synthesis_notes:
+      - Watch for links to metacognition, thinking practices, attention, and learning systems.
+  chronicle:
+    status: active
+    description: Morning pages, journaling, creative writing, mindfulness, and meditation.
+    synthesis_notes:
+      - Prefer distilled practices and recurring themes over raw journal preservation.
+  conjuration:
+    status: active
+    description: Imagination building, creativity, and drawing.
+    synthesis_notes:
+      - Preserve connections between creativity training, visual practice, and imagination.
+  revelation:
+    status: active
+    description: Math and physics learning.
+    synthesis_notes:
+      - Keep learning roadmaps, conceptual questions, and durable explanations.
+  genesis:
+    status: active
+    description: Building things, exercising agency, AI-adjacent work, and AI research.
+    synthesis_notes:
+      - Treat Weaver itself and AI research/building notes as part of this project unless better classified elsewhere.
