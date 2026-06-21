@@ -69,8 +69,33 @@ def test_render_and_manifest_include_stable_item_markers(tmp_path: Path) -> None
     write_manifest_csv(manifest, items)
 
     assert "<!-- triage-item: obsidian:tiny -->" in markdown
+    assert "Category labels:" in markdown
     assert "- [ ] include-later" in markdown
-    assert "source_id,source_kind,title,path" in manifest.read_text(encoding="utf-8")
+    manifest_text = manifest.read_text(encoding="utf-8")
+    assert "source_id,source_kind,title,path" in manifest_text
+    assert "category_labels" in manifest_text
+
+
+def test_scan_obsidian_vault_reads_yaml_frontmatter_tag_list(tmp_path: Path) -> None:
+    vault = tmp_path / "vault"
+    vault.mkdir()
+    (vault / "Yaml.md").write_text(
+        "\n".join(
+            [
+                "---",
+                "tags:",
+                "  - research",
+                "  - '#machine-learning'",
+                "---",
+                "# YAML",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    items, _summary = scan_obsidian_vaults([vault])
+
+    assert items[0].tags == ["research", "machine-learning"]
 
 
 def test_cli_writes_obsidian_triage_and_manifest(tmp_path: Path) -> None:

@@ -5,6 +5,7 @@ description = "Deterministic triage tooling for a personal knowledge wiki."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "pyyaml>=6.0.3",
     "typer>=0.26.7",
 ]
 

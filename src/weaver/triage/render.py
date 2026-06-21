@@ -25,6 +25,7 @@ def render_obsidian_triage(
         "",
         "Instructions:",
         "Mark one decision for each note. Add brief comments where useful.",
+        "Use Category labels for comma-separated labels you assign during triage.",
         "",
         "Decision options:",
     ]
@@ -64,6 +65,7 @@ def write_manifest_csv(path: Path, items: Sequence[TriageItem]) -> None:
         "word_count",
         "summary_hint",
         "tags",
+        "category_labels",
         "suggested_decision",
         "metadata",
     ]
@@ -73,6 +75,7 @@ def write_manifest_csv(path: Path, items: Sequence[TriageItem]) -> None:
         for item in items:
             row = asdict(item)
             row["tags"] = json.dumps(item.tags, ensure_ascii=False)
+            row["category_labels"] = json.dumps(item.category_labels, ensure_ascii=False)
             row["metadata"] = json.dumps(item.metadata, ensure_ascii=False)
             writer.writerow(row)
 
@@ -98,6 +101,7 @@ def _render_item(index: int, item: TriageItem) -> list[str]:
     if item.suggested_decision:
         lines.append(f"- suggested_decision: {item.suggested_decision}")
 
+    lines.extend(["", "Category labels:", ">"])
     lines.extend(["", "Decision:"])
     lines.extend(f"- [ ] {decision}" for decision in DECISION_OPTIONS)
     lines.extend(["", "Comments:", ">", ""])

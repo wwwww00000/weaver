@@ -8,6 +8,10 @@ The first workflow scans an Obsidian vault and writes:
 - an editable Markdown triage document for human decisions
 - a CSV manifest with the same source metadata for later processing
 
+Each note gets an editable `Category labels` field. Use it for comma-separated
+labels you want to assign during triage, distinct from source tags already found
+in Obsidian notes.
+
 ```bash
 weaver triage obsidian /path/to/vault --out ops/triage/obsidian.md
 ```

@@ -34,5 +34,6 @@ class TriageItem:
     word_count: int | None
     summary_hint: str | None
     tags: list[str] = field(default_factory=list)
+    category_labels: list[str] = field(default_factory=list)
     suggested_decision: str | None = None
     metadata: dict[str, str | int | None] = field(default_factory=dict)

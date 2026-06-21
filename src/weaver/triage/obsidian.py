@@ -7,7 +7,9 @@ from dataclasses import dataclass
 from datetime import datetime
 from hashlib import sha1
 from pathlib import Path
-from typing import Iterable, Sequence
+from typing import Iterable, Mapping, Sequence
+
+import yaml
 
 from weaver.triage.schema import SortMode, TriageItem
 
@@ -124,6 +126,7 @@ def _scan_note(vault: Path, note_path: Path) -> _ScannedNote:
         word_count=word_count,
         summary_hint=summary_hint,
         tags=tags,
+        category_labels=[],
         suggested_decision="skip" if word_count == 0 else None,
         metadata={"first_heading": first_heading},
     )
@@ -149,43 +152,45 @@ def _dedupe_source_ids(scanned: Sequence[_ScannedNote]) -> list[TriageItem]:
     return items
 
 
-def _split_frontmatter(text: str) -> tuple[list[str], str]:
+def _split_frontmatter(text: str) -> tuple[dict[str, object], str]:
     lines = text.splitlines()
     if not lines or lines[0].strip() != "---":
-        return [], text
+        return {}, text
 
     for index, line in enumerate(lines[1:], start=1):
         if line.strip() == "---":
-            return lines[1:index], "\n".join(lines[index + 1 :])
-    return [], text
+            frontmatter_text = "\n".join(lines[1:index])
+            body = "\n".join(lines[index + 1 :])
+            try:
+                loaded = yaml.safe_load(frontmatter_text) if frontmatter_text.strip() else {}
+            except yaml.YAMLError:
+                loaded = {}
+            if isinstance(loaded, dict):
+                return loaded, body
+            return {}, body
+    return {}, text
 
 
-def _extract_frontmatter_tags(frontmatter: Sequence[str]) -> list[str]:
-    tags: list[str] = []
-    index = 0
-    while index < len(frontmatter):
-        raw_line = frontmatter[index]
-        stripped = raw_line.strip()
-        if not stripped.startswith("tags:"):
-            index += 1
-            continue
+def _extract_frontmatter_tags(frontmatter: Mapping[object, object]) -> list[str]:
+    tags_value: object = None
+    for key, value in frontmatter.items():
+        if isinstance(key, str) and key.casefold() == "tags":
+            tags_value = value
+            break
+    return _merge_tags(_coerce_tags(tags_value))
 
-        value = stripped.partition(":")[2].strip()
-        if value:
-            tags.extend(_parse_tag_value(value))
-            index += 1
-            continue
 
-        index += 1
-        while index < len(frontmatter):
-            candidate = frontmatter[index]
-            candidate_stripped = candidate.strip()
-            if not candidate.startswith((" ", "\t")):
-                break
-            if candidate_stripped.startswith("- "):
-                tags.extend(_parse_tag_value(candidate_stripped[2:]))
-            index += 1
-    return _merge_tags(tags)
+def _coerce_tags(value: object) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return _parse_tag_value(value)
+    if isinstance(value, Sequence) and not isinstance(value, (bytes, bytearray)):
+        tags: list[str] = []
+        for item in value:
+            tags.extend(_coerce_tags(item))
+        return tags
+    return [_clean_tag(str(value))]
 
 
 def _parse_tag_value(value: str) -> list[str]:
