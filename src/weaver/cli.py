@@ -1,11 +1,17 @@
 from __future__ import annotations
 
+from datetime import date
 from pathlib import Path
 from typing import Annotated
 
 import typer
 
 from weaver import __version__
+from weaver.inventory import (
+    build_source_inventory,
+    write_inventory_manifest_csv,
+    write_inventory_qmd,
+)
 from weaver.triage.apply import apply_triage_document, parse_decisions
 from weaver.triage.chatgpt_apply import apply_chatgpt_triage
 from weaver.triage.chatgpt import scan_chatgpt_export, sort_chatgpt_items
@@ -26,7 +32,12 @@ app = typer.Typer(
     help="Deterministic tooling for triaging personal knowledge sources.",
 )
 triage_app = typer.Typer(no_args_is_help=True, help="Create human triage documents.")
+cluster_app = typer.Typer(
+    no_args_is_help=True,
+    help="Build deterministic source inventory workbenches.",
+)
 app.add_typer(triage_app, name="triage")
+app.add_typer(cluster_app, name="cluster")
 
 
 @app.callback()
@@ -308,6 +319,79 @@ def triage_apply(
     typer.echo(f"Skipped by decision: {summary.skipped_items}")
     if summary.index_path is not None:
         typer.echo(f"Artifact index: {summary.index_path}")
+
+
+@cluster_app.command("qmd")
+def cluster_qmd(
+    artifact_dirs: Annotated[
+        list[Path] | None,
+        typer.Option(
+            "--artifact-dir",
+            file_okay=False,
+            dir_okay=True,
+            readable=True,
+            help="Applied artifact directory to include. May be passed multiple times.",
+        ),
+    ] = None,
+    out: Annotated[
+        Path | None,
+        typer.Option(
+            "--out",
+            "-o",
+            dir_okay=False,
+            writable=True,
+            help="QMD source inventory workbench to write.",
+        ),
+    ] = None,
+    manifest: Annotated[
+        Path | None,
+        typer.Option(
+            "--manifest",
+            "-m",
+            dir_okay=False,
+            writable=True,
+            help="CSV manifest to write for the same inventory.",
+        ),
+    ] = None,
+    project_glossary: Annotated[
+        Path,
+        typer.Option(
+            "--project-glossary",
+            exists=True,
+            readable=True,
+            help="Project glossary used for deterministic project inference.",
+        ),
+    ] = Path("ops/context/project-glossary.yaml"),
+    chatgpt_project_glossary: Annotated[
+        Path,
+        typer.Option(
+            "--chatgpt-project-glossary",
+            exists=True,
+            readable=True,
+            help="ChatGPT project ID glossary used for deterministic project inference.",
+        ),
+    ] = Path("ops/context/chatgpt-project-glossary.yaml"),
+) -> None:
+    """Generate a QMD source inventory from applied artifacts."""
+
+    resolved_artifact_dirs = artifact_dirs or [
+        Path("ops/artifacts/obsidian"),
+        Path("ops/artifacts/chatgpt"),
+    ]
+    today = Path(date.today().isoformat())
+    resolved_out = out or Path("ops/clusters") / today / "source-inventory.qmd"
+    resolved_manifest = manifest or resolved_out.with_name("manifest.csv")
+
+    inventory = build_source_inventory(
+        resolved_artifact_dirs,
+        project_glossary_path=project_glossary,
+        chatgpt_project_glossary_path=chatgpt_project_glossary,
+    )
+    write_inventory_qmd(inventory, resolved_out)
+    write_inventory_manifest_csv(inventory, resolved_manifest)
+
+    typer.echo(f"Wrote {len(inventory.records)} artifacts to {resolved_out}")
+    typer.echo(f"Wrote manifest to {resolved_manifest}")
 
 
 @triage_app.command("apply-chatgpt")

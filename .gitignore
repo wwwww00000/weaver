@@ -12,6 +12,7 @@ build/
 # Raw exports and vault copies may contain private material.
 raw/
 ops/artifacts/
+ops/clusters/
 ops/triage/*.md
 ops/triage/**/*.md
 ops/manifests/*.csv

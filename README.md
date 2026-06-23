@@ -57,6 +57,17 @@ By default, `apply-chatgpt` copies conversations marked `include` or
 `extract-insights` into `raw/chatgpt/` as JSON plus Markdown transcripts, and
 writes per-conversation intermediate artifacts under `ops/artifacts/chatgpt/`.
 
+After applying source triage, generate a deterministic QMD inventory workbench:
+
+```bash
+weaver cluster qmd
+```
+
+By default, this reads `ops/artifacts/obsidian/` and
+`ops/artifacts/chatgpt/`, infers project labels from source metadata and
+glossary files, normalizes obvious category typos, and writes
+`ops/clusters/<date>/source-inventory.qmd` plus `manifest.csv`.
+
 ## Development
 
 ```bash

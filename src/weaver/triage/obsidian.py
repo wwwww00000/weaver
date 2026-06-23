@@ -171,7 +171,7 @@ def _split_frontmatter(text: str) -> tuple[dict[str, object], str]:
     return {}, text
 
 
-def _extract_frontmatter_tags(frontmatter: Mapping[object, object]) -> list[str]:
+def _extract_frontmatter_tags(frontmatter: Mapping[str, object]) -> list[str]:
     tags_value: object = None
     for key, value in frontmatter.items():
         if isinstance(key, str) and key.casefold() == "tags":
