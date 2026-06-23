@@ -34,6 +34,29 @@ By default, `apply` copies notes marked `include` or `extract-insights` into
 `raw/obsidian/` and writes per-note intermediate artifacts plus an index under
 `ops/artifacts/obsidian/`.
 
+ChatGPT exports can be triaged from an extracted export directory, a direct
+conversation JSON file, or a ZIP archive:
+
+```bash
+weaver triage chatgpt raw/exports/chatgpt/2026-06-23 --out ops/triage/chatgpt.md
+```
+
+For large exports, split the triage into smaller part files:
+
+```bash
+weaver triage chatgpt raw/exports/chatgpt/2026-06-23 --split-size 100
+```
+
+After marking decisions, apply selected ChatGPT conversations with:
+
+```bash
+weaver triage apply-chatgpt ops/triage/chatgpt.md
+```
+
+By default, `apply-chatgpt` copies conversations marked `include` or
+`extract-insights` into `raw/chatgpt/` as JSON plus Markdown transcripts, and
+writes per-conversation intermediate artifacts under `ops/artifacts/chatgpt/`.
+
 ## Development
 
 ```bash

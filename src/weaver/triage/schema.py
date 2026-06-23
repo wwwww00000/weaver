@@ -22,6 +22,14 @@ class SortMode(str, Enum):
     MODIFIED_DESC = "modified-desc"
 
 
+class ChatGPTSortMode(str, Enum):
+    UPDATED_DESC = "updated-desc"
+    UPDATED_ASC = "updated-asc"
+    CREATED_DESC = "created-desc"
+    CREATED_ASC = "created-asc"
+    TITLE = "title"
+
+
 @dataclass(frozen=True)
 class TriageItem:
     source_id: str

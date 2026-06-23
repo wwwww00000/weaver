@@ -52,10 +52,12 @@ Project names and descriptions are captured in:
 
 - `ops/context/projects.md`
 - `ops/context/project-glossary.yaml`
+- `ops/context/chatgpt-project-glossary.yaml`
 
 Project names are a separate axis from category labels. Downstream synthesis
 should infer project identity from file paths, titles, links, explicit comments,
-and the project glossary. Category labels should remain topical or conceptual.
+ChatGPT project IDs, and the project glossaries. Category labels should remain
+topical or conceptual.
 
 Important project code names:
 
@@ -78,7 +80,7 @@ raw/exports/chatgpt/2026-06-23/
 
 This path is ignored by git because `raw/` may contain private source material.
 
-Next, implement deterministic ChatGPT triage:
+Implemented deterministic ChatGPT triage:
 
 ```bash
 weaver triage chatgpt /path/to/export.zip --out ops/triage/chatgpt.md
@@ -91,7 +93,7 @@ The command should accept:
 - or a direct `conversations.json`.
 
 The triage output should use the same decision model as Obsidian and should
-produce a manifest. After manual review, `weaver triage apply` should also handle
+produce a manifest. After manual review, `weaver triage apply-chatgpt` handles
 ChatGPT triage artifacts under `raw/chatgpt/` and `ops/artifacts/chatgpt/`.
 
 ## Synthesis Direction

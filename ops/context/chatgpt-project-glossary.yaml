@@ -1,0 +1,82 @@
+chatgpt_projects:
+  g-p-69002c4b04d08191baacb68d07a7c9e7:
+    inferred_name: temporal-modeling-rnn-system-id
+    project_labels:
+      - p12n
+    description: Temporal modeling, RNNs, system identification, temporal regimes, recurrent expressiveness, and related crypto trading research.
+    confidence: medium
+  g-p-6954d6c7c7a88191868438657d60b638:
+    inferred_name: deep-learning-ai-research
+    project_labels:
+      - genesis
+    description: Deep learning, optimization, parameter-efficient fine-tuning, sequence/channel mixing, and broader AI research.
+    confidence: medium
+  g-p-690bf6a3b8b481918809b3b79c22a25f:
+    inferred_name: metacognition-awareness-journaling
+    project_labels:
+      - whetstone
+      - chronicle
+    description: Metacognition, awareness, thought cadence, dopamine reset, morning pages, and life operating system ideas.
+    confidence: medium
+  g-p-68e22a06c46c8191b85f4088746631dd:
+    inferred_name: personal-finance-structured-products
+    project_labels:
+      - accretion
+    description: Personal portfolio, autocallables, fixed income, option selling, structured products, and portfolio risk.
+    confidence: high
+  g-p-68f076ab66988191aa057b9080361733:
+    inferred_name: running-endurance-training
+    project_labels: []
+    description: Running, endurance, aerobic training, zone 2/zone 3, recovery, and training metrics.
+    confidence: medium
+  g-p-6a1bbdfcc68481919b2d7060833a25f8:
+    inferred_name: n-linear-bilinear-returns-model
+    project_labels:
+      - p12n
+    description: N-linear and bilinear returns models, ALS fitting, temporal bases, JVP efficiency, and structured coefficient tensors.
+    confidence: high
+  g-p-68de9f738d808191a6c9250864a15a8d:
+    inferred_name: rnn-training-drift-overfitting
+    project_labels:
+      - p12n
+    description: RNN training, model drift, overfitting diagnosis, post-training interpretability, state diversity, and MinGRU-style ideas.
+    confidence: medium
+  g-p-69514ed5937481919fe67ebdba6bda97:
+    inferred_name: weaver-agentic-wiki-ai-ide
+    project_labels:
+      - genesis
+    description: Weaver, LLM wiki planning, AI IDEs, agent harnesses, tool calling, MCP, and text editor/tool archetypes.
+    confidence: high
+  g-p-68bbc348f5bc81918c12515f9b4f7931:
+    inferred_name: generalization-regularization-validation
+    project_labels:
+      - genesis
+      - p12n
+    description: Generalization, regularization, validation loss optimization, gradient similarity, stability selection, and related ML research.
+    confidence: medium
+  g-p-6932b12d45588191a44735cd6a988c0d:
+    inferred_name: dynamic-ema-volatility-models
+    project_labels:
+      - p12n
+      - obelisk
+    description: Dynamic EMA decay, volatility models, temporal model adjustments, and gated EMA families.
+    confidence: medium
+  g-p-69512dd5d6448191b3de57f6758f4a3c:
+    inferred_name: experiment-feature-framework
+    project_labels:
+      - p12n
+    description: Experiment systems, feature transformation representation, feature attributes, context/cache handling, and boosting component loops.
+    confidence: high
+  g-p-68d944030eb0819188b8a0033421c338:
+    inferred_name: ai-research-arc-agi-rl
+    project_labels:
+      - genesis
+    description: RL techniques, neuro-symbolic reasoning, ARC-AGI, and hobbyist AI research avenues.
+    confidence: medium
+  g-p-6949f07b1a4c8191ba2ff8603c23dca0:
+    inferred_name: emergence-intuition-project-motivation
+    project_labels:
+      - genesis
+      - revelation
+    description: Emergence, project motivation, macro from micro, and intuition-building texts.
+    confidence: low

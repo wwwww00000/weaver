@@ -24,6 +24,11 @@ When synthesizing artifacts, infer project labels from paths, titles, explicit
 links, and this glossary. Do not force every artifact into a project: some notes
 are category-level or cross-project.
 
+For ChatGPT conversations, also use exported `project_id` values from
+`ops/context/chatgpt-project-glossary.yaml`. Those IDs are exported as opaque
+ChatGPT project/template identifiers, so treat their names as inferred labels
+rather than source-provided names.
+
 When project and category conflict, keep both axes:
 
 - Project pages should answer "what is happening in this named workstream?"
