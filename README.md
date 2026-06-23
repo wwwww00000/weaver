@@ -66,7 +66,9 @@ weaver cluster qmd
 By default, this reads `ops/artifacts/obsidian/` and
 `ops/artifacts/chatgpt/`, infers project labels from source metadata and
 glossary files, normalizes obvious category typos, and writes
-`ops/clusters/<date>/source-inventory.qmd` plus `manifest.csv`.
+`ops/clusters/<date>/source-inventory.qmd` plus `manifest.csv`. The QMD also
+includes candidate synthesis bundles keyed by `project/category` and simple
+lexical topic hints for unassigned artifacts.
 
 ## Development
 

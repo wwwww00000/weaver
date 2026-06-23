@@ -20,6 +20,51 @@ CATEGORY_ALIASES = {
     "quantc": "quant",
     "quatn": "quant",
 }
+_TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z0-9+]*")
+_TOKEN_STOPWORDS = frozenset(
+    {
+        "about",
+        "after",
+        "analysis",
+        "and",
+        "approach",
+        "branch",
+        "chat",
+        "chatgpt",
+        "conversation",
+        "conversations",
+        "def",
+        "design",
+        "extract",
+        "explained",
+        "explanation",
+        "for",
+        "from",
+        "ideas",
+        "include",
+        "insight",
+        "insights",
+        "into",
+        "json",
+        "later",
+        "md",
+        "misc",
+        "note",
+        "notes",
+        "obsidian",
+        "overview",
+        "project",
+        "projects",
+        "raw",
+        "request",
+        "summary",
+        "the",
+        "transcript",
+        "transcripts",
+        "triage",
+        "with",
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -138,6 +183,7 @@ def write_inventory_manifest_csv(inventory: SourceInventory, path: Path) -> None
         "decision",
         "title",
         "project_labels",
+        "synthesis_bundles",
         "project_reasons",
         "category_labels",
         "normalized_category_labels",
@@ -159,6 +205,7 @@ def write_inventory_manifest_csv(inventory: SourceInventory, path: Path) -> None
                     "decision": record.decision,
                     "title": record.title,
                     "project_labels": ", ".join(record.project_labels),
+                    "synthesis_bundles": ", ".join(_record_bundle_keys(record)),
                     "project_reasons": "; ".join(record.project_reasons),
                     "category_labels": ", ".join(record.category_labels),
                     "normalized_category_labels": ", ".join(record.normalized_category_labels),
@@ -248,6 +295,33 @@ def render_inventory_qmd(inventory: SourceInventory, *, output_path: Path) -> st
             )
             + " |"
         )
+
+    bundle_groups = _candidate_bundle_groups(records)
+    lines.extend(
+        [
+            "",
+            "## Candidate Synthesis Bundles",
+            "",
+            "These deterministic bundles combine project labels with normalized categories. Records can appear in multiple bundles when they have multiple projects or categories.",
+            "",
+        ]
+    )
+    lines.extend(_render_bundle_table(bundle_groups, output_path=output_path))
+
+    unassigned_topic_groups = _unassigned_topic_groups(records)
+    lines.extend(
+        [
+            "",
+            "## Unassigned Topic Hints",
+            "",
+            "These lexical hints split unassigned artifacts by category plus a repeated title/path term. Use them as review cues, not source-of-truth labels.",
+            "",
+        ]
+    )
+    if unassigned_topic_groups:
+        lines.extend(_render_bundle_table(unassigned_topic_groups, output_path=output_path))
+    else:
+        lines.append("_No repeated unassigned topic hints._")
 
     lines.extend(["", "## Label Normalization", ""])
     if alias_counts:
@@ -446,6 +520,80 @@ def _project_overview_row(
     )
 
 
+def _candidate_bundle_groups(
+    records: Sequence[InventoryRecord],
+) -> list[tuple[str, list[InventoryRecord]]]:
+    groups: dict[str, list[InventoryRecord]] = {}
+    for record in records:
+        for bundle_key in _record_bundle_keys(record):
+            groups.setdefault(bundle_key, []).append(record)
+    return _sort_groups(groups.items())
+
+
+def _record_bundle_keys(record: InventoryRecord) -> list[str]:
+    projects = record.project_labels or ("unassigned",)
+    categories = record.normalized_category_labels or ("uncategorized",)
+    return [f"{project}/{category}" for project in projects for category in categories]
+
+
+def _unassigned_topic_groups(
+    records: Sequence[InventoryRecord],
+) -> list[tuple[str, list[InventoryRecord]]]:
+    unassigned = [record for record in records if not record.project_labels]
+    tokens_by_id = {record.source_id: set(_record_tokens(record)) for record in unassigned}
+    token_counts: Counter[str] = Counter()
+    for tokens in tokens_by_id.values():
+        token_counts.update(tokens)
+
+    groups: dict[str, list[InventoryRecord]] = {}
+    for record in unassigned:
+        categories = record.normalized_category_labels or ("uncategorized",)
+        excluded = set(categories)
+        anchor = _anchor_token(tokens_by_id[record.source_id], token_counts, excluded=excluded)
+        if anchor is None:
+            continue
+        groups.setdefault(f"{categories[0]}/{anchor}", []).append(record)
+
+    repeated_groups = {key: values for key, values in groups.items() if len(values) >= 2}
+    return _sort_groups(repeated_groups.items())
+
+
+def _sort_groups(
+    groups: Iterable[tuple[str, list[InventoryRecord]]],
+) -> list[tuple[str, list[InventoryRecord]]]:
+    return sorted(groups, key=lambda item: (-len(item[1]), item[0]))
+
+
+def _render_bundle_table(
+    groups: Sequence[tuple[str, Sequence[InventoryRecord]]],
+    *,
+    output_path: Path,
+) -> list[str]:
+    lines = [
+        "| Bundle | Artifacts | Sources | Decisions | Top Terms | Examples |",
+        "| --- | ---: | --- | --- | --- | --- |",
+    ]
+    for key, records in groups:
+        source_counts = Counter(record.source_kind for record in records)
+        decision_counts = Counter(record.decision for record in records)
+        excluded_terms = set(key.replace("/", " ").split())
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    _table_cell(key),
+                    str(len(records)),
+                    _table_cell(_counter_inline(source_counts)),
+                    _table_cell(_counter_inline(decision_counts)),
+                    _table_cell(", ".join(_top_terms(records, exclude=excluded_terms))),
+                    _table_cell(_example_links(records, output_path=output_path)),
+                ]
+            )
+            + " |"
+        )
+    return lines
+
+
 def _render_record_bundle(
     heading: str,
     records: Sequence[InventoryRecord],
@@ -465,6 +613,80 @@ def _render_record_bundle(
     lines.extend(_render_record_table(records, output_path=output_path))
     lines.append("")
     return lines
+
+
+def _top_terms(
+    records: Sequence[InventoryRecord],
+    *,
+    exclude: set[str] | None = None,
+    limit: int = 8,
+) -> list[str]:
+    excluded = {term.casefold() for term in exclude or set()}
+    counts: Counter[str] = Counter()
+    for record in records:
+        counts.update(set(_record_tokens(record)) - excluded)
+    return [
+        token
+        for token, _count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:limit]
+    ]
+
+
+def _record_tokens(record: InventoryRecord) -> list[str]:
+    source_path = record.source_path if record.source_kind != "chatgpt" else ""
+    text = " ".join(
+        value
+        for value in [
+            record.title,
+            source_path or "",
+            record.chatgpt_project_name or "",
+            record.triage_comments or "",
+            " ".join(record.category_labels),
+            " ".join(record.source_tags),
+        ]
+        if value
+    )
+    tokens: list[str] = []
+    for match in _TOKEN_RE.finditer(text.casefold()):
+        token = match.group(0).strip("-_")
+        if _useful_token(token):
+            _append_unique(tokens, token)
+    return tokens
+
+
+def _useful_token(token: str) -> bool:
+    if len(token) < 3 and token not in {"ai", "rl"}:
+        return False
+    if token in _TOKEN_STOPWORDS:
+        return False
+    if token.isdigit():
+        return False
+    return True
+
+
+def _anchor_token(
+    tokens: set[str],
+    token_counts: Counter[str],
+    *,
+    excluded: set[str],
+) -> str | None:
+    candidates = [
+        token
+        for token in tokens
+        if token not in excluded and token_counts[token] >= 2
+    ]
+    if not candidates:
+        return None
+    return sorted(candidates, key=lambda token: (-token_counts[token], token))[0]
+
+
+def _example_links(
+    records: Sequence[InventoryRecord],
+    *,
+    output_path: Path,
+    limit: int = 3,
+) -> str:
+    examples = sorted(records, key=lambda record: record.title.casefold())[:limit]
+    return "; ".join(_record_link(record, output_path=output_path) for record in examples)
 
 
 def _render_record_table(records: Sequence[InventoryRecord], *, output_path: Path) -> list[str]:
@@ -500,8 +722,17 @@ def _render_record_table(records: Sequence[InventoryRecord], *, output_path: Pat
 
 
 def _artifact_link(record: InventoryRecord, *, output_path: Path) -> str:
+    return _record_link(record, output_path=output_path, label=record.artifact_path.name)
+
+
+def _record_link(
+    record: InventoryRecord,
+    *,
+    output_path: Path,
+    label: str | None = None,
+) -> str:
     rel_path = Path(os.path.relpath(record.artifact_path.resolve(), output_path.resolve().parent))
-    return f"[{record.artifact_path.name}]({rel_path.as_posix()})"
+    return f"[{label or record.title}]({rel_path.as_posix()})"
 
 
 def _counter_inline(counter: Counter[str], *, limit: int | None = None) -> str:

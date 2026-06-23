@@ -40,6 +40,9 @@ def test_render_inventory_qmd_includes_overviews_and_attention_queue(tmp_path: P
 
     assert "## Project Overview" in rendered
     assert "## Category Overview" in rendered
+    assert "## Candidate Synthesis Bundles" in rendered
+    assert "## Unassigned Topic Hints" in rendered
+    assert "genesis/cognitive" in rendered
     assert "| quantc | quant | 1 |" in rendered
     assert "## Attention Queue" in rendered
     assert "Uncategorized Genesis Note" in rendered
@@ -74,7 +77,9 @@ def test_cli_cluster_qmd_writes_inventory_and_manifest(tmp_path: Path) -> None:
     assert "Wrote 3 artifacts" in result.stdout
     assert out.exists()
     assert manifest.exists()
-    assert "chatgpt:abc" in manifest.read_text(encoding="utf-8")
+    manifest_text = manifest.read_text(encoding="utf-8")
+    assert "synthesis_bundles" in manifest_text
+    assert "chatgpt:abc" in manifest_text
 
 
 def _sample_inventory_inputs(tmp_path: Path) -> tuple[list[Path], Path, Path]:
