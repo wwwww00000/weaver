@@ -70,9 +70,15 @@ Important project code names:
 
 ## ChatGPT Triage Next
 
-The ChatGPT export has been requested and may take about 24 hours.
+The ChatGPT export is available. Stage the extracted export locally under:
 
-When it is available, implement deterministic ChatGPT triage:
+```text
+raw/exports/chatgpt/2026-06-23/
+```
+
+This path is ignored by git because `raw/` may contain private source material.
+
+Next, implement deterministic ChatGPT triage:
 
 ```bash
 weaver triage chatgpt /path/to/export.zip --out ops/triage/chatgpt.md
