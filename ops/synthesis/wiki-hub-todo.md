@@ -64,14 +64,19 @@ Largest unassigned mining queues:
   - Remaining work: deepen individual pages after source-specific review and
     connect future implementation artifacts back into the wiki.
 
-- [ ] Build the `genesis` hub.
+- [x] Build the `genesis` hub.
   - Likely child pages:
-    - AI research map
-    - agentic tools and coding workflows
-    - Weaver as a knowledge-work system
-    - ARC-AGI, reinforcement learning, and neurosymbolic experiments
-    - building, agency, and taste formation
+    - [AI research map](../../wiki/projects/genesis/ai-research-map.md)
+    - [agentic tools and coding workflows](../../wiki/projects/genesis/agentic-tooling.md)
+    - [Weaver as a knowledge-work system](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+    - ARC-AGI, reinforcement learning, and neurosymbolic experiments are
+      currently grouped under the AI research map.
+    - building, agency, and taste formation remains a possible later child
+      page if more source material is pulled in.
   - Mine `genesis/ai`, `genesis/tech`, `genesis/math`, and `unassigned/ai`.
+  - Remaining work: review whether `unassigned/ai` should produce additional
+    topic pages for context management, reasoning-model training, or
+    notebook-agent workflows.
 
 - [ ] Build the `chronicle` and `whetstone` hubs as a paired pass.
   - Keep the boundary explicit:
