@@ -14,6 +14,9 @@ Source inventory: [source-inventory.qmd](../clusters/2026-06-24/source-inventory
 - Genesis now has a project hub plus child pages for Weaver, agentic tooling,
   and AI research.
 - Commit: `d4f0d31 Synthesize Genesis wiki hub`
+- Chronicle and Whetstone now have paired project hubs plus child pages for
+  pages/life OS, think tags, cadence, and felt sense.
+- Commit: `9fbee08 Synthesize Chronicle and Whetstone wiki hubs`
 - Keep future passes source-grounded, but do not let raw source references dominate
   the page shape. The output should read like synthesized wiki material.
 
@@ -101,11 +104,19 @@ Largest unassigned mining queues:
     and `unassigned/writing` queues for reusable topic pages after the
     remaining project hubs exist.
 
-- [ ] Build the `conjuration` hub.
+- [x] Build the `conjuration` hub.
   - Focus on imagination, creativity, drawing, visual practice, and creative
     confidence.
   - Mine `unassigned/drawing`, `unassigned/creativity`, `unassigned/art`, and
     relevant `unassigned/writing`.
+  - Added a project hub:
+    - [Conjuration](../../wiki/projects/conjuration.md)
+  - Added child pages:
+    - [Visualization And Imagination Training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
+    - [Constructive Drawing Practice](../../wiki/projects/conjuration/constructive-drawing-practice.md)
+    - [Sourcebook Worldwork](../../wiki/projects/conjuration/sourcebook-worldwork.md)
+  - Remaining work: review whether the large unassigned drawing/art queues
+    should become a separate drawing topic hub or stay under Conjuration.
 
 - [ ] Build the `accretion` hub.
   - Focus on personal finance, wealth accumulation, structured products,
