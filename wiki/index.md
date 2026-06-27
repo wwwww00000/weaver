@@ -9,6 +9,7 @@ This wiki will hold curated notes after source triage and import decisions.
 - [Genesis](projects/genesis.md)
 - [Obelisk](projects/obelisk.md)
 - [P12n](projects/p12n.md)
+- [Revelation](projects/revelation.md)
 - [Whetstone](projects/whetstone.md)
 
 ## Topics

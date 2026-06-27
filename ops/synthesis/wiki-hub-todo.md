@@ -17,6 +17,9 @@ Source inventory: [source-inventory.qmd](../clusters/2026-06-24/source-inventory
 - Chronicle and Whetstone now have paired project hubs plus child pages for
   pages/life OS, think tags, cadence, and felt sense.
 - Commit: `9fbee08 Synthesize Chronicle and Whetstone wiki hubs`
+- Conjuration now has a project hub plus child pages for visualization,
+  constructive drawing, and sourcebook worldwork.
+- Commit: `d9c552c Synthesize Conjuration wiki hub`
 - Keep future passes source-grounded, but do not let raw source references dominate
   the page shape. The output should read like synthesized wiki material.
 
@@ -124,11 +127,19 @@ Largest unassigned mining queues:
   - Mine `accretion/finance`, `unassigned/finance`, and relevant
     `unassigned/personal`.
 
-- [ ] Build the `revelation` hub.
+- [x] Build the `revelation` hub.
   - Focus on math and physics learning, intuition building, and bridges to
     quantitative modeling.
   - Mine `revelation/math`, `revelation/physics`, `unassigned/math`, and
     `unassigned/physics`.
+  - Added a project hub:
+    - [Revelation](../../wiki/projects/revelation.md)
+  - Added child pages:
+    - [Quantum Mechanics Spine](../../wiki/projects/revelation/quantum-mechanics-spine.md)
+    - [Emergence And Reverse Physics](../../wiki/projects/revelation/emergence-and-reverse-physics.md)
+    - [Active Learning For Math And Physics](../../wiki/projects/revelation/active-learning-for-math-and-physics.md)
+  - Remaining work: review whether the broader unassigned math queue belongs
+    mostly under quant, Revelation, or standalone math topic pages.
 
 ## Per-Hub Checklist
 
