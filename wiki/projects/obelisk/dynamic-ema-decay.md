@@ -12,6 +12,7 @@ categories:
 parent: projects/obelisk
 related:
   - projects/obelisk/regime-and-instrument-selection
+  - topics/quant/adaptive-filters-and-ema
 source_bundles:
   - obelisk/quant
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
@@ -101,6 +102,11 @@ directions:
 
 These are good candidates for p12n because they add adaptive temporal structure
 without immediately jumping to a large deep learning model.
+
+The broader method layer is
+[Adaptive Filters And EMA](../../topics/quant/adaptive-filters-and-ema.md).
+This Obelisk note keeps the project-specific dynamic EMA thread; the quant note
+keeps the reusable adaptive-filter framework.
 
 ## Design Implications
 

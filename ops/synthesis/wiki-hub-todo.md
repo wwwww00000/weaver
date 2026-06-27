@@ -9,6 +9,8 @@ Source inventory: [source-inventory.qmd](../clusters/2026-06-24/source-inventory
 
 - Obelisk has been split into a project hub plus child pages.
 - Commit: `722a68d Split Obelisk wiki into child pages`
+- P12n now has a project hub plus six child pages, and Quant has a topic hub
+  plus seven method pages.
 - Keep future passes source-grounded, but do not let raw source references dominate
   the page shape. The output should read like synthesized wiki material.
 
@@ -52,17 +54,15 @@ Largest unassigned mining queues:
 
 ## Next Hub Passes
 
-- [ ] Build the `p12n` hub.
-  - Start with a hub page and decide child pages before writing too much.
-  - Likely child pages:
-    - temporal modeling and dynamic filters
-    - sequence models and recurrent architectures
-    - bilinear and N-linear models
-    - validation, generalization, and leakage control
-    - regression and forecasting workflows
-    - feature engineering and experiment infrastructure
-  - Mine `p12n/quant`, `p12n/ai`, `unassigned/quant`, `unassigned/math`,
-    and `unassigned/ai`.
+- [x] Draft the `p12n` hub and initial quant method split.
+  - Added a p12n project hub with child pages for temporal returns, n-linear
+    returns models, sequence-model analogies, feature transforms, execution and
+    policy, and experiment infrastructure.
+  - Added a quant topic hub with method pages for temporal evidence, adaptive
+    filters, structured return models, tabular nonlinearities, regression
+    stability, optimization/computation, and generalization/regularization.
+  - Remaining work: deepen individual pages after source-specific review and
+    connect future implementation artifacts back into the wiki.
 
 - [ ] Build the `genesis` hub.
   - Likely child pages:
