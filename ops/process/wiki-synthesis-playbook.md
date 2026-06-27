@@ -154,6 +154,9 @@ cross-page reconciliation.
 
 ## Subagent Delegation Contract
 
+Use [wiki-synthesis-task-template.md](wiki-synthesis-task-template.md) when
+starting a fresh agent context or delegating a synthesis pass.
+
 A delegated synthesis task should include:
 
 - bundle key, such as `obelisk/quant`;
