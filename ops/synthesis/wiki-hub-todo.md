@@ -11,6 +11,9 @@ Source inventory: [source-inventory.qmd](../clusters/2026-06-24/source-inventory
 - Commit: `722a68d Split Obelisk wiki into child pages`
 - P12n now has a project hub plus six child pages, and Quant has a topic hub
   plus seven method pages.
+- Genesis now has a project hub plus child pages for Weaver, agentic tooling,
+  and AI research.
+- Commit: `d4f0d31 Synthesize Genesis wiki hub`
 - Keep future passes source-grounded, but do not let raw source references dominate
   the page shape. The output should read like synthesized wiki material.
 
@@ -78,7 +81,7 @@ Largest unassigned mining queues:
     topic pages for context management, reasoning-model training, or
     notebook-agent workflows.
 
-- [ ] Build the `chronicle` and `whetstone` hubs as a paired pass.
+- [x] Build the `chronicle` and `whetstone` hubs as a paired pass.
   - Keep the boundary explicit:
     - `chronicle`: morning pages, journaling, mindfulness, meditation,
       creative writing
@@ -86,6 +89,17 @@ Largest unassigned mining queues:
       solving
   - Mine `chronicle/cognitive`, `whetstone/cognitive`,
     `unassigned/cognitive`, `unassigned/personal`, and `unassigned/writing`.
+  - Added paired project hubs:
+    - [Chronicle](../../wiki/projects/chronicle.md)
+    - [Whetstone](../../wiki/projects/whetstone.md)
+  - Added child pages:
+    - [Morning Pages And Life OS](../../wiki/projects/chronicle/morning-pages-and-life-os.md)
+    - [Think Tags And Metacognition](../../wiki/projects/whetstone/think-tags-and-metacognition.md)
+    - [Cadence And Mental Pages](../../wiki/projects/whetstone/cadence-and-mental-pages.md)
+    - [Felt Sense And Modes](../../wiki/projects/whetstone/felt-sense-and-modes.md)
+  - Remaining work: mine larger `unassigned/cognitive`, `unassigned/personal`,
+    and `unassigned/writing` queues for reusable topic pages after the
+    remaining project hubs exist.
 
 - [ ] Build the `conjuration` hub.
   - Focus on imagination, creativity, drawing, visual practice, and creative
