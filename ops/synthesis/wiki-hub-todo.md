@@ -213,7 +213,7 @@ Largest unassigned mining queues:
       and Whetstone visualization notes.
     - [x] [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
       and Whetstone semantic-notetaking notes.
-- [ ] Route and mine `unassigned/personal`.
+- [x] Route and mine `unassigned/personal`.
   - Initial routing plan:
     [unassigned-personal-mining-plan.md](unassigned-personal-mining-plan.md)
   - Preferred first page-deepening candidates:
@@ -222,7 +222,7 @@ Largest unassigned mining queues:
       plus Whetstone high-leverage skill link.
     - [x] Chronicle life operations and inner voice pages.
     - [x] [Travel, home, and environment life-operations material](../../wiki/projects/chronicle/travel-and-environment-design.md).
-    - [ ] Conjuration/creativity spillovers, mostly deferred to later queues.
+    - [x] Conjuration/creativity spillovers, mostly deferred to later queues.
 - [ ] Route and mine `unassigned/writing`.
 - [ ] Route and mine `unassigned/math`.
 - [ ] Route and mine `unassigned/drawing`.

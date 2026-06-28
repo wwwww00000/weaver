@@ -63,6 +63,9 @@ feeding each other.
 This should be managed as a portfolio, not as a pile of simultaneous
 obligations. Candidate shapes include:
 
+- creative technologist or AI creative-code work;
+- interdisciplinary research roles that leave room for art, math, physics,
+  software, and AI;
 - weekend-grade AI product prototypes;
 - creative tools for artists, writers, musicians, or learners;
 - data-driven visual explanations and essays;
@@ -206,6 +209,7 @@ Genesis build.
 - [High-leverage Skill Acquisition](../../../ops/artifacts/chatgpt/68123594-eeac-8009-8163-b659b79f4126.md)
 - [Lifestyle Design Explanation](../../../ops/artifacts/chatgpt/040b3f13-c0b9-44d5-8553-177f30c3c962.md)
 - [Polymaths and Renaissance Individuals](../../../ops/artifacts/chatgpt/3990366c-6bcb-4b93-9620-3742005fc2ed.md)
+- [Career Options for Creatives](../../../ops/artifacts/chatgpt/66f2d854-6184-8009-ae19-d46632087061.md)
 - [Sprint Structure for Progress](../../../ops/artifacts/chatgpt/67e298fd-2b8c-8009-9dc4-846c97043936.md)
 - [Strategies for Rediscovering Your Full Potential and Giving 100% Again](../../../ops/artifacts/chatgpt/40d8ef9d-7f5b-4829-a533-1d0fca05d57f.md)
 - [Systems literacy hobbies](../../../ops/artifacts/chatgpt/68f31f78-b988-8322-be39-0dc41f397ec2.md)

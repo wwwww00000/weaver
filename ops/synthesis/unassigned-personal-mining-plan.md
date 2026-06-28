@@ -64,6 +64,13 @@ Priority means:
   [Attention And State Regulation](../../wiki/projects/whetstone/attention-and-state-regulation.md).
 - 2026-06-28: Completed the travel, home, and environment pass:
   [Travel And Environment Design](../../wiki/projects/chronicle/travel-and-environment-design.md).
+- 2026-06-28: Completed the creativity and imagination spillover pass:
+  micro-play into
+  [Visualization And Imagination Training](../../wiki/projects/conjuration/visualization-and-imagination-training.md),
+  museum prompts into
+  [Constructive Drawing Practice](../../wiki/projects/conjuration/constructive-drawing-practice.md),
+  and creative studio-career material into
+  [Agency And Building Practice](../../wiki/projects/genesis/agency-and-building-practice.md).
 
 ## Endurance And Running Training
 
@@ -163,11 +170,11 @@ Primary destinations:
 | [Micro Play Ideas](../artifacts/chatgpt/67ed6897-9cb4-8009-bd97-1863c683a674.md) | dual-link | P2 | Chronicle/Conjuration play practice. |
 | [chuu2](../artifacts/obsidian/imagination.md) | defer | P2 | Likely Conjuration imagination material. |
 | [museum notes](../artifacts/obsidian/drawing-ideas.md) | defer | P2 | Better handled with drawing/art queues. |
-| [designing your life](../artifacts/obsidian/books-designing-your-life.md) | dual-link | P2 | Life design plus career; inspect with agency/life-ops pass. |
+| [designing your life](../artifacts/obsidian/books-designing-your-life.md) | skip | P3 | Copied source is metadata-only; no durable synthesis material in this pass. |
 
 ## Next Pass
 
 The endurance/running, agency/high-leverage skill, and Chronicle life-operations
-passes are complete. The travel/home/environment pass is also complete. Next,
-review creativity and imagination spillovers, mostly for deferral to Conjuration
-or later writing/drawing queues.
+passes are complete. The travel/home/environment and creativity/imagination
+spillover passes are also complete. The `unassigned/personal` queue has now
+been mined at first-pass depth.

@@ -97,6 +97,26 @@ fake.
 The tool is secondary. The important thing is that the exercise has a planned
 comparison.
 
+## Museum And Reference Prompts
+
+Museum notes can become drawing prompts when they are treated as structured
+observation rather than vague inspiration.
+
+Useful prompts:
+
+- study how an object becomes memorable through silhouette, material, use, and
+  named detail;
+- imagine a future museum exhibit and draw the artifact, label, and display
+  context;
+- compare how different paintings or sculptures stylize the same human form;
+- redraw a familiar room as if it were a curated exhibit;
+- ask how a graphic-design piece moves the viewer's gaze;
+- extract one motif from an artwork and recombine it with an invented subject.
+
+This keeps museum visits connected to constructive practice: notice the form,
+compress the observation, then turn it into a checkable sketch or design
+constraint.
+
 ## Open Questions
 
 - Which subject track should become the first serious curriculum?
@@ -118,3 +138,4 @@ comparison.
 - [reference study](../../../ops/artifacts/obsidian/drawing-reference-study.md)
 - [sketchbook](../../../ops/artifacts/obsidian/drawing-sketchbook.md)
 - [3d sketching](../../../ops/artifacts/obsidian/drawing-3d-sketching.md)
+- [museum notes](../../../ops/artifacts/obsidian/drawing-ideas.md)

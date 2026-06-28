@@ -106,6 +106,24 @@ Rewarding fragments matters. When a small image, character, line, or scene
 appears, capture and explore it. The habit teaches imagination that fragments
 are worth offering again.
 
+## Micro Play
+
+Micro-play exercises keep imagination available when there is no time for a
+full session. They should be short enough to run privately in the head.
+
+Useful moves:
+
+- reality remix: make one ordinary object behave impossibly;
+- tiny backstory: invent a quick story for a person, object, or place;
+- mini world-building: imagine a small civilization around a mundane object;
+- absurd hypothetical: change one physical or social rule for a minute;
+- sensory swap: imagine two nearby things exchanging sensory qualities;
+- persona day: borrow a fictional or invented persona and notice what they
+  would attend to.
+
+The output can be nothing more than a phrase or image. The goal is to reward
+the imaginative impulse before it gets trained out by busyness.
+
 ## Everywhere Drills
 
 Conjuration should have exercises that work on a commute, walk, or idle wait:
@@ -164,6 +182,7 @@ awareness-practice side of this material.
 - [Visualization Skill Development](../../../ops/artifacts/chatgpt/b069844b-4fb6-406c-86a3-b551c247e776.md)
 - [Visualization and Perspective Exercises](../../../ops/artifacts/chatgpt/67a0f79f-4ec8-8009-9b6d-e71fcf77298a.md)
 - [Creative Commute Exercises](../../../ops/artifacts/chatgpt/4f97f718-3907-48ae-898a-1b01f112e69c.md)
+- [Micro Play Ideas](../../../ops/artifacts/chatgpt/67ed6897-9cb4-8009-bd97-1863c683a674.md)
 - [Reigniting Creative Imagination](../../../ops/artifacts/chatgpt/67aacbed-057c-8009-8b70-4ac05322e564.md)
 - [Rekindling Your Imagination](../../../ops/artifacts/chatgpt/c7c15c72-b349-44bf-b7cf-a657668aa679.md)
 - [Edison's Pen Inspiration](../../../ops/artifacts/chatgpt/37e6cc50-f4d0-48c3-851c-1151ef27c0c2.md)
