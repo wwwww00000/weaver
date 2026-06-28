@@ -59,6 +59,9 @@ Status:
   and [generalization and regularization](../../wiki/topics/quant/generalization-and-regularization.md).
 - 2026-06-28: Completed optimization and computation pass for
   [optimization and computation](../../wiki/topics/quant/optimization-and-computation.md).
+- 2026-06-28: Completed tabular nonlinearities and feature-search pass for
+  [tabular nonlinearities](../../wiki/topics/quant/tabular-nonlinearities.md)
+  and [P12n feature transforms and BST](../../wiki/projects/p12n/feature-transforms-and-bst.md).
 
 ### Adaptive Filters And EMA
 
@@ -224,11 +227,6 @@ later targeted page.
 
 ## Next Pass
 
-Next, run a page-deepening pass for the tabular nonlinearities and feature
-search queue:
-[tabular nonlinearities](../../wiki/topics/quant/tabular-nonlinearities.md)
-and [P12n feature transforms and BST](../../wiki/projects/p12n/feature-transforms-and-bst.md).
-
-This pass should keep the durable method page and the active p12n project page
-slightly separated: reusable nonlinear tabular modeling ideas belong in Quant,
-while BST, crypto features, and experiment workflow belong in P12n.
+The queued `unassigned/quant` page-deepening passes before
+`Defer Or Human Review` are complete. The remaining quant items in this plan are
+defer or human-review candidates, not a ready synthesis queue.

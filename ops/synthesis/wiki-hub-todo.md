@@ -184,6 +184,8 @@ Largest unassigned mining queues:
     - [x] [Regression Stability And Validation](../../wiki/topics/quant/regression-stability-and-validation.md)
       and [Generalization And Regularization](../../wiki/topics/quant/generalization-and-regularization.md)
     - [x] [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md)
+    - [x] [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md)
+      and [P12n Feature Transforms And BST](../../wiki/projects/p12n/feature-transforms-and-bst.md)
 - [ ] Route and mine `unassigned/ai`.
 - [ ] Route and mine `unassigned/cognitive`.
 - [ ] Route and mine `unassigned/personal`.

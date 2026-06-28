@@ -24,7 +24,7 @@ related:
   - topics/quant/regression-stability-and-validation
   - topics/quant/generalization-and-regularization
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Feature Transforms And BST
@@ -111,6 +111,41 @@ Feature metadata matters because not every feature should be allowed in every
 product. The p12n notes point at moving product permissions into feature meta,
 pruning unused product permissions, and computing reusable base bins once.
 
+## Selective Temporal Feature Maps
+
+One promising BST direction is to emulate sequence-model selectivity while
+staying inside the "feature map plus ridge" workflow.
+
+The conservative base learner menu is:
+
+- distributed-lag linear models with ridge or elastic-net readouts;
+- fixed filter banks, EMAs, or diagonal SSM poles crossed with current bins;
+- reservoir or ESN states with analytic ridge readouts;
+- sparse hashed lag kernels that act like a cheap attention-style convolution;
+- tree or spline components only after the linear feature-map baselines are
+  exhausted.
+
+The strongest p12n-shaped idea from the unassigned queue is the selective hashed
+temporal kernel. For a scalar or feature channel, emit sparse features such as:
+
+```text
+hash(current_bin, past_bin, lag_bucket) * past_value
+```
+
+This is a convolutional analogue of attention: current content gates which past
+content and lag region matter, but the fit is still one regularized linear
+solve. Useful variations include:
+
+- signed or magnitude-difference bins;
+- log-dilated lag buckets;
+- wave or Fourier lag probes;
+- fixed pole/filter states crossed with current bins;
+- residual hashed buckets for rare high-value interactions.
+
+This belongs in BST when the transform is explicitly generated, scored, and
+logged. It should not become a recurrent module until the explicit version has
+survived blocked validation and ablation.
+
 ## Binning And Product Bins
 
 Binning is attractive because it gives robust nonlinear scalar effects with
@@ -129,6 +164,10 @@ The most important modeling distinction is whether a product bin is a final
 prediction component or merely a derived feature offered to later stages. The
 second is more flexible but raises leakage risk.
 
+For p12n, target-aware buckets should be treated as fitted features. If bucket
+means, tree leaves, or semantic hashes use target information, they must be
+computed out of fold before becoming inputs to later components.
+
 ## Validation And Selection
 
 Feature selection needs time-aware diagnostics, not only aggregate train fit.
@@ -145,6 +184,20 @@ Current or planned signals:
 - minimum incremental improvement thresholds;
 - pruning rules based on iteration and unused metadata.
 
+Greedy feature discovery should prefer small, interpretable modules over a long
+forward-selection path. A candidate group is useful when it has:
+
+- incremental validation gain;
+- stable contribution across time folds;
+- semantic or metadata coherence;
+- synergy with the existing group, not just standalone strength;
+- low reuse of already-explained feature families.
+
+This suggests a workflow of seeded restarts: choose a plausible seed feature,
+grow a small group with a validation/coherence score, stop early, log the group,
+then restart with reuse penalties. The output is a collection of feature modules
+that can be promoted, pruned, or handed to the sequence-model analogy pages.
+
 The reusable method layer is split across
 [Regression Stability And Validation](../../topics/quant/regression-stability-and-validation.md)
 for leakage and out-of-fold feature handling, [Temporal
@@ -160,6 +213,8 @@ sequence-model behavior as feature transforms:
 
 - filter-bank features conditioned on bins;
 - EMA products and binned EMA states;
+- diagonal SSM pole states crossed with current feature bins;
+- hashed triplets of current bin, past bin, and lag bucket;
 - attention-like feature hash triplets;
 - in-context-learning-like transforms from causal target products;
 - rolling regression states exposed as features;
@@ -181,6 +236,10 @@ then promote only the stable ones into recurrent or adaptive modules.
   study artifact?
 - How much of BST should remain forecast-only versus feed execution and
   threshold training?
+- Which selective feature-map baseline should be implemented first: binned EMA
+  states, fixed pole states, or hashed tri-bin lag kernels?
+- What audit artifact should record a discovered feature module before it is
+  promoted into the production feature registry?
 
 ## Source Map
 
@@ -188,6 +247,12 @@ then promote only the stable ones into recurrent or adaptive modules.
 - [p12n overview](../../../ops/artifacts/obsidian/p12n-overview.md)
 - [2026-W25 weekly project context](../../../ops/artifacts/obsidian/weekly-2026-W25.md)
 - [Boosting components loop](../../../ops/artifacts/chatgpt/6957de3f-9af0-8322-9487-410fe60d459d.md)
+- [Base Learner Options TS](../../../ops/artifacts/chatgpt/6830a950-368c-8009-ab4b-c7baf293dd2e.md)
 - [ML Regression with Product Bins](../../../ops/artifacts/chatgpt/6871e0bb-14a8-8009-a8c9-fbf8690c0430.md)
 - [Ridge CV vs OOF Scaling](../../../ops/artifacts/chatgpt/6763f3ae-17ec-8009-8723-49f1fcb2e6c1.md)
 - [Non-linear Feature Transformations](../../../ops/artifacts/chatgpt/674b3994-918c-8009-9724-e8dd5d984766.md)
+- [Feature Hashing Alternatives](../../../ops/artifacts/chatgpt/68382bfb-6f44-8009-a58e-7a6a8bf15ad8.md)
+- [Iterative Greedy Feature Selection](../../../ops/artifacts/chatgpt/69eb6c3d-c5d8-839e-97e0-8caedc8c6584.md)
+- [Linear Regression with Modulation](../../../ops/artifacts/chatgpt/6834364d-3f9c-8009-b633-c4fc44a8399d.md)
+- [Streaming k-means extension](../../../ops/artifacts/chatgpt/69b65ceb-6620-8398-8796-e663ba3066cf.md)
+- [Tabular ML for Time Series](../../../ops/artifacts/chatgpt/67dc2d07-fa44-8009-b9fa-0ac6fc749115.md)
