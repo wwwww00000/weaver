@@ -45,6 +45,11 @@ Priority means:
 The `unassigned/quant` bundle should deepen the existing P12n and Quant pages
 rather than produce a new top-level unassigned page.
 
+Status:
+
+- 2026-06-28: Completed first page-deepening pass for
+  [adaptive filters and EMA](../../wiki/topics/quant/adaptive-filters-and-ema.md).
+
 ### Adaptive Filters And EMA
 
 Primary destination:
@@ -209,11 +214,9 @@ later targeted page.
 
 ## Next Pass
 
-Start with a page-deepening pass for
-[adaptive filters and EMA](../../wiki/topics/quant/adaptive-filters-and-ema.md)
-or [temporal returns experiments](../../wiki/projects/p12n/temporal-returns-experiments.md).
+Next, run a page-deepening pass for
+[temporal returns experiments](../../wiki/projects/p12n/temporal-returns-experiments.md).
 
-The adaptive-filter pass is mechanically clean because the relevant artifacts
-are concentrated and mostly method-level. The temporal-returns pass is more
-project-relevant, but it will require more care to avoid mixing signal study,
-execution policy, and reusable return-model structure.
+The temporal-returns pass is more project-relevant than the adaptive-filter
+pass, but it will require more care to avoid mixing signal study, execution
+policy, and reusable return-model structure.
