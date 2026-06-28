@@ -224,5 +224,12 @@ Largest unassigned mining queues:
     - [x] [Travel, home, and environment life-operations material](../../wiki/projects/chronicle/travel-and-environment-design.md).
     - [x] Conjuration/creativity spillovers, mostly deferred to later queues.
 - [ ] Route and mine `unassigned/writing`.
+  - Initial routing plan:
+    [unassigned-writing-mining-plan.md](unassigned-writing-mining-plan.md)
+  - Preferred first page-deepening candidates:
+    - [ ] Chronicle writing practice and voice.
+    - [ ] Conjuration fiction premises and worldwork.
+    - [ ] Weaver/AI writing tools, only if new material remains after the
+      `unassigned/ai` pass.
 - [ ] Route and mine `unassigned/math`.
 - [ ] Route and mine `unassigned/drawing`.
