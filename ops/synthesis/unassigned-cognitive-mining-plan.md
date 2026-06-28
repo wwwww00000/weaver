@@ -50,6 +50,9 @@ Priority means:
 - 2026-06-28: Completed the contemplative practice and liminal cognition pass:
   [Meditation And Nonduality](../../wiki/projects/chronicle/meditation-and-nonduality.md),
   with a bounded Conjuration cross-link for liminal imagery.
+- 2026-06-28: Completed the visualization and imagination practice pass:
+  [Conjuration visualization and imagination training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
+  and [Whetstone problem solving and skill acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
 
 ## Problem Solving And Skill Acquisition
 
@@ -167,10 +170,9 @@ These sources have cognitive labels but are better saved for the
 
 ## Next Pass
 
-Next, run a page-deepening pass for visualization and imagination practice:
-[Conjuration visualization and imagination training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
-and [Whetstone problem solving and skill acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
+Next, run the knowledge systems and agency spillover pass:
+[Genesis Weaver as knowledge system](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+and [Whetstone think tags and metacognition](../../wiki/projects/whetstone/think-tags-and-metacognition.md).
 
-This pass should route visualization techniques by purpose: Conjuration owns
-imagination and drawing transfer, while Whetstone owns mental workspace and
-problem-solving transfer.
+This pass should route semantic-notetaking material mainly to Genesis/Weaver,
+with only the cognitive-control pieces landing in Whetstone.

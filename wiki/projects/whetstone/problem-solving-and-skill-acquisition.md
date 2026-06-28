@@ -20,6 +20,7 @@ related:
   - projects/whetstone/think-tags-and-metacognition
   - projects/whetstone/cadence-and-mental-pages
   - projects/whetstone/felt-sense-and-modes
+  - projects/conjuration/visualization-and-imagination-training
   - projects/revelation/active-learning-for-math-and-physics
 created: 2026-06-28
 updated: 2026-06-28
@@ -94,6 +95,27 @@ When the `stuck` tag fires, the next move should be concrete. Useful operators:
 The operator library should be practiced directly. Codeforces, project Euler,
 small proof exercises, debugging tasks, and toy research questions all work if
 the review names the operator that succeeded or failed.
+
+## Visual-Spatial Reasoning
+
+Visualization is not only for art. It can be used as a problem-solving
+representation.
+
+Useful forms:
+
+- mind maps for branching associations;
+- concept maps for labeled relationships;
+- storyboards for processes, user flows, or arguments;
+- mental rotation for geometry, mechanics, code paths, or scene blocking;
+- object models where variables become movable pieces with properties;
+- spatial layouts where constraints occupy positions;
+- diagrams of data flow, control flow, dependencies, and feedback loops;
+- simulations where the system is operated in the mind before building.
+
+The Tesla-style move is design rehearsal: build the thing internally, operate
+it, notice faults, revise, then externalize. For Whetstone, the practice should
+always end with a checkable artifact: sketch, diagram, pseudocode, proof
+outline, test case, or implementation note.
 
 ## Skill Acquisition Loop
 
@@ -200,6 +222,10 @@ for holding an attempt together without paper.
 [Felt Sense And Modes](felt-sense-and-modes.md) supplies the intuitive and
 somatic signals that can suggest a representation switch.
 
+[Visualization And Imagination Training](../conjuration/visualization-and-imagination-training.md)
+owns the Conjuration-facing version of visualization: imagery, drawing, and
+creative transfer.
+
 [Active Learning For Math And Physics](../revelation/active-learning-for-math-and-physics.md)
 is the Revelation-specific application of these principles to texts,
 derivations, exercises, prerequisites, and mathematical fatigue.
@@ -222,6 +248,8 @@ derivations, exercises, prerequisites, and mathematical fatigue.
 - [Metacognition in problem solving.](../../../ops/artifacts/chatgpt/a84f0334-18ef-420b-997c-45dbaf6ba2e4.md)
 - [Problem-solving Competencies](../../../ops/artifacts/chatgpt/565db9f3-9674-4601-89b3-31f2b55abec1.md)
 - [Problem Solving Competencies](../../../ops/artifacts/chatgpt/029dbdb1-6e82-409d-a8bd-8bc0408cabbe.md)
+- [Tesla's Visualization Technique](../../../ops/artifacts/chatgpt/554d6d50-4e57-44dd-9495-a9038c61feb5.md)
+- [Visualization Techniques for Cognitive Tasks](../../../ops/artifacts/chatgpt/4254a9f4-dc4b-4c3e-90c0-c9cf4885af68.md)
 - [Decision Loop Models](../../../ops/artifacts/chatgpt/b9793ea5-5532-4ee3-a262-284ca09fe287.md)
 - [Diverse Internal Mental Models](../../../ops/artifacts/chatgpt/6894a6ab-551b-474d-a4e9-7eb5719792bb.md)
 - [Cognitive Skills Enhancement Exercises](../../../ops/artifacts/chatgpt/43e3c0b2-3688-469a-9337-573d3d04afe6.md)

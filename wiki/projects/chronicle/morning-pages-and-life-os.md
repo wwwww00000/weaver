@@ -43,6 +43,8 @@ Use different variants for different constraints.
   organization.
 - Head pages: think through a page while walking or commuting, then capture a
   handle, thesis, and next action afterward.
+- Commute pages: describe the surroundings, continue a scene, or run a small
+  imagination drill, then capture one phrase afterward.
 - Prompted pages: start from one narrow prompt when the blank page is too much.
 
 The retrieval step matters. Without it, pages relieve pressure but do not
@@ -133,5 +135,6 @@ awareness practice, concentration, nondual inquiry, and liminal capture.
 - [Regaining Rich Thought Patterns](../../../ops/artifacts/chatgpt/67d45443-b6c4-8009-b03a-8dd16b8a8c62.md)
 - [Disconnected self: Unease and erosion.](../../../ops/artifacts/chatgpt/8dba6d1d-fd8e-4178-91ce-55de91d68f5a.md)
 - [Cognitive Tricks for Focus](../../../ops/artifacts/chatgpt/67e94beb-ef98-8009-8545-9d88804e077d.md)
+- [Creative Commute Exercises](../../../ops/artifacts/chatgpt/4f97f718-3907-48ae-898a-1b01f112e69c.md)
 - [chronicle overview](../../../ops/artifacts/obsidian/chronicle.md)
 - [2026-W25 weekly project context](../../../ops/artifacts/obsidian/weekly-2026-W25.md)

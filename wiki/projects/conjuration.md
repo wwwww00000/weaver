@@ -64,6 +64,7 @@ more creative. A good Conjuration session should have a concrete constraint:
 construct a creature from primitives, imagine an object in the current visual
 field, map a first-person scene onto the page, remix a sourcebook location, or
 draw an invented subject with a checkable reference or model afterward.
+
 Dream and hypnagogic fragments can be used as source material when they are
 captured lightly and do not interfere with sleep.
 
@@ -112,6 +113,7 @@ visualization, or AI-assisted creative workflows.
 - [conjuration overview](../../ops/artifacts/obsidian/conjuration.md)
 - [2026-W25 weekly project context](../../ops/artifacts/obsidian/weekly-2026-W25.md)
 - [Visualization Training Techniques](../../ops/artifacts/chatgpt/67c86245-df84-8009-8c9e-491c8c9b6844.md)
+- [Creative Commute Exercises](../../ops/artifacts/chatgpt/4f97f718-3907-48ae-898a-1b01f112e69c.md)
 - [Edison's Pen Inspiration](../../ops/artifacts/chatgpt/37e6cc50-f4d0-48c3-851c-1151ef27c0c2.md)
 - [Solo D&D Lore Exploration](../../ops/artifacts/chatgpt/69f6fc64-4b84-83a0-8ec4-0b95c761306d.md)
 - [source inventory](../../ops/clusters/2026-06-24/source-inventory.qmd)

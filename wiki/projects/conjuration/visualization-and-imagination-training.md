@@ -102,6 +102,28 @@ sessions:
 The practice should remain playful enough to revive childhood-style world
 building, but constrained enough to improve a concrete skill.
 
+Rewarding fragments matters. When a small image, character, line, or scene
+appears, capture and explore it. The habit teaches imagination that fragments
+are worth offering again.
+
+## Everywhere Drills
+
+Conjuration should have exercises that work on a commute, walk, or idle wait:
+
+- describe the surroundings in artful prose;
+- pick three objects and bind them into a short story;
+- choose a scene and imagine it from another camera angle;
+- continue a story in the head for two minutes;
+- invent a character and answer one question in their voice;
+- imagine an everyday object transformed into a creature or device;
+- build a mental music video for a song;
+- read fiction and deliberately visualize the scene, characters, and blocking;
+- read manga and imagine alternate shots, crops, or panel sequences.
+
+The output can be tiny: one phrase, one sketch, one panel idea, one character
+constraint, or one next scene. The point is to keep imaginative contact alive
+between formal sessions.
+
 ## Liminal Imagery
 
 Dreams, hypnagogic fragments, shower thoughts, naps, and bedtime drift can
@@ -137,12 +159,16 @@ awareness-practice side of this material.
 
 - [Visualization Training Techniques](../../../ops/artifacts/chatgpt/67c86245-df84-8009-8c9e-491c8c9b6844.md)
 - [Modes of Mental Visualization](../../../ops/artifacts/chatgpt/a00ee50c-d8cd-426c-b746-0d71f2a840e1.md)
+- [Tesla's Visualization Technique](../../../ops/artifacts/chatgpt/554d6d50-4e57-44dd-9495-a9038c61feb5.md)
+- [Visualization Techniques for Cognitive Tasks](../../../ops/artifacts/chatgpt/4254a9f4-dc4b-4c3e-90c0-c9cf4885af68.md)
 - [Visualization Skill Development](../../../ops/artifacts/chatgpt/b069844b-4fb6-406c-86a3-b551c247e776.md)
 - [Visualization and Perspective Exercises](../../../ops/artifacts/chatgpt/67a0f79f-4ec8-8009-9b6d-e71fcf77298a.md)
+- [Creative Commute Exercises](../../../ops/artifacts/chatgpt/4f97f718-3907-48ae-898a-1b01f112e69c.md)
 - [Reigniting Creative Imagination](../../../ops/artifacts/chatgpt/67aacbed-057c-8009-8b70-4ac05322e564.md)
 - [Rekindling Your Imagination](../../../ops/artifacts/chatgpt/c7c15c72-b349-44bf-b7cf-a657668aa679.md)
 - [Edison's Pen Inspiration](../../../ops/artifacts/chatgpt/37e6cc50-f4d0-48c3-851c-1151ef27c0c2.md)
 - [Lucid Dreaming Techniques](../../../ops/artifacts/chatgpt/673caaf4-09dc-8009-9aef-07872776aa5f.md)
 - [ideas before bed](../../../ops/artifacts/obsidian/ideas-before-bed.md)
+- [chuu2](../../../ops/artifacts/obsidian/imagination.md)
 - [observation and visualization](../../../ops/artifacts/obsidian/drawing-observation-and-visualization.md)
 - [perspective](../../../ops/artifacts/obsidian/drawing-perspective.md)
