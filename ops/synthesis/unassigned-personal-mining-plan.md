@@ -62,6 +62,8 @@ Priority means:
   [Morning Pages And Life OS](../../wiki/projects/chronicle/morning-pages-and-life-os.md),
   with Whetstone state-regulation links in
   [Attention And State Regulation](../../wiki/projects/whetstone/attention-and-state-regulation.md).
+- 2026-06-28: Completed the travel, home, and environment pass:
+  [Travel And Environment Design](../../wiki/projects/chronicle/travel-and-environment-design.md).
 
 ## Endurance And Running Training
 
@@ -166,4 +168,6 @@ Primary destinations:
 ## Next Pass
 
 The endurance/running, agency/high-leverage skill, and Chronicle life-operations
-passes are complete. Next, move to travel, home, and environment.
+passes are complete. The travel/home/environment pass is also complete. Next,
+review creativity and imagination spillovers, mostly for deferral to Conjuration
+or later writing/drawing queues.

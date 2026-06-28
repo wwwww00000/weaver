@@ -120,7 +120,8 @@ Use these settings as prompts:
 
 Chronicle should keep the portable part. The point is not to need travel or a
 special room, but to learn how novelty, quiet, elevation, walking, and liminal
-time change attention.
+time change attention. The dedicated Chronicle page for this pattern is
+[Travel And Environment Design](travel-and-environment-design.md).
 
 ## Attention Hygiene
 

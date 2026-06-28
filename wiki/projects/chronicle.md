@@ -40,6 +40,9 @@ into usable memory.
   journaling without paper, audio or head-pages, weekly retrieval, life
   operating-system routines, insight integration, reflective environment
   design, and attention hygiene.
+- [Travel And Environment Design](chronicle/travel-and-environment-design.md):
+  travel mindset, micro-vacations, home project containers, personal retreats,
+  and anticipation as state-design tools.
 - [Meditation And Nonduality](chronicle/meditation-and-nonduality.md):
   consistency-first meditation, concentration practice, nondual inquiry,
   portable awareness, liminal capture, and lucid-dreaming boundaries.
