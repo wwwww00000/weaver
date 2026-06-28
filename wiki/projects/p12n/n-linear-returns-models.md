@@ -13,6 +13,7 @@ source_bundles:
   - p12n/quant
   - p12n/math
   - p12n/uncategorized
+  - unassigned/math
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: projects/p12n
 related:
@@ -227,6 +228,60 @@ The preferred gauge is:
 This keeps pressure on the model to learn reusable predictor-lag factors instead
 of hiding the whole target-space map in a value projection.
 
+## Amortized Local Regression Prototype
+
+A useful p12n prototype fuses query and key maps into one matrix:
+
+```text
+M = W_q W_k^T
+y_hat = (L .* X M X^T) y
+```
+
+where `L` is a fixed causal mask and `.*` denotes elementwise multiplication.
+For scalar targets this becomes:
+
+```text
+c_t = sum_s L[t, s] y_s x_s
+y_hat_t = x_t^T M c_t
+```
+
+The mask controls the memory:
+
+- full causal prefix: `c_t = sum_{s < t} y_s x_s`;
+- sliding window: `c_t = sum_{l=1}^w y_{t-l} x_{t-l}`;
+- exponential decay: `c_{t+1} = rho c_t + y_t x_t`;
+- general lag kernel: filter each coordinate of `y_t x_t` by the kernel.
+
+Once `c_t` is built, the fused problem is ordinary least squares on the lifted
+feature `c_t kron x_t`. The original query/key factorization is a low-rank
+constraint on `M`.
+
+This resembles sliding-window regression but is not the same estimator. A local
+windowed ridge fit would compute:
+
+```text
+G_t = X_w^T X_w
+c_t = X_w^T y_w
+beta_t = (G_t + lambda I)^-1 c_t
+y_hat_t = x_t^T beta_t
+```
+
+The fused attention-like prototype instead learns one global operator:
+
+```text
+beta_t = M c_t
+```
+
+So `M` is an amortized inverse-covariance or preconditioner. This is attractive
+when local Gram structure is stable enough to share. If local covariance changes
+materially, the model needs either access to `G_t`, regime-specific operators,
+or a more explicit streaming-regression backend.
+
+The learned `M` should not be expected to be symmetric. Current features
+`x_t` and historical memory `c_t` play different roles. Symmetry only becomes
+natural in same-vector quadratic forms such as `x_t^T W x_t`, where the
+skew-symmetric part is unidentifiable.
+
 ## Diagnostics
 
 The first atom or first temporal profile may dominate. In low-SNR returns, that
@@ -268,8 +323,10 @@ predictions?
 - [Returns Model Design](../../../ops/artifacts/chatgpt/69eaa7ea-ca34-839c-a770-0c47bb62edba.md)
 - [Bilinear Model Generalization](../../../ops/artifacts/chatgpt/69fb6b98-5d84-839f-a5f8-fef0e1b96345.md)
 - [Basis Function Branch - Bilinear Model Generalization](../../../ops/artifacts/chatgpt/6a081747-34fc-83ec-9431-0075044dd952.md)
+- [Bilinear Autoregressive LSQ](../../../ops/artifacts/chatgpt/6a200ef7-f71c-83ec-8c98-cceb472c5baa.md)
 - [Framework Branch - Bilinear Model Generalization](../../../ops/artifacts/chatgpt/6a14f60f-5eb4-83ec-b398-eaf71c6e4763.md)
 - [Linear Attention Branch - Bilinear Model Generalization](../../../ops/artifacts/chatgpt/69fb6ffd-cdc0-83a0-b8eb-d4d5437aad8a.md)
+- [Low-Rank Tensor Regression](../../../ops/artifacts/chatgpt/68639f33-2858-8009-8a85-351d48135a5a.md)
 - [N-linear model fitting](../../../ops/artifacts/chatgpt/6a1bd091-cafc-83ec-9c0d-5bfdf73d5c93.md)
 - [Solving for Beta](../../../ops/artifacts/chatgpt/6a1718c0-976c-83ec-83df-0e71575a25a0.md)
 - [Sparse-lag AR Models](../../../ops/artifacts/chatgpt/6a0950af-853c-83ec-9b55-472bb305fd38.md)

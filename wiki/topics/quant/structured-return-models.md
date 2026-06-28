@@ -14,6 +14,7 @@ source_bundles:
   - p12n/quant
   - p12n/uncategorized
   - unassigned/quant
+  - unassigned/math
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: topics/quant
 related:
@@ -209,6 +210,47 @@ It is attractive when local covariance geometry is stable enough that a shared
 preconditioner works, while the local target-feature cross moment carries the
 interesting drift.
 
+For a general fixed causal mask, the same idea is:
+
+```text
+U = diag(y) X
+C = L U
+c_t = C[t, :]
+y_hat_t = x_t^T M c_t
+```
+
+The mask `L` can be a causal prefix, a sliding window, exponential decay, a
+seasonal lag kernel, or any fixed lag weighting. Once `C` is formed, fitting the
+fused `M` is convex least squares:
+
+```text
+y_t ~= (c_t kron x_t)^T vec(M)
+```
+
+Keeping the original query/key factorization:
+
+```text
+M = W_q W_k^T
+```
+
+adds a low-rank constraint. Dropping the factorization gives the full bilinear
+kernel; keeping it gives a nonconvex low-rank regression with fewer degrees of
+freedom.
+
+This model is directional. The two arguments in `x_t^T M c_t` are not the same
+object: one is the current query feature and the other is a target-weighted
+memory of past features. An unconstrained `M` should therefore be asymmetric in
+general. If the model is instead a same-vector quadratic:
+
+```text
+y_i ~= x_i^T W x_i
+```
+
+only the symmetric part of `W` is identifiable, because
+`x_i^T A x_i = 0` for every skew-symmetric `A`. That case should be solved as
+ordinary regression on the unique entries of `x_i x_i^T`, with ridge or other
+regularization when `p(p + 1) / 2` is too large.
+
 ## Additional Axes
 
 The same structure can extend beyond target asset, predictor asset, and lag.
@@ -254,6 +296,26 @@ W[i, j, l] = e_i^T C_l e_j + 1[i = j] d[i, l]
 
 This is useful when asset identity should be compressed into a learned or
 hand-built embedding rather than represented as a fully free matrix.
+
+The broader low-rank tensor regression toolbox gives several choices for these
+coefficient families:
+
+- CP factors when each atom should be a product of one vector per mode;
+- Tucker factors when modes need different ranks and a small interaction core;
+- tensor-train factors when there are many small modes;
+- convex nuclear-norm penalties on unfoldings when global optimality matters
+  more than a tiny parameter count;
+- sparse plus low-rank decompositions when a few specific edges coexist with
+  broad factor structure.
+
+For all-categorical product designs, each observation selects one cell in a
+large contingency tensor. The unregularized mean-per-cell problem is just a
+grouped average. Low-rank CP or Tucker can be fit from collapsed cell means and
+counts, factorization-machine style embeddings can train row-wise without
+materializing the full design, and crossed random effects or block-specific
+ridge penalties give a convex partial-pooling alternative. This is a useful
+analogy for return models with categorical axes such as regime, time of day, or
+asset cluster.
 
 ## Linear Attention View
 
@@ -374,6 +436,7 @@ geometry before committing to a particular structured return model.
 
 - [Returns Model Design](../../../ops/artifacts/chatgpt/69eaa7ea-ca34-839c-a770-0c47bb62edba.md)
 - [Bilinear Model Generalization](../../../ops/artifacts/chatgpt/69fb6b98-5d84-839f-a5f8-fef0e1b96345.md)
+- [Bilinear Regression Closed Form](../../../ops/artifacts/chatgpt/671d1f8c-7784-8009-953f-437c04a0766d.md)
 - [Basis Function Branch - Bilinear Model Generalization](../../../ops/artifacts/chatgpt/6a081747-34fc-83ec-9431-0075044dd952.md)
 - [Framework Branch - Bilinear Model Generalization](../../../ops/artifacts/chatgpt/6a14f60f-5eb4-83ec-b398-eaf71c6e4763.md)
 - [Linear Attention Branch - Bilinear Model Generalization](../../../ops/artifacts/chatgpt/69fb6ffd-cdc0-83a0-b8eb-d4d5437aad8a.md)
@@ -388,3 +451,4 @@ geometry before committing to a particular structured return model.
 - [Impulse Forecasting Explanation](../../../ops/artifacts/chatgpt/69cccd65-5520-839f-aecd-e5420a505bc7.md)
 - [Low-Rank Tensor Regression](../../../ops/artifacts/chatgpt/68639f33-2858-8009-8a85-351d48135a5a.md)
 - [Returns Forecasting with Regression](../../../ops/artifacts/chatgpt/69983e0f-e664-839b-88fb-408fd5249246.md)
+- [ideas](../../../ops/artifacts/obsidian/regression.md)

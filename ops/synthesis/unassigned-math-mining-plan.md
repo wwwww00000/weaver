@@ -63,6 +63,10 @@ Priority means:
   [Generalization And Regularization](../../wiki/topics/quant/generalization-and-regularization.md),
   [Regression Stability And Validation](../../wiki/topics/quant/regression-stability-and-validation.md),
   and [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md).
+- 2026-06-28: Completed the bilinear, low-rank, and structured regression pass
+  by deepening
+  [N-Linear Returns Models](../../wiki/projects/p12n/n-linear-returns-models.md)
+  and [Structured Return Models](../../wiki/topics/quant/structured-return-models.md).
 
 ## Linear Regression Algebra And Solvers
 
@@ -125,6 +129,13 @@ for ALS and conditional-linear fitting details.
 | [Robust Regression Research Directions](../artifacts/chatgpt/67191c44-b954-8009-8e92-c5799747b9bb.md) | merge | P2 | Robust regression research ideas; likely quant method follow-up. |
 | [ideas](../artifacts/obsidian/regression.md) | merge | P2 | Obsidian regression notes. |
 
+Status: complete. The pass added fixed-mask bilinear attention equations,
+amortized local regression versus sliding-window OLS, asymmetry versus
+same-vector quadratic identifiability, low-rank tensor regression choices, and
+categorical-product partial-pooling analogies. The robust-regression source is
+already represented by the validation-aware regularization and bilevel sections
+in the Quant pages.
+
 ## Revelation Learning Resources
 
 Primary destination:
@@ -152,5 +163,6 @@ source-map/reference only unless a later page needs exact details.
 
 ## Next Pass
 
-The linear regression algebra/solvers and ridge/convex/internal-risk passes are
-complete. Next, move to bilinear, low-rank, and structured regression.
+The linear regression algebra/solvers, ridge/convex/internal-risk, and
+bilinear/low-rank/structured-regression passes are complete. Next, move to
+Revelation math-learning resources.
