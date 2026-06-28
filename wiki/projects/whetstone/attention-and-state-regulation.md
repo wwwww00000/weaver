@@ -84,6 +84,10 @@ Use concrete operators before trying to reason your way into a different state.
 - Breath reset: take a few slower breaths before the next action.
 - Environment shift: remove a cue, add friction, open the right tool, close the
   wrong tab.
+- Habit releaser: change the usual route, seat, device location, task order, or
+  opening cue so an automatic loop becomes visible.
+- Novelty cue: use a walk, different room, transit interval, quiet public
+  space, or tourist-attention exercise when the current state is too stale.
 - Timer boundary: use a short work interval when the task feels shapeless.
 - Priming: read, look at, or listen to material that matches the desired mode.
 - Music: use a known soundtrack for creative, focused, or reflective states.
@@ -228,3 +232,6 @@ direct awareness, concentration practice, nondual inquiry, and liminal capture.
 - [Regaining Rich Thought Patterns](../../../ops/artifacts/chatgpt/67d45443-b6c4-8009-b03a-8dd16b8a8c62.md)
 - [Vivid Eclectic Thought Experience](../../../ops/artifacts/chatgpt/8ee2dbd5-5b98-45fb-89fa-f1aa52b3ba5d.md)
 - [Disconnected self: Unease and erosion.](../../../ops/artifacts/chatgpt/8dba6d1d-fd8e-4178-91ce-55de91d68f5a.md)
+- [Mindfulness Book: Habit Releaser](../../../ops/artifacts/chatgpt/959ab10b-1053-41a5-809e-86f171d8d444.md)
+- [liminal moments](../../../ops/artifacts/obsidian/awareness.md)
+- [walks](../../../ops/artifacts/obsidian/walks.md)

@@ -220,7 +220,7 @@ Largest unassigned mining queues:
     - [x] [Endurance and running training](../../wiki/topics/personal/endurance-and-running-training.md).
     - [x] [Agency and building practice](../../wiki/projects/genesis/agency-and-building-practice.md)
       plus Whetstone high-leverage skill link.
-    - [ ] Chronicle life operations and inner voice pages.
+    - [x] Chronicle life operations and inner voice pages.
     - [ ] Travel, home, and environment life-operations material.
     - [ ] Conjuration/creativity spillovers, mostly deferred to later queues.
 - [ ] Route and mine `unassigned/writing`.

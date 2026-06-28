@@ -58,6 +58,10 @@ Priority means:
   [Agency And Building Practice](../../wiki/projects/genesis/agency-and-building-practice.md),
   with a Whetstone link from
   [Problem Solving And Skill Acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
+- 2026-06-28: Completed the Chronicle life operations and inner voice pass:
+  [Morning Pages And Life OS](../../wiki/projects/chronicle/morning-pages-and-life-os.md),
+  with Whetstone state-regulation links in
+  [Attention And State Regulation](../../wiki/projects/whetstone/attention-and-state-regulation.md).
 
 ## Endurance And Running Training
 
@@ -161,5 +165,5 @@ Primary destinations:
 
 ## Next Pass
 
-The endurance/running and agency/high-leverage skill passes are complete. Next,
-move to Chronicle life operations and inner voice.
+The endurance/running, agency/high-leverage skill, and Chronicle life-operations
+passes are complete. Next, move to travel, home, and environment.

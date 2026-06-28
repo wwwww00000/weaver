@@ -38,7 +38,8 @@ into usable memory.
 
 - [Morning Pages And Life OS](chronicle/morning-pages-and-life-os.md):
   journaling without paper, audio or head-pages, weekly retrieval, life
-  operating-system routines, and attention hygiene.
+  operating-system routines, insight integration, reflective environment
+  design, and attention hygiene.
 - [Meditation And Nonduality](chronicle/meditation-and-nonduality.md):
   consistency-first meditation, concentration practice, nondual inquiry,
   portable awareness, liminal capture, and lucid-dreaming boundaries.
@@ -69,6 +70,11 @@ mental pages are ways to preserve a voice, lower the friction of expression,
 and keep implicit experience from disappearing. The mindfulness side keeps the
 same machinery from becoming rumination: notice the state, label the loop, and
 choose a smaller next move.
+
+Chronicle also treats places and transitions as state design. Quiet spaces,
+night journaling, walks, transit, travel, and other breaks from routine are
+useful when they expose insight, agency, or tourist attention that can later be
+captured and re-entered.
 
 Meditation and nondual inquiry give the project a direct-awareness spine:
 show up consistently, notice the current contents of consciousness, look for
