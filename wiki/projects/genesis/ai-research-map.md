@@ -113,6 +113,21 @@ modeling rather than Genesis itself. Genesis should keep the research-program
 view: which experiments are worth running, what they might teach, and how they
 connect to AI reasoning, tool use, or small-model learning.
 
+## Paper Backlog
+
+The ICLR 2025 note is a paper-watch list rather than a synthesized direction,
+but three threads are worth keeping visible:
+
+- parameter-efficient tabular deep learning ensembles, especially when they can
+  be compared against ridge, tree, and feature-map baselines;
+- one-run Data Shapley or sample-value approximations using sample-gradient
+  inner products;
+- fast additive explanations for Shapley-style attributions.
+
+These belong downstream in the Quant method pages if they become implementation
+work. For Genesis, they are reminders of small experiments that connect neural
+modeling, interpretability, and efficient validation.
+
 ## First Research Loop
 
 A reasonable first Genesis AI research loop:
@@ -155,4 +170,5 @@ later experiments in verifiers, test-time compute, tool calling, and search.
 - [Credit Assignment Scaling](../../../ops/artifacts/chatgpt/69f36da9-8d1c-83a0-8d24-8180ac364ad8.md)
 - [Dense Supervision in RL](../../../ops/artifacts/chatgpt/69c562d7-dfd0-839d-9aed-3c7baa9adad0.md)
 - [Cotangents and Backpropagation](../../../ops/artifacts/chatgpt/69f22f99-32a4-839c-a2b7-1b072ee23783.md)
+- [iclr2025](../../../ops/artifacts/obsidian/iclr2025.md)
 - [source inventory](../../../ops/clusters/2026-06-24/source-inventory.qmd)

@@ -55,6 +55,10 @@ Priority means:
   [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md),
   [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md), and
   [Generalization And Regularization](../../wiki/topics/quant/generalization-and-regularization.md).
+- 2026-06-28: Completed the AI research backlog pass:
+  [AI Research Map](../../wiki/projects/genesis/ai-research-map.md). The
+  `iclr2025` note was folded in as a light paper backlog; `generative ai` was
+  empty and skipped.
 
 ## Reasoning Models And Tool Use
 
@@ -152,12 +156,9 @@ page unless the raw note has concrete project direction.
 
 | Artifact | Action | Priority | Note |
 | --- | --- | --- | --- |
-| [iclr2025](../artifacts/obsidian/iclr2025.md) | defer | P2 | Conference/resource note; route only selected threads into AI research map. |
-| [generative ai](../artifacts/obsidian/generative-ai.md) | defer | P2 | Resource note; read before deciding whether it adds concrete project direction. |
+| [iclr2025](../artifacts/obsidian/iclr2025.md) | merge-light | P2 | Folded into the Genesis AI research map as a paper-watch backlog. |
+| [generative ai](../artifacts/obsidian/generative-ai.md) | skip | P3 | Raw copied note is empty. |
 
 ## Next Pass
 
-The reasoning models/tool-use, agentic tooling/Weaver, credit-assignment,
-sequence-architecture, and nonlinear method-spillover passes are complete. Next,
-decide whether the two resource/backlog notes add concrete project direction or
-should remain deferred.
+The `unassigned/ai` mining pass is complete.

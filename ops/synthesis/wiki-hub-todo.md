@@ -186,7 +186,7 @@ Largest unassigned mining queues:
     - [x] [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md)
     - [x] [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md)
       and [P12n Feature Transforms And BST](../../wiki/projects/p12n/feature-transforms-and-bst.md)
-- [ ] Route and mine `unassigned/ai`.
+- [x] Route and mine `unassigned/ai`.
   - Initial routing plan:
     [unassigned-ai-mining-plan.md](unassigned-ai-mining-plan.md)
   - Preferred first page-deepening candidates:
@@ -198,6 +198,8 @@ Largest unassigned mining queues:
     - [x] [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md),
       [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md),
       and related Quant method pages.
+    - [x] [AI Research Map](../../wiki/projects/genesis/ai-research-map.md)
+      paper backlog triage.
 - [x] Route and mine `unassigned/cognitive`.
   - Initial routing plan:
     [unassigned-cognitive-mining-plan.md](unassigned-cognitive-mining-plan.md)
