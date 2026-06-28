@@ -32,7 +32,7 @@ Priority means:
 | Queue | Count | First pass |
 | --- | ---: | --- |
 | Problem Solving And Skill Acquisition | 19 | Create a Whetstone child page and link to Revelation where math learning is specific. |
-| Attention And Mental-State Regulation | 13 | Deepen Whetstone felt-sense/modes and possibly Chronicle attention hygiene. |
+| Attention And Mental-State Regulation | 14 | Deepen Whetstone felt-sense/modes and possibly Chronicle attention hygiene. |
 | Contemplative Practice And Liminal Cognition | 11 | Split Chronicle meditation/nonduality from Whetstone state-control mechanics. |
 | Visualization And Imagination Practice | 4 | Dual-link Whetstone cognitive technique and Conjuration imagination practice. |
 | Knowledge Systems And Agency Spillovers | 3 | Route to Genesis/Weaver and Whetstone only where cognitive tooling is explicit. |
@@ -43,6 +43,10 @@ Priority means:
 - 2026-06-28: Created initial routing plan for `unassigned/cognitive`.
 - 2026-06-28: Completed the problem-solving and skill-acquisition pass:
   [Whetstone problem solving and skill acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
+- 2026-06-28: Completed the attention and state-regulation pass:
+  [Attention And State Regulation](../../wiki/projects/whetstone/attention-and-state-regulation.md),
+  with supporting updates to Whetstone, Chronicle, Felt Sense, and Morning
+  Pages.
 
 ## Problem Solving And Skill Acquisition
 
@@ -160,10 +164,9 @@ These sources have cognitive labels but are better saved for the
 
 ## Next Pass
 
-Next, run a page-deepening pass for the attention and mental-state regulation
-queue:
-[Felt Sense And Modes](../../wiki/projects/whetstone/felt-sense-and-modes.md)
-and [Chronicle morning pages and life OS](../../wiki/projects/chronicle/morning-pages-and-life-os.md).
+Next, run a page-creation pass for contemplative practice and liminal cognition.
+Likely destination:
+[Chronicle meditation and nonduality](../../wiki/projects/chronicle/meditation-and-nonduality.md).
 
-This pass should split state-control mechanics from journaling and life-review
-material instead of turning the queue into a generic productivity page.
+This pass should split durable Chronicle practice from Whetstone state-control
+mechanics and Conjuration imagination material.

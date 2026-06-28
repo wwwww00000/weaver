@@ -38,6 +38,9 @@ execute for a short interval, and review what changed.
 - [Problem Solving And Skill Acquisition](whetstone/problem-solving-and-skill-acquisition.md):
   trainable cognitive operators, deliberate practice loops, project-vs-drill
   strategy, and transfer checks.
+- [Attention And State Regulation](whetstone/attention-and-state-regulation.md):
+  mode registers, switch operators, internal anchors, sensory regulation, and
+  recovery of inner voice during heavy screen-work periods.
 - [Cadence And Mental Pages](whetstone/cadence-and-mental-pages.md): mental
   pages, handwriting-like thought cadence, mental cache lines, and no-paper
   workspaces.
@@ -55,6 +58,8 @@ directions:
 
 - micro-tagging mental processes without breaking flow;
 - decomposing problem solving into operators, drills, and transfer checks;
+- switching between autopilot, intentional, diffuse, anxious, imaginative,
+  flow, reflective, and depleted modes with small operators;
 - using cadence and mental pages to stabilize attention without paper;
 - developing felt-sense labels for expertise and inner-state recognition;
 - testing cognitive-training exercises with independent outcome checks.
@@ -89,6 +94,7 @@ purpose changes by context.
 - [whetstone overview](../../ops/artifacts/obsidian/whetstone.md)
 - [Think tags and awareness](../../ops/artifacts/chatgpt/695fd45e-7490-8324-a476-095d77b51b64.md)
 - [Felt-sense Branch](../../ops/artifacts/chatgpt/695fd715-b9e0-8324-b1f9-235609636542.md)
+- [Two Mental Modes Explained](../../ops/artifacts/chatgpt/9d7b6484-cfcc-40e0-b9f4-1f2a7a0a689b.md)
 - [Improving Metacognitive Abilities](../../ops/artifacts/chatgpt/695fcd4d-4fd0-8321-9bf3-a5e8009f213a.md)
 - [problem solving](../../ops/artifacts/obsidian/problem-solving.md)
 - [Optimizing Thought Cadence](../../ops/artifacts/chatgpt/69737e39-61cc-8324-83c9-2d97223ef4dc.md)

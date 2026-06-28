@@ -70,6 +70,11 @@ Chronicle can use this vocabulary for meditation, journaling, and state
 awareness. Whetstone can use it for control: notice whether the current mode
 fits the task, then loosen, focus, embody, narrate, or switch representations.
 
+The more operational register is simpler: autopilot, intentional, diffuse,
+anxious, imaginative, flow, reflective, and depleted. That register belongs in
+[Attention And State Regulation](attention-and-state-regulation.md), where each
+label points to a small switch operator.
+
 The coarse categories are more reliable than fine-grained labels. Terms like
 heart-softening, spine-brightening, cranial lightness, or widening semantic
 radius are useful as first-person handles, not as settled scientific entities.
@@ -91,7 +96,8 @@ only create a satisfying story?
 ## Relationship To Other Pages
 
 [Think Tags And Metacognition](think-tags-and-metacognition.md) supplies the
-controller vocabulary. [Cadence And Mental Pages](cadence-and-mental-pages.md)
+controller vocabulary. [Attention And State Regulation](attention-and-state-regulation.md)
+supplies the switchboard for changing modes. [Cadence And Mental Pages](cadence-and-mental-pages.md)
 supplies the workspace. [Chronicle](../chronicle.md) supplies the mindfulness
 and journaling context where mode vocabulary can be observed without forcing
 immediate performance.
@@ -110,5 +116,8 @@ immediate performance.
 - [Felt-sense Branch](../../../ops/artifacts/chatgpt/695fd715-b9e0-8324-b1f9-235609636542.md)
 - [Think tags and awareness](../../../ops/artifacts/chatgpt/695fd45e-7490-8324-a476-095d77b51b64.md)
 - [Modes of consciousness explanation](../../../ops/artifacts/chatgpt/6931a7d8-a2fc-8321-9269-53b03f5b3da7.md)
+- [Two Mental Modes Explained](../../../ops/artifacts/chatgpt/9d7b6484-cfcc-40e0-b9f4-1f2a7a0a689b.md)
+- [Modes of Thought Insights](../../../ops/artifacts/chatgpt/3c31f6d3-5117-4fda-8eaf-e0bd24946d86.md)
+- [practices](../../../ops/artifacts/obsidian/qualia-neural-circuits-mental-modes.md)
 - [Improving Metacognitive Abilities](../../../ops/artifacts/chatgpt/695fcd4d-4fd0-8321-9bf3-a5e8009f213a.md)
 - [whetstone overview](../../../ops/artifacts/obsidian/whetstone.md)

@@ -15,6 +15,7 @@ source_bundles:
   - chronicle/personal
   - chronicle/cognitive
   - whetstone/writing
+  - unassigned/cognitive
   - unassigned/personal
   - unassigned/writing
 created: 2026-06-28
@@ -86,13 +87,33 @@ exercise, or deep work.
 The important test is whether boredom becomes tolerable enough for writing,
 meditation, and problem solving to resume.
 
+## Inner Voice Maintenance
+
+When reflection disappears for too long, the result can feel like an erosion of
+inner voice or identity continuity. Treat this as an attention-maintenance
+signal, not as a character judgment.
+
+Busy-week repairs should be small:
+
+- five minutes of sensory observation;
+- one slow literary or poetic microdose;
+- one walk without audio or feeds;
+- one short genuine conversation;
+- a head page, audio page, or brief written page;
+- a shutdown note that reconnects the day to values.
+
+The practice is not to preserve every thought. It is to keep the reflective
+channel alive enough that experience does not collapse into work, feeds, and
+unprocessed fragments.
+
 ## Relationship To Whetstone
 
 Chronicle uses this page to preserve the lived practice. [Whetstone](../whetstone.md)
 can reuse the same loops when they become cognitive training:
 [think tags](../whetstone/think-tags-and-metacognition.md), [cadence and
 mental pages](../whetstone/cadence-and-mental-pages.md), and [felt-sense
-calibration](../whetstone/felt-sense-and-modes.md).
+calibration](../whetstone/felt-sense-and-modes.md). The Whetstone-facing
+state-switching method is [Attention And State Regulation](../whetstone/attention-and-state-regulation.md).
 
 ## Open Questions
 
@@ -107,5 +128,8 @@ calibration](../whetstone/felt-sense-and-modes.md).
 - [Morning Pages Without Paper](../../../ops/artifacts/chatgpt/69717bc7-907c-8323-9c91-c897b13b2ce3.md)
 - [Life Operating System](../../../ops/artifacts/chatgpt/695fd383-0010-8323-8918-a978d0da0fcb.md)
 - [Dopamine Detox Strategies](../../../ops/artifacts/chatgpt/697f6e88-f42c-8398-97a5-2e44ce9e79ff.md)
+- [Regaining Rich Thought Patterns](../../../ops/artifacts/chatgpt/67d45443-b6c4-8009-b03a-8dd16b8a8c62.md)
+- [Disconnected self: Unease and erosion.](../../../ops/artifacts/chatgpt/8dba6d1d-fd8e-4178-91ce-55de91d68f5a.md)
+- [Cognitive Tricks for Focus](../../../ops/artifacts/chatgpt/67e94beb-ef98-8009-8545-9d88804e077d.md)
 - [chronicle overview](../../../ops/artifacts/obsidian/chronicle.md)
 - [2026-W25 weekly project context](../../../ops/artifacts/obsidian/weekly-2026-W25.md)

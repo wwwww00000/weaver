@@ -192,7 +192,8 @@ Largest unassigned mining queues:
     [unassigned-cognitive-mining-plan.md](unassigned-cognitive-mining-plan.md)
   - Preferred first page-deepening candidates:
     - [x] [Whetstone Problem Solving And Skill Acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md)
-    - [ ] [Felt Sense And Modes](../../wiki/projects/whetstone/felt-sense-and-modes.md)
+    - [x] [Attention And State Regulation](../../wiki/projects/whetstone/attention-and-state-regulation.md),
+      [Felt Sense And Modes](../../wiki/projects/whetstone/felt-sense-and-modes.md),
       and [Morning Pages And Life OS](../../wiki/projects/chronicle/morning-pages-and-life-os.md)
     - [ ] Chronicle meditation/nonduality page candidate.
     - [ ] [Conjuration Visualization And Imagination Training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
