@@ -173,7 +173,7 @@ Largest unassigned mining queues:
 
 ## Unassigned Mining Passes
 
-- [ ] Route and mine `unassigned/quant`.
+- [x] Route and mine `unassigned/quant`.
   - Initial routing plan:
     [unassigned-mining-plan.md](unassigned-mining-plan.md)
   - Preferred first page-deepening candidates:
@@ -188,6 +188,17 @@ Largest unassigned mining queues:
       and [P12n Feature Transforms And BST](../../wiki/projects/p12n/feature-transforms-and-bst.md)
 - [ ] Route and mine `unassigned/ai`.
 - [ ] Route and mine `unassigned/cognitive`.
+  - Initial routing plan:
+    [unassigned-cognitive-mining-plan.md](unassigned-cognitive-mining-plan.md)
+  - Preferred first page-deepening candidates:
+    - [ ] [Whetstone Problem Solving And Skill Acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md)
+    - [ ] [Felt Sense And Modes](../../wiki/projects/whetstone/felt-sense-and-modes.md)
+      and [Morning Pages And Life OS](../../wiki/projects/chronicle/morning-pages-and-life-os.md)
+    - [ ] Chronicle meditation/nonduality page candidate.
+    - [ ] [Conjuration Visualization And Imagination Training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
+      and Whetstone visualization notes.
+    - [ ] [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+      and Whetstone semantic-notetaking notes.
 - [ ] Route and mine `unassigned/personal`.
 - [ ] Route and mine `unassigned/writing`.
 - [ ] Route and mine `unassigned/math`.
