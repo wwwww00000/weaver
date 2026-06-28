@@ -48,6 +48,25 @@ Use a simple loop:
 The last step matters. Most exercises are training reps, not material that
 needs to be promoted into the wiki.
 
+## Mode Switching Into Voice
+
+Writerly voice can disappear after too much solve-and-optimize cognition. Treat
+that as a mode-switch problem before treating it as a writing problem.
+
+Useful transitions:
+
+- walk and name three sensory details, then invent one tiny story about one of
+  them;
+- play one song and hunt for a single interesting sentence;
+- breathe for a minute, imagine one vivid room, face, or object, then pan the
+  camera around it;
+- read or copy a short paragraph with a cadence worth borrowing;
+- use a conversation protocol: notice one specific detail, wonder about it,
+  then reveal a small personal association.
+
+The goal is to tell the mind that it can stop optimizing and start observing.
+Do this before demanding a good paragraph.
+
 ## Voice Masks
 
 Voice experiments make journaling feel less stale. Instead of "write about the
@@ -229,6 +248,7 @@ no-paper cognitive mechanics behind internal drafting and thought cadence.
 - [Exploring Writing Styles](../../../ops/artifacts/chatgpt/afb27847-8584-4eba-b585-6c8fa474c147.md)
 - [Lyrical Quality of Lyrics](../../../ops/artifacts/chatgpt/683ec446-d7f8-8009-b68e-162b5fbad2fa.md)
 - [Poetry in Everyday Things](../../../ops/artifacts/chatgpt/e2a1f094-8642-4820-95c7-e5effe66dc07.md)
+- [Switching Cognitive Modes](../../../ops/artifacts/chatgpt/69872a09-944c-83a0-b662-670e2c57db24.md)
 - [Writers Travel for Inspiration](../../../ops/artifacts/chatgpt/d71d0d40-779c-49cb-9cbc-a953632c61ea.md)
 - [ideas](../../../ops/artifacts/obsidian/writing-exercises-the-reluctant-i.md)
 - [morning pages](../../../ops/artifacts/obsidian/books-the-artist-s-way.md)

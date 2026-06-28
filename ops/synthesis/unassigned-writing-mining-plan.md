@@ -52,6 +52,11 @@ Priority means:
   [Fiction Premises And Motif Catalog](../../wiki/projects/conjuration/fiction-premises-and-motif-catalog.md),
   with a boundary link from
   [Sourcebook Worldwork](../../wiki/projects/conjuration/sourcebook-worldwork.md).
+- 2026-06-28: Completed the Weaver/AI writing tools cleanup:
+  `LLM Note-taking Tools` was already mined into
+  [Weaver As A Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md),
+  and `Switching Cognitive Modes` was merged into
+  [Writing Practice And Voice](../../wiki/projects/chronicle/writing-practice-and-voice.md).
 
 ## Chronicle Writing Practice And Voice
 
@@ -114,7 +119,7 @@ and [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md).
 | Artifact | Action | Priority | Note |
 | --- | --- | --- | --- |
 | [LLM Note-taking Tools](../artifacts/chatgpt/67e29c1d-88f4-8009-b717-e92513a6543e.md) | skip | P3 | Already mined during `unassigned/ai` into Weaver/agentic tooling. |
-| [Switching Cognitive Modes](../artifacts/chatgpt/69872a09-944c-83a0-b662-670e2c57db24.md) | dual-link | P2 | Likely Whetstone/Chronicle mode switching; inspect only if writing-mode detail remains. |
+| [Switching Cognitive Modes](../artifacts/chatgpt/69872a09-944c-83a0-b662-670e2c57db24.md) | merge | P2 | Writing-mode transition ritual merged into Chronicle writing practice. |
 
 ## Defer Or High-Level Only
 
@@ -128,6 +133,7 @@ defer unless a future fiction-premise page needs a high-level motif.
 
 ## Next Pass
 
-The Chronicle writing practice/voice and Conjuration fiction-premise passes
-are complete. Next, review Weaver and AI writing tools, then decide whether
-the two deferred notes need any high-level archive-only handling.
+The Chronicle writing practice/voice, Conjuration fiction-premise, and
+Weaver/AI cleanup passes are complete. The two deferred sensitive premise
+notes remain archive-only unless a future fiction page needs a high-level
+motif. The `unassigned/writing` queue has now been mined at first-pass depth.
