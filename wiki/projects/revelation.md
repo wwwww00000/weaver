@@ -11,13 +11,14 @@ categories:
 source_bundles:
   - revelation/math
   - revelation/physics
+  - revelation/foundation
   - revelation/current priorities
   - revelation/project context
   - unassigned/math
   - unassigned/physics
-source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
+source_inventory: ops/clusters/2026-06-29/source-inventory.qmd
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Revelation
@@ -42,6 +43,9 @@ alternative physical laws.
 - [Active Learning For Math And Physics](revelation/active-learning-for-math-and-physics.md):
   exercises, problem-heavy texts, just-in-time prerequisites, fatigue
   management, and study-session structure.
+- [Foundation](foundation.md): the separate software substrate for
+  source-grounded textbook ingestion, concept tagging, study memory, and
+  LLM-aided technical learning.
 
 ## Current Shape
 
@@ -62,6 +66,12 @@ synthesis note, or prerequisite scratchpad entry.
 Use [Genesis](genesis.md) when the material becomes AI research, coding tools,
 or software for learning and exploration.
 
+Use [Foundation](foundation.md) when the material is specifically about the
+tooling substrate for textbook parsing, source-linked learning state,
+confusion ledgers, cross-text navigation, or LLM-aided study sessions.
+Revelation should own the study path and learned concepts; Foundation should
+own the machinery that supports studying.
+
 Use [P12n](p12n.md) and [Quant](../topics/quant.md) when the math is mainly in
 service of trading, statistical modeling, regression, optimization, or time
 series.
@@ -81,6 +91,7 @@ math and physics structure.
   until more statistical mechanics is in place?
 - How should AI assistance be used without turning exercises into passive
   solution-reading?
+- What is the first chapter that should dogfood Foundation?
 
 ## Source Map
 
@@ -90,4 +101,5 @@ math and physics structure.
 - [Text recommendations for intuition](../../ops/artifacts/chatgpt/692793f0-4068-8331-a8e1-82308fc7ef49.md)
 - [Macro from Micro Emergence](../../ops/artifacts/chatgpt/694a5496-0b70-8326-9912-1d3e79986526.md)
 - [Reverse Physics Survey](../../ops/artifacts/chatgpt/696a6b1b-cf44-832c-93b0-dc357d213ace.md)
-- [source inventory](../../ops/clusters/2026-06-24/source-inventory.qmd)
+- [Foundation inbox note](../../ops/artifacts/notes/foundation.md)
+- [source inventory](../../ops/clusters/2026-06-29/source-inventory.qmd)

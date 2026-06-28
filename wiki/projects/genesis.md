@@ -12,6 +12,8 @@ categories:
 source_bundles:
   - genesis/ai
   - genesis/tech
+  - genesis/context-management
+  - genesis/structured-memory
   - genesis/math
   - genesis/personal
   - genesis/current priorities
@@ -19,7 +21,7 @@ source_bundles:
   - unassigned/ai
   - unassigned/cognitive
   - unassigned/personal
-source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
+source_inventory: ops/clusters/2026-06-29/source-inventory.qmd
 created: 2026-06-28
 updated: 2026-06-29
 ---
@@ -40,6 +42,9 @@ compute-efficient learning.
 - [Weaver](weaver.md): the peer project that turns messy notes, chats, source
   artifacts, and project state into durable wiki pages and eventually
   agent-loadable context.
+- [Structured Context As A Portable LLM Substrate](genesis/structured-context-substrate.md):
+  the Genesis/Weaver-adjacent thread about transcripts as event logs,
+  context packs, state deltas, affordance cards, and portable memory layers.
 - [Agentic Tooling](genesis/agentic-tooling.md): agent harnesses, live
   computational workbenches, notebook controllers, editor substrates, and the
   command-oriented tool ideas that make AI-assisted work compounding.
@@ -68,6 +73,11 @@ still overlaps with Weaver when the work is about agentic tooling, AI-assisted
 interfaces, or building the system, but Weaver owns the knowledge workflow:
 source triage, provenance, wiki synthesis, status surfaces, and context
 compilation.
+
+Structured context is the main shared boundary. Genesis owns the AI-systems and
+agent-harness side of the idea: context operations, controller policies,
+affordance routing, and possible model/runtime primitives. Weaver owns the
+markdown state layer and any practical context compiler used by this repo.
 
 Taste and agency are part of the Genesis frame. AI can cheapen generic
 execution, but it does not decide what is worth building or force anything to
@@ -102,6 +112,8 @@ agent-loadable context.
 
 - Which agent tooling experiment should become the first standalone build:
   notebook controller, command palette, agent harness, or AI research workbench?
+- Should structured context start as a Weaver sidecar over project pages and
+  status cards, or as a separate Genesis prototype?
 - Which AI research thread is most worth a first reproducible repo: ARC-AGI
   DSL/search, toy context-action RL loops, cotangent-routing diagnostics, or
   small optimization alternatives?
@@ -116,4 +128,5 @@ agent-loadable context.
 - [LLM Wiki Project Planning](../../ops/artifacts/chatgpt/6a379f1a-a974-83ec-901a-a9c6f958030c.md)
 - [Taste and agency in AI](../../ops/artifacts/chatgpt/689b6e60-1688-8322-95a3-6848c2ab85c5.md)
 - [10x Agency Mindset](../../ops/artifacts/chatgpt/679c3939-bc78-8009-9658-ecc5ae02766a.md)
-- [source inventory](../../ops/clusters/2026-06-24/source-inventory.qmd)
+- [Structured Context inbox note](../../ops/artifacts/notes/structured-context.md)
+- [source inventory](../../ops/clusters/2026-06-29/source-inventory.qmd)

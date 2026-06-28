@@ -7,6 +7,7 @@ This wiki will hold curated notes after source triage and import decisions.
 - [Accretion](projects/accretion.md)
 - [Chronicle](projects/chronicle.md)
 - [Conjuration](projects/conjuration.md)
+- [Foundation](projects/foundation.md)
 - [Genesis](projects/genesis.md)
 - [Obelisk](projects/obelisk.md)
 - [P12n](projects/p12n.md)

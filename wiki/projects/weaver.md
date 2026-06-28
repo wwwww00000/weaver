@@ -12,11 +12,16 @@ categories:
 source_bundles:
   - genesis/personal
   - genesis/tech
+  - weaver/context-management
+  - weaver/structured-memory
+  - weaver/foundation
   - unassigned/ai
   - unassigned/cognitive
-source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
+source_inventory: ops/clusters/2026-06-29/source-inventory.qmd
 related:
   - projects/genesis
+  - projects/genesis/structured-context-substrate
+  - projects/foundation
   - projects/genesis/agentic-tooling
   - projects/whetstone/think-tags-and-metacognition
 created: 2026-06-28
@@ -150,6 +155,12 @@ The model should feel like it is manipulating a small context operating system,
 not rummaging through a folder. But the operating system must remain visible in
 markdown and git.
 
+[Structured Context As A Portable LLM Substrate](genesis/structured-context-substrate.md)
+is the sharper research thread for this idea. Weaver should treat it as a
+design reference for context packs, session-close state deltas, affordance
+cards, and memory hygiene, while keeping the first implementation grounded in
+this repo's markdown artifacts.
+
 ## Semantic Notes As Interface
 
 The semantic-notetaking source suggests a useful bridge between freeform
@@ -277,6 +288,8 @@ delegated agents.
 
 - What is the first concrete context-compiler prototype: QMD-backed retrieval,
   explicit task frames, or an agent tool for module loading?
+- What minimum context-pack schema should be dogfooded on Genesis and Weaver
+  sessions?
 - Should semantic tags remain a human notation convention first, or become a
   parser-backed command surface?
 - What are the exact promotion rules from raw trace to episode summary to
@@ -298,5 +311,6 @@ delegated agents.
 - [genesis overview](../../ops/artifacts/obsidian/genesis.md)
 - [Context Management in LLMs](../../ops/artifacts/chatgpt/69acf566-8c94-839f-9dc5-9e4931ab63ba.md)
 - [LLM Note-taking Tools](../../ops/artifacts/chatgpt/67e29c1d-88f4-8009-b717-e92513a6543e.md)
+- [Structured Context inbox note](../../ops/artifacts/notes/structured-context.md)
 - [LLM Coding Workflows](../../ops/artifacts/chatgpt/6a31f45a-f0e0-83ec-8a47-08c0e09e206c.md)
-- [source inventory](../../ops/clusters/2026-06-24/source-inventory.qmd)
+- [source inventory](../../ops/clusters/2026-06-29/source-inventory.qmd)

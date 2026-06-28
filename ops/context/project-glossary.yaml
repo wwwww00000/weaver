@@ -34,6 +34,12 @@ projects:
     description: Math and physics learning.
     synthesis_notes:
       - Keep learning roadmaps, conceptual questions, and durable explanations.
+  foundation:
+    status: incubating
+    description: Source-grounded textbook ingestion and LLM-aided learning environment for math and physics study.
+    synthesis_notes:
+      - Use for textbook parsing, source-linked concept maps, study-session memory, confusion ledgers, and LLM-aided learning interfaces.
+      - Keep the actual math and physics study path in Revelation unless the note is primarily about the supporting software substrate.
   genesis:
     status: active
     description: Building things, exercising agency, agentic tooling, AI-adjacent work, and AI research.

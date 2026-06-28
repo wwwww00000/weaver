@@ -19,6 +19,12 @@ a scanning surface.
 | Genesis | active | Agentic tooling, AI research, agency, and building-practice loops. | [status](projects/genesis.md) | [wiki](../../wiki/projects/genesis.md) |
 | Weaver | active | Source triage, compiled wiki synthesis, status surfaces, and context compilation. | [status](projects/weaver.md) | [wiki](../../wiki/projects/weaver.md) |
 
+## Incubating Projects
+
+| Project | Status | Current Focus | Card | Wiki |
+| --- | --- | --- | --- | --- |
+| Foundation | incubating | Source-grounded textbook ingestion and LLM-aided study memory for math and physics learning. | [status](projects/foundation.md) | [wiki](../../wiki/projects/foundation.md) |
+
 ## Archive
 
 | Project | Status | Current Focus | Card | Wiki |

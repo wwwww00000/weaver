@@ -29,6 +29,7 @@ the tooling layer that turns ideas into artifacts.
 - The initial Weaver ingest and synthesis pass is complete.
 - Project status cards are being introduced as the live state layer.
 - Weaver has been promoted from a Genesis child page to a top-level project.
+- Structured context was synthesized as a Genesis/Weaver research thread.
 
 ## Decisions
 
@@ -42,6 +43,8 @@ the tooling layer that turns ideas into artifacts.
 
 - Evaluate whether the next Genesis build should be a notebook controller,
   command palette, agent harness, AI research experiment, or product prototype.
+- Decide whether structured context starts as a Weaver sidecar or separate
+  Genesis prototype.
 - Keep design questions explicit before adding automation.
 
 ## Open Questions
@@ -69,5 +72,6 @@ the tooling layer that turns ideas into artifacts.
 
 - [Genesis wiki](../../../wiki/projects/genesis.md)
 - [Weaver status](weaver.md)
+- [Foundation status](foundation.md)
 - [Weaver state note](../../notes/2026-06-21-weaver-state-and-next-steps.md)
 - [Project dashboard](../dashboard.md)

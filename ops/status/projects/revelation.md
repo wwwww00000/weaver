@@ -27,6 +27,8 @@ emergence, renormalization, and reverse physics.
   mechanics spine, emergence/reverse physics, and active learning.
 - Unassigned math and physics notes were routed into Revelation and Quant as
   appropriate.
+- Foundation was promoted as the separate tooling substrate for textbook
+  ingestion and source-grounded study memory.
 
 ## Decisions
 
@@ -41,6 +43,7 @@ emergence, renormalization, and reverse physics.
 - Decide Sakurai-first versus Shankar-first for the quantum mechanics spine.
 - Pick the first toy quantum systems or measurement exercises.
 - Create a lightweight prerequisite scratchpad if needed.
+- Pick one chapter that could dogfood Foundation.
 
 ## Open Questions
 
@@ -63,5 +66,6 @@ emergence, renormalization, and reverse physics.
 ## Links
 
 - [Revelation wiki](../../../wiki/projects/revelation.md)
+- [Foundation status](foundation.md)
 - [Whetstone status](whetstone.md)
 - [Quant wiki](../../../wiki/topics/quant.md)

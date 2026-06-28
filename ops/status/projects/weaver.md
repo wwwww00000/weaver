@@ -28,6 +28,8 @@ and agent-assisted synthesis.
 - Project status cards were added as the live project-state layer.
 - Initial Obsidian and ChatGPT ingest, artifact generation, QMD inventory, and
   first synthesis pass are complete.
+- Repo-native inbox notes were ingested and synthesized into Foundation and
+  structured-context pages.
 
 ## Decisions
 
@@ -48,6 +50,8 @@ and agent-assisted synthesis.
 - Trial the current Weaver/status-card workflow for a few weeks before deciding
   whether to move periodic notes fully into the repo and Neovim.
 - Prototype the smallest useful context-compiler loop over one project.
+- Use the structured-context page as the design reference for context packs,
+  session-close state deltas, affordance cards, and memory hygiene.
 - Tighten frontmatter and project/status-card conventions after a few live
   review cycles.
 - Keep project-promotion mechanics documented and repeatable.
@@ -80,5 +84,6 @@ and agent-assisted synthesis.
 
 - [Weaver wiki](../../../wiki/projects/weaver.md)
 - [Genesis status](genesis.md)
+- [Foundation status](foundation.md)
 - [Chronicle status](chronicle.md)
 - [Project dashboard](../dashboard.md)
