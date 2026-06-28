@@ -40,6 +40,11 @@ row-wise exact formulas, large linear solves, autocorrelation scans,
 sufficient statistics, block-coordinate fitting, Gauss-Newton, bilevel
 objectives, and variable splitting.
 
+The linear-regression-specific algebra and solver map lives in
+[Linear Regression Identities And Solvers](linear-regression-identities-and-solvers.md).
+This page keeps the broader computation patterns that apply across structured
+models, gates, feature search, and multi-stage experiments.
+
 ## Row-Level Versus Summary-Level Computation
 
 Some quantities are determined by aggregate sufficient statistics:

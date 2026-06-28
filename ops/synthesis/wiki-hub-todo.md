@@ -235,7 +235,7 @@ Largest unassigned mining queues:
   - Initial routing plan:
     [unassigned-math-mining-plan.md](unassigned-math-mining-plan.md)
   - Preferred first page-deepening candidates:
-    - [ ] Quant linear regression algebra and solvers.
+    - [x] [Quant linear regression algebra and solvers](../../wiki/topics/quant/linear-regression-identities-and-solvers.md).
     - [ ] Ridge, convex optimization, and internal risk.
     - [ ] Bilinear, low-rank, and structured regression.
     - [ ] Revelation math-learning resources.

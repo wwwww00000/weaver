@@ -31,6 +31,9 @@ technique or mathematical pattern.
 - [Regression Stability And Validation](quant/regression-stability-and-validation.md):
   cross-validation as self-influence deletion, LOOCV identities, leakage
   control, and out-of-fold transforms.
+- [Linear Regression Identities And Solvers](quant/linear-regression-identities-and-solvers.md):
+  sufficient statistics, leverage, GCV, level-set geometry, sketching, solver
+  choices, and structured feature expansions.
 - [Adaptive Filters And EMA](quant/adaptive-filters-and-ema.md): dynamic
   forgetting, RLS/LMS/Kalman views, fast weights, and decay diagnostics.
 - [Structured Return Models](quant/structured-return-models.md): diagonal,

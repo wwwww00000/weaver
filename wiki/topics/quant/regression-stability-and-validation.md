@@ -247,6 +247,11 @@ This page is the validation decision layer. It asks how to turn that evidence
 into deletion protocols, OOF features, shrinkage choices, and final model
 selection rules.
 
+[Linear Regression Identities And Solvers](linear-regression-identities-and-solvers.md)
+owns the underlying OLS algebra: sufficient statistics, leverage computation,
+GCV approximations, level-set geometry, sketching, and solver choice. This page
+uses those identities to choose validation protocols.
+
 The two pages should stay linked:
 
 - use temporal evidence to discover where effects appear stable;

@@ -53,6 +53,11 @@ Priority means:
 ## Status
 
 - 2026-06-28: Created initial routing plan for `unassigned/math`.
+- 2026-06-28: Completed the linear regression algebra and solvers pass:
+  [Linear Regression Identities And Solvers](../../wiki/topics/quant/linear-regression-identities-and-solvers.md),
+  with links from [Quant](../../wiki/topics/quant.md),
+  [Regression Stability And Validation](../../wiki/topics/quant/regression-stability-and-validation.md),
+  and [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md).
 
 ## Linear Regression Algebra And Solvers
 
@@ -138,6 +143,5 @@ source-map/reference only unless a later page needs exact details.
 
 ## Next Pass
 
-Start with Linear Regression Algebra And Solvers. It is the largest coherent
-math-specific bucket and should produce either a compact new Quant method page
-or a set of targeted additions to existing Quant pages.
+The linear regression algebra and solvers pass is complete. Next, move to
+ridge, convex optimization, and internal risk.
