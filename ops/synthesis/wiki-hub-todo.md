@@ -183,6 +183,7 @@ Largest unassigned mining queues:
       and [Structured Return Models](../../wiki/topics/quant/structured-return-models.md)
     - [x] [Regression Stability And Validation](../../wiki/topics/quant/regression-stability-and-validation.md)
       and [Generalization And Regularization](../../wiki/topics/quant/generalization-and-regularization.md)
+    - [x] [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md)
 - [ ] Route and mine `unassigned/ai`.
 - [ ] Route and mine `unassigned/cognitive`.
 - [ ] Route and mine `unassigned/personal`.

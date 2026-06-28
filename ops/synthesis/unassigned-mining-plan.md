@@ -57,6 +57,8 @@ Status:
 - 2026-06-28: Completed regression, stability, and regularization pass for
   [regression stability and validation](../../wiki/topics/quant/regression-stability-and-validation.md)
   and [generalization and regularization](../../wiki/topics/quant/generalization-and-regularization.md).
+- 2026-06-28: Completed optimization and computation pass for
+  [optimization and computation](../../wiki/topics/quant/optimization-and-computation.md).
 
 ### Adaptive Filters And EMA
 
@@ -222,9 +224,11 @@ later targeted page.
 
 ## Next Pass
 
-Next, run a page-deepening pass for the optimization and computation queue:
-[optimization and computation](../../wiki/topics/quant/optimization-and-computation.md).
+Next, run a page-deepening pass for the tabular nonlinearities and feature
+search queue:
+[tabular nonlinearities](../../wiki/topics/quant/tabular-nonlinearities.md)
+and [P12n feature transforms and BST](../../wiki/projects/p12n/feature-transforms-and-bst.md).
 
-This pass should keep solver mechanics, sufficient statistics, and validation
-objectives separated, because several sources describe optimization tricks that
-are useful only after the statistical target is fixed.
+This pass should keep the durable method page and the active p12n project page
+slightly separated: reusable nonlinear tabular modeling ideas belong in Quant,
+while BST, crypto features, and experiment workflow belong in P12n.
