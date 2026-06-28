@@ -54,6 +54,48 @@ def render_obsidian_triage(
     return "\n".join(lines).rstrip() + "\n"
 
 
+def render_notes_triage(
+    items: Sequence[TriageItem],
+    summary: ObsidianScanSummary,
+    *,
+    generated_on: date | None = None,
+) -> str:
+    generated = generated_on or date.today()
+    lines: list[str] = [
+        "# Markdown Notes Triage",
+        "",
+        f"Generated: {generated.isoformat()}",
+        "",
+        "Instructions:",
+        "Mark one decision for each note. Add brief comments where useful.",
+        "Use Category labels for comma-separated labels you assign during triage.",
+        "",
+        "Decision options:",
+    ]
+    lines.extend(f"- {decision}" for decision in DECISION_OPTIONS)
+    lines.extend(
+        [
+            "",
+            "## Summary",
+            "",
+            f"- Source roots scanned: {summary.vault_count}",
+            f"- Total markdown files: {summary.total_markdown_files}",
+            f"- Notes listed: {len(items)}",
+            f"- Empty or tiny files: {summary.empty_or_tiny_files}",
+            f"- Large files: {summary.large_files}",
+            f"- Ignored directories: {', '.join(summary.ignored_dirs)}",
+            "",
+            "## Notes",
+            "",
+        ]
+    )
+
+    for index, item in enumerate(items, start=1):
+        lines.extend(_render_item(index, item))
+
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def render_chatgpt_triage(
     items: Sequence[TriageItem],
     summary: ChatGPTScanSummary,

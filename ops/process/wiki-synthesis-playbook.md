@@ -14,7 +14,8 @@ Start from these inputs:
 - `ops/clusters/<date>/source-inventory.qmd`: human-readable synthesis queue.
 - `ops/clusters/<date>/manifest.csv`: machine-readable bundle inventory.
 - `ops/artifacts/<source>/`: applied per-source artifacts with YAML
-  frontmatter.
+  frontmatter. Current source directories include `obsidian`, `chatgpt`, and
+  `notes`.
 - `raw/<source>/`: copied raw source material, used only when the artifact points
   to a transcript or copied note that must be read directly.
 - `ops/context/project-glossary.yaml`: project names and descriptions.

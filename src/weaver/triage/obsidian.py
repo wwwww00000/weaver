@@ -11,7 +11,7 @@ from typing import Iterable, Mapping, Sequence
 
 import yaml
 
-from weaver.triage.schema import SortMode, TriageItem
+from weaver.triage.schema import SortMode, SourceKind, TriageItem
 
 CORE_IGNORED_DIRS = frozenset({".obsidian", ".trash", ".git", "node_modules"})
 ASSET_IGNORED_DIRS = frozenset({"assets", "attachments"})
@@ -62,13 +62,66 @@ def scan_obsidian_vaults(
             raise NotADirectoryError(f"Obsidian vault does not exist: {vault}")
 
         for note_path in _iter_markdown_files(vault, ignored_dirs):
-            scanned.append(_scan_note(vault, note_path))
+            scanned.append(_scan_note(vault, note_path, source_kind="obsidian"))
 
     items = _dedupe_source_ids(scanned)
     empty_or_tiny = sum(1 for item in items if (item.word_count or 0) <= TINY_WORD_THRESHOLD)
     large = sum(1 for item in items if (item.word_count or 0) >= LARGE_WORD_THRESHOLD)
     summary = ObsidianScanSummary(
         vault_count=len(vault_paths),
+        total_markdown_files=len(items),
+        empty_or_tiny_files=empty_or_tiny,
+        large_files=large,
+        ignored_dirs=tuple(sorted(ignored_dirs)),
+    )
+    return items, summary
+
+
+def scan_markdown_sources(
+    source_root: Path,
+    source_paths: Sequence[Path] | None = None,
+    *,
+    source_kind: SourceKind = "notes",
+    include_assets: bool = False,
+    include_periodic: bool = False,
+) -> tuple[list[TriageItem], ObsidianScanSummary]:
+    ignored_dirs = set(CORE_IGNORED_DIRS)
+    if not include_assets:
+        ignored_dirs.update(ASSET_IGNORED_DIRS)
+    if not include_periodic:
+        ignored_dirs.update(PERIODIC_IGNORED_DIRS)
+
+    root = source_root.expanduser().resolve()
+    if not root.is_dir():
+        raise NotADirectoryError(f"Markdown source root does not exist: {root}")
+
+    requested_paths = source_paths or [Path(".")]
+    scanned: list[_ScannedNote] = []
+    seen_files: set[Path] = set()
+    for requested_path in requested_paths:
+        source_path = _resolve_requested_source_path(root, requested_path)
+        note_paths: Iterable[Path]
+        if source_path.is_dir():
+            note_paths = _iter_markdown_files(source_path, ignored_dirs)
+        elif source_path.is_file():
+            if source_path.suffix.casefold() != ".md":
+                continue
+            note_paths = [source_path]
+        else:
+            raise FileNotFoundError(f"Markdown source path does not exist: {source_path}")
+
+        for note_path in note_paths:
+            resolved_note_path = note_path.resolve()
+            if resolved_note_path in seen_files:
+                continue
+            seen_files.add(resolved_note_path)
+            scanned.append(_scan_note(root, resolved_note_path, source_kind=source_kind))
+
+    items = _dedupe_source_ids(scanned)
+    empty_or_tiny = sum(1 for item in items if (item.word_count or 0) <= TINY_WORD_THRESHOLD)
+    large = sum(1 for item in items if (item.word_count or 0) >= LARGE_WORD_THRESHOLD)
+    summary = ObsidianScanSummary(
+        vault_count=1,
         total_markdown_files=len(items),
         empty_or_tiny_files=empty_or_tiny,
         large_files=large,
@@ -100,7 +153,19 @@ def _iter_markdown_files(vault: Path, ignored_dirs: set[str]) -> Iterable[Path]:
                 yield Path(root) / filename
 
 
-def _scan_note(vault: Path, note_path: Path) -> _ScannedNote:
+def _resolve_requested_source_path(source_root: Path, requested_path: Path) -> Path:
+    candidate = requested_path.expanduser()
+    if not candidate.is_absolute():
+        candidate = source_root / candidate
+    resolved = candidate.resolve()
+    try:
+        resolved.relative_to(source_root)
+    except ValueError as exc:
+        raise ValueError(f"Markdown source path escapes source root: {requested_path}") from exc
+    return resolved
+
+
+def _scan_note(vault: Path, note_path: Path, *, source_kind: SourceKind) -> _ScannedNote:
     relative_path = note_path.relative_to(vault)
     stat = note_path.stat()
     text = note_path.read_text(encoding="utf-8", errors="replace")
@@ -113,11 +178,11 @@ def _scan_note(vault: Path, note_path: Path) -> _ScannedNote:
     title = first_heading or note_path.stem
     updated_at = datetime.fromtimestamp(stat.st_mtime).date().isoformat()
     summary_hint = _summary_hint(first_heading, note_path.stem, word_count)
-    base_source_id = f"obsidian:{_slugify(relative_path.with_suffix('').as_posix())}"
+    base_source_id = f"{source_kind}:{_slugify(relative_path.with_suffix('').as_posix())}"
 
     item = TriageItem(
         source_id=base_source_id,
-        source_kind="obsidian",
+        source_kind=source_kind,
         title=title,
         path=relative_path.as_posix(),
         created_at=None,

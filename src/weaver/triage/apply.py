@@ -69,6 +69,7 @@ def apply_triage_document(
     raw_out: Path,
     artifact_out: Path,
     selected_decisions: Sequence[str],
+    index_title: str = "Obsidian Applied Triage",
     dry_run: bool = False,
 ) -> ApplySummary:
     items = parse_triage_document(triage_doc)
@@ -110,7 +111,11 @@ def apply_triage_document(
 
     index_path = artifact_out / "index.md"
     index_path.write_text(
-        _render_index(artifact_rows, selected_decisions=selected_decisions),
+        _render_index(
+            artifact_rows,
+            selected_decisions=selected_decisions,
+            title=index_title,
+        ),
         encoding="utf-8",
     )
 
@@ -302,6 +307,7 @@ def _render_index(
     rows: Sequence[tuple[ParsedTriageItem, Path, Path]],
     *,
     selected_decisions: Sequence[str],
+    title: str,
 ) -> str:
     generated = date.today().isoformat()
     decision_counts = Counter(item.decision for item, _copied_path, _artifact_path in rows)
@@ -310,7 +316,7 @@ def _render_index(
         category_counts.update(item.category_labels or ["uncategorized"])
 
     lines = [
-        "# Obsidian Applied Triage",
+        f"# {title}",
         "",
         f"Generated: {generated}",
         "",

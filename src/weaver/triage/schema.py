@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Literal
 
-SourceKind = Literal["obsidian", "chatgpt"]
+SourceKind = Literal["obsidian", "chatgpt", "notes"]
 
 DECISION_OPTIONS: tuple[str, ...] = (
     "include",

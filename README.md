@@ -34,6 +34,25 @@ By default, `apply` copies notes marked `include` or `extract-insights` into
 `raw/obsidian/` and writes per-note intermediate artifacts plus an index under
 `ops/artifacts/obsidian/`.
 
+New Markdown notes can enter Weaver directly without an Obsidian hop. Put them
+under `notes/inbox/` and run:
+
+```bash
+weaver triage notes
+weaver triage apply-notes ops/triage/notes.md
+```
+
+By default, this writes `ops/triage/notes.md`, copies selected notes to
+`raw/notes/`, and writes artifacts under `ops/artifacts/notes/`.
+
+You can also triage arbitrary Markdown files by choosing the root directory that
+owns them:
+
+```bash
+weaver triage notes idea.md --source-root /path/to/source
+weaver triage apply-notes ops/triage/notes.md --source-root /path/to/source
+```
+
 ChatGPT exports can be triaged from an extracted export directory, a direct
 conversation JSON file, or a ZIP archive:
 
@@ -63,7 +82,7 @@ After applying source triage, generate a deterministic QMD inventory workbench:
 weaver cluster qmd
 ```
 
-By default, this reads `ops/artifacts/obsidian/` and
+By default, this reads `ops/artifacts/obsidian/`, `ops/artifacts/notes/`, and
 `ops/artifacts/chatgpt/`, infers project labels from source metadata and
 glossary files, normalizes obvious category typos, and writes
 `ops/clusters/<date>/source-inventory.qmd` plus `manifest.csv`. The QMD also

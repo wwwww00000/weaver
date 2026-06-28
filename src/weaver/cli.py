@@ -15,10 +15,15 @@ from weaver.inventory import (
 from weaver.triage.apply import apply_triage_document, parse_decisions
 from weaver.triage.chatgpt_apply import apply_chatgpt_triage
 from weaver.triage.chatgpt import scan_chatgpt_export, sort_chatgpt_items
-from weaver.triage.obsidian import scan_obsidian_vaults, sort_triage_items
+from weaver.triage.obsidian import (
+    scan_markdown_sources,
+    scan_obsidian_vaults,
+    sort_triage_items,
+)
 from weaver.triage.render import (
     render_chatgpt_split_index,
     render_chatgpt_triage,
+    render_notes_triage,
     render_obsidian_triage,
     write_manifest_csv,
 )
@@ -26,6 +31,7 @@ from weaver.triage.schema import ChatGPTSortMode, SortMode
 
 DEFAULT_OBSIDIAN_VAULT = Path("/mnt/c/Users/limwe/Documents/obsidian")
 DEFAULT_CHATGPT_EXPORT = Path("raw/exports/chatgpt/2026-06-23")
+DEFAULT_NOTES_INBOX = Path("notes/inbox")
 
 app = typer.Typer(
     no_args_is_help=True,
@@ -131,6 +137,106 @@ def triage_obsidian(
     manifest.parent.mkdir(parents=True, exist_ok=True)
 
     out.write_text(render_obsidian_triage(items, summary), encoding="utf-8")
+    write_manifest_csv(manifest, items)
+
+    typer.echo(f"Wrote {len(items)} notes to {out}")
+    typer.echo(f"Wrote manifest to {manifest}")
+
+
+@triage_app.command("notes")
+def triage_notes(
+    note_paths: Annotated[
+        list[Path] | None,
+        typer.Argument(
+            exists=False,
+            file_okay=True,
+            dir_okay=True,
+            readable=True,
+            resolve_path=False,
+            help=(
+                "Markdown files or directories to scan, relative to --source-root "
+                f"unless absolute. Defaults to scanning {DEFAULT_NOTES_INBOX}."
+            ),
+        ),
+    ] = None,
+    source_root: Annotated[
+        Path,
+        typer.Option(
+            "--source-root",
+            file_okay=False,
+            dir_okay=True,
+            readable=True,
+            resolve_path=True,
+            help="Root directory containing Markdown notes to triage.",
+        ),
+    ] = DEFAULT_NOTES_INBOX,
+    out: Annotated[
+        Path,
+        typer.Option(
+            "--out",
+            "-o",
+            dir_okay=False,
+            writable=True,
+            help="Markdown triage document to write.",
+        ),
+    ] = Path("ops/triage/notes.md"),
+    manifest: Annotated[
+        Path,
+        typer.Option(
+            "--manifest",
+            "-m",
+            dir_okay=False,
+            writable=True,
+            help="CSV manifest to write alongside the triage document.",
+        ),
+    ] = Path("ops/manifests/notes.csv"),
+    sort: Annotated[
+        SortMode,
+        typer.Option("--sort", help="Ordering for notes in the triage document."),
+    ] = SortMode.MODIFIED_DESC,
+    limit: Annotated[
+        int | None,
+        typer.Option("--limit", min=1, help="Only render the first N notes after sorting."),
+    ] = None,
+    include_assets: Annotated[
+        bool,
+        typer.Option(
+            "--include-assets",
+            help="Include common asset directories such as assets/ and attachments/.",
+        ),
+    ] = False,
+    include_periodic: Annotated[
+        bool,
+        typer.Option(
+            "--include-periodic",
+            help="Include periodic note directories such as daily/ and weekly/.",
+        ),
+    ] = False,
+) -> None:
+    """Create an editable triage document for repo-local or arbitrary Markdown notes."""
+
+    if not source_root.is_dir():
+        raise typer.BadParameter(f"Markdown source root does not exist: {source_root}")
+
+    try:
+        items, summary = scan_markdown_sources(
+            source_root,
+            note_paths,
+            source_kind="notes",
+            include_assets=include_assets,
+            include_periodic=include_periodic,
+        )
+    except (FileNotFoundError, NotADirectoryError, ValueError) as exc:
+        raise typer.BadParameter(str(exc)) from exc
+
+    items = sort_triage_items(items, sort)
+    if limit is not None:
+        items = items[:limit]
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    manifest.parent.mkdir(parents=True, exist_ok=True)
+
+    out.write_text(render_notes_triage(items, summary), encoding="utf-8")
     write_manifest_csv(manifest, items)
 
     typer.echo(f"Wrote {len(items)} notes to {out}")
@@ -321,6 +427,87 @@ def triage_apply(
         typer.echo(f"Artifact index: {summary.index_path}")
 
 
+@triage_app.command("apply-notes")
+def triage_apply_notes(
+    triage_doc: Annotated[
+        Path,
+        typer.Argument(
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Completed Markdown notes triage document to apply.",
+        ),
+    ],
+    source_root: Annotated[
+        Path,
+        typer.Option(
+            "--source-root",
+            file_okay=False,
+            dir_okay=True,
+            readable=True,
+            resolve_path=True,
+            help="Root directory containing original Markdown notes.",
+        ),
+    ] = DEFAULT_NOTES_INBOX,
+    raw_out: Annotated[
+        Path,
+        typer.Option(
+            "--raw-out",
+            file_okay=False,
+            dir_okay=True,
+            writable=True,
+            help="Directory where selected source notes are copied.",
+        ),
+    ] = Path("raw/notes"),
+    artifact_out: Annotated[
+        Path,
+        typer.Option(
+            "--artifact-out",
+            file_okay=False,
+            dir_okay=True,
+            writable=True,
+            help="Directory where per-note intermediate artifacts are written.",
+        ),
+    ] = Path("ops/artifacts/notes"),
+    decisions: Annotated[
+        str,
+        typer.Option(
+            "--decisions",
+            help="Comma-separated decisions to copy and generate artifacts for.",
+        ),
+    ] = "include,extract-insights",
+    dry_run: Annotated[
+        bool,
+        typer.Option("--dry-run", help="Validate and summarize without writing files."),
+    ] = False,
+) -> None:
+    """Apply completed Markdown notes triage decisions to selected notes."""
+
+    selected_decisions = parse_decisions(decisions)
+    summary = apply_triage_document(
+        triage_doc,
+        source_root=source_root,
+        raw_out=raw_out,
+        artifact_out=artifact_out,
+        selected_decisions=selected_decisions,
+        index_title="Markdown Notes Applied Triage",
+        dry_run=dry_run,
+    )
+
+    action = "Would apply" if dry_run else "Applied"
+    typer.echo(
+        f"{action} {summary.selected_items} of {summary.total_items} triage items "
+        f"for decisions: {', '.join(summary.selected_decisions)}"
+    )
+    typer.echo(f"Copied notes: {summary.copied_notes}")
+    typer.echo(f"Wrote artifacts: {summary.written_artifacts}")
+    typer.echo(f"Skipped by decision: {summary.skipped_items}")
+    if summary.index_path is not None:
+        typer.echo(f"Artifact index: {summary.index_path}")
+
+
 @cluster_app.command("qmd")
 def cluster_qmd(
     artifact_dirs: Annotated[
@@ -376,6 +563,7 @@ def cluster_qmd(
 
     resolved_artifact_dirs = artifact_dirs or [
         Path("ops/artifacts/obsidian"),
+        Path("ops/artifacts/notes"),
         Path("ops/artifacts/chatgpt"),
     ]
     today = Path(date.today().isoformat())
