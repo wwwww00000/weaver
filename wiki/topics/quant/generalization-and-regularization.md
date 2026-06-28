@@ -15,6 +15,7 @@ source_bundles:
   - p12n/math
   - quant/generalization
   - quant/ridge
+  - unassigned/quant
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: topics/quant
 related:
@@ -23,7 +24,7 @@ related:
   - topics/quant/tabular-nonlinearities
   - projects/p12n/execution-and-policy
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Generalization And Regularization
@@ -81,6 +82,44 @@ likely outcome is not that equal-weight multi-target training fixes everything.
 It is that the decomposition reveals which parts of the future should be
 trusted.
 
+## Proxy-Target Curriculum
+
+A proxy target is useful when it extracts a stable latent direction that the
+true deployment target estimates too noisily. In linear regression, the object
+being estimated is the target-feature cross moment:
+
+```text
+g_h = X^T y_h
+```
+
+Changing from a long horizon to a short horizon changes `g_h`. Ridge on the
+long target cannot generally reproduce that change because it is still driven
+by the noisy long-horizon cross moment.
+
+A structured curriculum should therefore smooth or combine horizon cross
+moments rather than rely on initialization alone. For fully solved convex
+linear problems, initialization has no effect unless the objective changes. Two
+useful objective changes are:
+
+```text
+sum_h ||y_h - X beta_h||^2
+  + lambda sum_h ||beta_h||^2
+  + gamma sum_h ||beta_h - beta_{h-1}||^2
+```
+
+and a proximal continuation:
+
+```text
+beta_h = argmin_beta ||y_h - X beta||^2
+       + lambda ||beta||^2
+       + rho ||beta - beta_{h-1}||^2
+```
+
+The first shares strength across horizons globally. The second treats shorter
+horizons as a prior mean for longer horizons. Both make the "curriculum" real in
+the estimator, instead of relying on an optimization path that disappears after
+full convergence.
+
 ## Ridge And Prediction Scaling
 
 Ridge changes coefficient geometry during fitting:
@@ -106,6 +145,70 @@ The practical split is:
 - use ridge or structured shrinkage when coefficient geometry is unstable;
 - inspect the gap between unscaled and scaled validation performance to
   distinguish miscalibration from overfit feature shape.
+
+## Ridge Penalty Geometry
+
+In one-dimensional ridge without an intercept, the validation-optimal penalty
+has a simple closed form if the labeled validation moments are known. With
+training moments:
+
+```text
+a = x_train^T y_train
+b = x_train^T x_train
+```
+
+and validation moments:
+
+```text
+c = x_val^T y_val
+d = x_val^T x_val
+```
+
+the ridge coefficient is:
+
+```text
+beta(lambda) = a / (b + lambda)
+```
+
+and the validation-optimal candidate is:
+
+```text
+lambda* = a d / c - b
+```
+
+with boundary handling when the expression is negative, undefined, or the
+training and validation slopes disagree in sign. The point is not that this
+formula should be used operationally. It depends on validation labels and is
+unstable when `c` is small. The useful lesson is geometric: ridge is choosing a
+shrink factor that reconciles the train slope with the validation slope.
+
+In multiple dimensions, a single `lambda` moves along a restricted shrinkage
+path. If validation failure is caused by the wrong coefficient direction, not
+only too much amplitude, scalar ridge may not be expressive enough. That is
+where feature-group penalties, spectral shrinkage, proxy targets, or learned
+post-training transforms become relevant.
+
+## Quadratic Level Sets
+
+In linear regression, "flat" and "sharp" are not properties of different local
+minima. The squared-loss Hessian is fixed:
+
+```text
+H = X^T X
+```
+
+Near an optimum `w*`, the epsilon-level set is:
+
+```text
+(w - w*)^T H (w - w*) <= epsilon
+```
+
+Small eigenvalues of `H` give wide directions; large eigenvalues give narrow
+directions. This is useful for thinking about near-optimal alternatives,
+robustness, and implicit bias, but it is not the deep-learning notion of
+choosing among distinct basins. In linear models, generalization usually comes
+from how the solution is selected within this geometry: minimum norm, ridge,
+sparse path, grouped shrinkage, or validation-calibrated transform.
 
 ## Sparse Feature Regularization
 
@@ -222,6 +325,28 @@ This is a diagnostic before it is a regularizer. In p12n, likely uses are:
 - testing whether sequence-model heads share useful representation;
 - comparing raw gradients to optimizer-scaled update vectors.
 
+## Alternative Smoothers And Metrics
+
+Not every regression-like smoother is ordinary linear regression. A learned
+Mahalanobis metric with a kernel smoother is still linear in the observed
+responses for fixed metric:
+
+```text
+y_hat = S(M) y
+```
+
+but it is generally nonlinear as a function of the query features and has a
+different hypothesis class from OLS. With an identity distance kernel, the
+training-point smoother can even have zero self-influence because each point's
+distance to itself is zero.
+
+The regularization lesson is that raw parameter count can mislead. A full metric
+has quadratic algebraic parameters, but diagonal, low-rank, trace-normalized, or
+nearest-neighbor-constrained versions can have much lower effective complexity.
+For p12n this is mostly a cautionary analogy: if a learned smoother appears to
+generalize, inspect its self-influence, locality, and validation protocol rather
+than comparing parameter counts directly with OLS.
+
 ## Validation-Aware Regularization Loop
 
 A pragmatic regularization loop for quant experiments:
@@ -255,5 +380,12 @@ miscalibration, unstable coefficient direction, or feature group conflict.
 - [Regularization concept exploration](../../../ops/artifacts/chatgpt/689a25e1-4428-8329-b331-49afd82fb261.md)
 - [Ridge CV vs OOF Scaling](../../../ops/artifacts/chatgpt/6763f3ae-17ec-8009-8723-49f1fcb2e6c1.md)
 - [Sparse Features in Ridge](../../../ops/artifacts/chatgpt/69cff0f3-96b8-839e-8380-caf5d0b911b6.md)
+- [Branch - Proxy-target training in regression](../../../ops/artifacts/chatgpt/69d5ed83-dbb4-83a1-b4fd-1f878f014cf9.md)
+- [Flat vs Sharp Minima in Linear Regression](../../../ops/artifacts/chatgpt/67b3134f-cf50-8009-9265-a47222f57525.md)
+- [Mahalanobis vs Linear Regression](../../../ops/artifacts/chatgpt/68480c76-7cbc-8009-aca1-4934960c1980.md)
+- [Optimal Ridge Penalty Computation](../../../ops/artifacts/chatgpt/6876f4ab-b368-8009-9320-b72c69c8ce00.md)
+- [Ridge Penalty Optimization](../../../ops/artifacts/chatgpt/6876f4ac-77cc-8009-8b48-a1327e12c379.md)
+- [Robust Regression Research Directions](../../../ops/artifacts/chatgpt/67191c44-b954-8009-8e92-c5799747b9bb.md)
 - [temporal relationship of response](../../../ops/artifacts/obsidian/generalization.md)
+- [ideas](../../../ops/artifacts/obsidian/regression.md)
 - [p12n ml](../../../ops/artifacts/obsidian/p12n-ml.md)

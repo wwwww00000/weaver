@@ -54,6 +54,9 @@ Status:
 - 2026-06-28: Completed structured returns and p12n signal-study pass for
   [temporal returns experiments](../../wiki/projects/p12n/temporal-returns-experiments.md)
   and [structured return models](../../wiki/topics/quant/structured-return-models.md).
+- 2026-06-28: Completed regression, stability, and regularization pass for
+  [regression stability and validation](../../wiki/topics/quant/regression-stability-and-validation.md)
+  and [generalization and regularization](../../wiki/topics/quant/generalization-and-regularization.md).
 
 ### Adaptive Filters And EMA
 
@@ -219,10 +222,9 @@ later targeted page.
 
 ## Next Pass
 
-Next, run a page-deepening pass for the regression, stability, and
-regularization queue:
-[regression stability and validation](../../wiki/topics/quant/regression-stability-and-validation.md)
-and [generalization and regularization](../../wiki/topics/quant/generalization-and-regularization.md).
+Next, run a page-deepening pass for the optimization and computation queue:
+[optimization and computation](../../wiki/topics/quant/optimization-and-computation.md).
 
-This pass should keep validation protocol, target construction, and regularizer
-selection explicit, because those concerns cut across several p12n model pages.
+This pass should keep solver mechanics, sufficient statistics, and validation
+objectives separated, because several sources describe optimization tricks that
+are useful only after the statistical target is fixed.

@@ -24,7 +24,7 @@ related:
   - projects/p12n/temporal-returns-experiments
   - projects/p12n/feature-transforms-and-bst
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Regression Stability And Validation
@@ -90,6 +90,30 @@ The block view matters for time series. If neighboring samples are serially
 correlated, ordinary LOOCV can be optimistic because the left-out sample is
 still partly represented by adjacent training rows. Blocking makes the deletion
 large enough to remove local dependence.
+
+## Exact Versus Summary Risk
+
+Exact LOOCV needs row-level residuals and row-level leverages:
+
+```text
+e_i = y_i - x_i^T beta
+h_i = x_i^T (X^T X)^-1 x_i
+```
+
+The diagonal of the hat matrix cannot be recovered from `X^T X`, `X^T y`, and
+`beta` alone. Those summaries forget which row had which leverage. An exact
+memory-light implementation can stream rows to accumulate `h_i` and `e_i`, but
+it still needs access to each row.
+
+When only aggregate summaries are available, use a proxy such as GCV:
+
+```text
+GCV = (RSS / n) / (1 - trace(H) / n)^2
+```
+
+This is useful for fast screening, but it hides leverage concentration. If rare
+features, clustered regimes, or sparse rows create uneven leverage, exact OOF or
+blocked validation is safer than a trace-only proxy.
 
 ## Time-Series Splits
 
@@ -229,6 +253,61 @@ The two pages should stay linked:
 - use validation protocols to decide whether a model using those effects should
   be trusted.
 
+## Proxy Targets
+
+Changing the target can be a stronger inductive bias than changing the
+regularization value. A shorter-horizon or easier proxy target can produce a
+prediction that beats every point on the direct long-horizon ridge path when the
+long target has lower SNR or unstable cross moments.
+
+Validation should treat this as a different estimator, not as "just more
+regularization." For train and validation matrices:
+
+```text
+beta_direct(lambda) = (G_train + lambda I)^-1 X_train^T y_long
+beta_proxy(mu)      = (G_train + mu I)^-1 X_train^T y_short
+```
+
+The proxy can win because it changes the direction of `X^T y`, while ridge only
+shrinks or rotates within the geometry induced by the same target. In an
+orthogonalized design this is especially clear: each target defines a different
+ray, and regularization mostly chooses position along the ray.
+
+Practical validation pattern:
+
+- choose source horizons on a small ordered grid;
+- generate OOF proxy predictions for each source horizon;
+- evaluate them on the true deployment target with purged or rolling folds;
+- fit any calibration or horizon recombination using only training-fold data;
+- keep a final later period untouched, because source-horizon search is feature
+  selection over targets.
+
+If a proxy target repeatedly wins, the next step is usually a structured
+horizon model or proximal continuation across horizons, not a one-off
+hard-coded source horizon.
+
+## Selection Paths
+
+Feature selection procedures create their own validation risk. Least Angle
+Regression, lasso paths, forward stagewise regression, and greedy feature search
+all expose a path of candidate models rather than a single model.
+
+The path is useful because it shows when predictors enter, whether correlated
+features share credit, and how sparse explanations evolve. It is also a leakage
+risk when the path is chosen on all rows before validation. The validation rule
+is:
+
+```text
+for each fold:
+  fit the entire selection path on training rows
+  choose path position using training-internal risk or nested validation
+  emit held-out predictions
+```
+
+For p12n, sparse selection should be judged by blocked OOF performance and
+temporal evidence stability, not only by entry order or in-sample residual
+correlation.
+
 ## Open Questions
 
 - What default block length should p12n use for highly oversampled crypto
@@ -248,4 +327,8 @@ The two pages should stay linked:
 - [LOOCV Error Efficient Computation](../../../ops/artifacts/chatgpt/6811ed55-0e14-8009-9c2a-f4b586b27278.md)
 - [Ridge CV vs OOF Scaling](../../../ops/artifacts/chatgpt/6763f3ae-17ec-8009-8723-49f1fcb2e6c1.md)
 - [Sparse Features in Ridge](../../../ops/artifacts/chatgpt/69cff0f3-96b8-839e-8380-caf5d0b911b6.md)
+- [Branch - Proxy-target training in regression](../../../ops/artifacts/chatgpt/69d5ed83-dbb4-83a1-b4fd-1f878f014cf9.md)
+- [Least Angle Regression Explained](../../../ops/artifacts/chatgpt/674c0a48-e938-8009-94fa-c205a686cd89.md)
+- [Optimal Ridge Penalty Computation](../../../ops/artifacts/chatgpt/6876f4ab-b368-8009-9320-b72c69c8ce00.md)
+- [Ridge Penalty Optimization](../../../ops/artifacts/chatgpt/6876f4ac-77cc-8009-8b48-a1327e12c379.md)
 - [p12n ml](../../../ops/artifacts/obsidian/p12n-ml.md)
