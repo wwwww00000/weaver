@@ -22,7 +22,7 @@ related:
   - projects/p12n/n-linear-returns-models
   - topics/quant/temporal-evidence
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Sequence-Model Analogies
@@ -162,6 +162,47 @@ source asset and lag structure act like keys, target-asset exposure acts like
 queries, raw returns act like values, and diagonal self effects should remain
 explicit rather than hidden in the value map.
 
+## Gated Layers As Product Features
+
+Many neural gated layers have the rough form:
+
+```text
+output = value(x) * gate(x)
+```
+
+If the gate is locally affine, or if it is replaced by bins, splines, or other
+explicit basis functions, the layer begins to look like a bilinear model or a
+linear model over product features. For p12n this is useful because product
+features can be fitted with ridge, inspected as regression terms, and validated
+with the same machinery used for tabular nonlinearities.
+
+Useful translations:
+
+- feature value times current feature bin;
+- timescale state times regime descriptor;
+- EMA state times volatility or liquidity bucket;
+- source-asset return times target-asset exposure;
+- forecast output times execution-context bucket.
+
+The caveat is composition. A single product-feature layer is still linear in its
+expanded basis, but stacking multiple product-feature layers makes downstream
+predictions nonlinear in hidden outputs. That loses the clean closed-form solve
+unless the workflow changes.
+
+Practical workarounds are:
+
+- flatten the desired products into one explicit feature map and solve once;
+- freeze upstream transforms, then solve only the readout;
+- add product-feature components stagewise with out-of-fold residual targets;
+- use Gauss-Newton or alternating least squares only for small controlled
+  nonlinear blocks;
+- promote a gated module only after the explicit product-feature version has
+  validation lift.
+
+This makes gated-layer research useful as a feature-design lens, not as an
+argument for building a deep stack before the shallow regression analogue has
+failed.
+
 ## Gates From Filtering
 
 Kalman filtering gives a clean theoretical motivation for gates.
@@ -248,6 +289,8 @@ for incremental validation value.
   whole-model test-time training?
 - How much of linear attention's value is captured by n-linear diagonal plus
   low-rank return operators?
+- Which gated-layer ideas are already captured by explicit product features and
+  which require true learned composition?
 - What innovation summaries are stable enough to drive gates in crypto data?
 - Can stagewise recurrence remain identifiable after several modules are added?
 
@@ -258,6 +301,7 @@ for incremental validation value.
 - [p12n overview](../../../ops/artifacts/obsidian/p12n-overview.md)
 - [Adaptive Filtering in Sequence Models](../../../ops/artifacts/chatgpt/69992303-31c0-839c-8f32-640d3fbc88a1.md)
 - [Benchmarking Recurrent State Updates](../../../ops/artifacts/chatgpt/694bb258-cdb0-8322-bc06-8e605305a9f5.md)
+- [Gated Layers and Approximations](../../../ops/artifacts/chatgpt/6728c741-b2f8-8009-b3e5-c1fabd74ad94.md)
 - [Fixed RNN with Interpretable Optimization](../../../ops/artifacts/chatgpt/698c58da-57a4-83a1-9602-bead070b12bf.md)
 - [Optimization of linear attention](../../../ops/artifacts/chatgpt/693be35d-abc0-8324-94c3-829b017f3382.md)
 - [RNN architecture design](../../../ops/artifacts/chatgpt/690030a3-f2d8-8323-8d98-505aaad9c238.md)

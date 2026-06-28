@@ -62,6 +62,9 @@ Status:
 - 2026-06-28: Completed tabular nonlinearities and feature-search pass for
   [tabular nonlinearities](../../wiki/topics/quant/tabular-nonlinearities.md)
   and [P12n feature transforms and BST](../../wiki/projects/p12n/feature-transforms-and-bst.md).
+- 2026-06-28: Promoted [zzz's framework](../../wiki/topics/quant/zzz-framework.md)
+  into a reference page and merged high-level gated-layer notes into
+  [P12n sequence-model analogies](../../wiki/projects/p12n/sequence-model-analogies.md).
 
 ### Adaptive Filters And EMA
 
@@ -219,14 +222,15 @@ later targeted page.
 
 | Artifact | Action | Priority | Note |
 | --- | --- | --- | --- |
-| [Gated Layers and Approximations](../artifacts/chatgpt/6728c741-b2f8-8009-b3e5-c1fabd74ad94.md) | defer | P2 | Likely sequence-model analogy, but route after reading. |
-| [Machine Learning Algorithms for Finance](../artifacts/chatgpt/686fde92-6040-8009-bad0-f98d2ea123d5.md) | defer | P2 | Broad survey source. |
-| [Model fitting ideas](../artifacts/chatgpt/6909bf03-39e4-8323-8729-b0fe673a7db8.md) | defer | P2 | Broad note; mine only if a page needs filler detail. |
-| [pc setup](../artifacts/obsidian/pc-setup.md) | defer | P3 | Infrastructure context, not a quant method source. |
-| [zzz's framework](../artifacts/obsidian/zzz-s-framework.md) | defer | P2 | Broad framework note; route after body review. |
+| [Gated Layers and Approximations](../artifacts/chatgpt/6728c741-b2f8-8009-b3e5-c1fabd74ad94.md) | merge | P2 | Routed to P12n sequence-model analogies as a product-feature approximation note. |
+| [Machine Learning Algorithms for Finance](../artifacts/chatgpt/686fde92-6040-8009-bad0-f98d2ea123d5.md) | skip | P3 | Broad survey source; ignored for this pass. |
+| [Model fitting ideas](../artifacts/chatgpt/6909bf03-39e4-8323-8729-b0fe673a7db8.md) | skip | P3 | Broad note; ignored for this pass. |
+| [pc setup](../artifacts/obsidian/pc-setup.md) | skip | P3 | Infrastructure context, not a quant method source. |
+| [zzz's framework](../artifacts/obsidian/zzz-s-framework.md) | new-page | P1 | Promoted to Zzz's Framework reference page. |
 
 ## Next Pass
 
 The queued `unassigned/quant` page-deepening passes before
-`Defer Or Human Review` are complete. The remaining quant items in this plan are
-defer or human-review candidates, not a ready synthesis queue.
+`Defer Or Human Review` are complete. The deferred notes have now been routed:
+`zzz's framework` became a reference page, gated-layer notes were merged at a
+high level, and the remaining broad notes were skipped.

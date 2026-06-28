@@ -9,7 +9,7 @@ categories:
   - time-series
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Quant
@@ -44,6 +44,9 @@ technique or mathematical pattern.
 - [Generalization And Regularization](quant/generalization-and-regularization.md):
   ridge, shrinkage, horizon generalization, validation-aware regularization,
   and gradient similarity.
+- [Zzz's Framework](quant/zzz-framework.md): sheriffpony's forecast-bank
+  reference architecture with many calibrated signals, stable thematic
+  forecasts, rolling regularized combination, and a 5-second realization grid.
 
 ## Boundary With P12n
 
