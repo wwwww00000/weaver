@@ -67,6 +67,9 @@ Priority means:
   by deepening
   [N-Linear Returns Models](../../wiki/projects/p12n/n-linear-returns-models.md)
   and [Structured Return Models](../../wiki/topics/quant/structured-return-models.md).
+- 2026-06-28: Completed the Revelation math-learning resources and reference
+  tail by deepening
+  [Active Learning For Math And Physics](../../wiki/projects/revelation/active-learning-for-math-and-physics.md).
 
 ## Linear Regression Algebra And Solvers
 
@@ -151,6 +154,9 @@ possible Revelation child page if source material becomes a durable reading map.
 | [Mental Fatigue: Reading Mathematics](../artifacts/chatgpt/f4d0ea68-cbba-4e8f-a5b8-8031e03a037d.md) | skip | P3 | Already mined into active learning and Whetstone/cognitive pass. |
 | [Problem-Based Mathematics Texts](../artifacts/chatgpt/69884bb9-b520-83a0-83a0-5f7b8ab0d935.md) | skip | P3 | Already represented in active learning source map. |
 
+Status: complete. The pass added a resource-backlog stance and mathematical
+modelling drill lane to the Revelation active-learning page.
+
 ## Already Mined Or Reference Only
 
 Primary destination:
@@ -161,8 +167,11 @@ source-map/reference only unless a later page needs exact details.
 | [bookmarks](../artifacts/obsidian/mathematics.md) | merge | P2 | Math bookmark/reference note; inspect with Revelation resources. |
 | [Iterative Greedy Feature Selection](../artifacts/chatgpt/69eb6c3d-c5d8-839e-97e0-8caedc8c6584.md) | skip | P3 | Already mined into Quant tabular/feature-search pages. |
 
+Status: complete. The bookmarks source is represented in the Revelation
+resource-backlog section and source map. The greedy feature-selection source was
+already mined into the Quant feature-search material.
+
 ## Next Pass
 
-The linear regression algebra/solvers, ridge/convex/internal-risk, and
-bilinear/low-rank/structured-regression passes are complete. Next, move to
-Revelation math-learning resources.
+`unassigned/math` is complete for this initial mining pass. Future work should
+be just-in-time review and fleshing, not a mandatory bulk pass.

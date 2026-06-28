@@ -49,6 +49,24 @@ Problem-heavy texts are useful when a topic needs muscle rather than more
 motivation. They should be paired with conceptual texts rather than replacing
 them.
 
+## Resource Backlog
+
+The current backlog points toward differential geometry, algebra, algebraic
+geometry, mathematical problem solving, and physics-motivated geometry. Treat
+these as shelves, not obligations.
+
+Useful resource types:
+
+- problem-forward books with worked solutions or solution sketches;
+- conceptual spines that make the subject feel worth learning;
+- isolated exercises that can become short drills;
+- companion texts for just-in-time prerequisites;
+- bookmarks for later review, without forcing immediate coverage.
+
+The immediate rule is to pull one exercise or one section into an active
+session. A bookmark becomes useful only after it creates a solved problem,
+derivation, synthesis note, or sharper question.
+
 ## Just-In-Time Prerequisites
 
 The current source notes repeatedly warn against prerequisite hell. The better
@@ -92,6 +110,37 @@ A practical Revelation week can have three modes:
 The playground is not optional. It is where the beauty and mystery motivations
 stay alive instead of being buried under textbook coverage.
 
+## Mathematical Modelling Drills
+
+Mathematical modelling needs a different practice shape from theorem-proving.
+The prompts are messier, the assumptions matter, and there is rarely a single
+answer key. A good drill still has a concrete deliverable.
+
+For a 60-90 minute modelling kata, write:
+
+1. assumptions and ignored complications;
+2. two plausible model families;
+3. a minimal calibration or data plan;
+4. sensitivity checks and failure modes;
+5. a decision-facing recommendation.
+
+Good prompt sources include modelling contest archives, solution reports,
+case-study books, differential-equation modelling challenges, optimization and
+OR benchmarks, data-science competitions, queueing/simulation exercises,
+agent-based model libraries, and system-dynamics courses. The point is not to
+collect every resource. It is to rotate through modelling styles:
+
+- data-driven and statistical;
+- mechanistic ODE/PDE or systems models;
+- optimization and operations research;
+- stochastic, queueing, and simulation;
+- agent-based and system-dynamics models.
+
+The comparison artifact is often more important than the prompt: write a short
+memo first, then compare it with an exemplar, commentary, winning report, or
+reference implementation. This keeps modelling practice from collapsing into
+passive reading.
+
 ## AI Assistance
 
 AI tools should be used as tutors, not answer engines.
@@ -119,6 +168,7 @@ Risky uses:
 - What is the minimum weekly output that keeps the project alive?
 - How should solved exercises, synthesis notes, and toy simulations flow back
   into the wiki?
+- What should the first reusable modelling kata template look like?
 
 ## Source Map
 
@@ -127,5 +177,6 @@ Risky uses:
 - [Problem-Based Mathematics Texts](../../../ops/artifacts/chatgpt/69884bb9-b520-83a0-83a0-5f7b8ab0d935.md)
 - [Text recommendations for intuition](../../../ops/artifacts/chatgpt/692793f0-4068-8331-a8e1-82308fc7ef49.md)
 - [Mental Fatigue: Reading Mathematics](../../../ops/artifacts/chatgpt/f4d0ea68-cbba-4e8f-a5b8-8031e03a037d.md)
+- [Mathematical Modelling Resources](../../../ops/artifacts/chatgpt/696908b8-9e90-832a-a5a9-313769c74a30.md)
 - [mathematics notes](../../../ops/artifacts/obsidian/mathematics.md)
 - [physics notes](../../../ops/artifacts/obsidian/physics.md)
