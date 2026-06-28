@@ -59,6 +59,38 @@ The key move is separating study from application. The study supplies structure;
 the imagination pass tests whether the structure is usable without direct
 copying.
 
+## Practice Tracking And Error Isolation
+
+The session log should capture the learning loop, not only the finished image.
+Before drawing, write:
+
+- target skill;
+- subject or prompt;
+- constraint;
+- planned check;
+- expected failure mode.
+
+After drawing, record where the error entered. For reference study, this often
+requires checkpoints rather than one final critique:
+
+1. block in large proportions and axes;
+2. check against reference or overlay;
+3. build forms;
+4. check again;
+5. add contour, detail, or line emphasis only after structure survives.
+
+This matters because a bad animal, portrait, or invented creature can fail at
+several different levels: gesture, proportion, perspective, form
+simplification, contour choice, or line confidence. The next exercise should
+isolate the first failing level rather than repeat the whole drawing with vague
+intent.
+
+Line quality is part of the same loop. Previsualize the line, place faint guide
+dots or axes when needed, ghost the motion, then commit. Long lines can be
+handled by a small elbow lift and repositioning rather than a dramatic shoulder
+movement. The goal is not theatrical mark-making; it is a predictable line that
+lands where the construction needs it.
+
 ## Subject Tracks
 
 Current source notes suggest several candidate tracks.
@@ -69,6 +101,10 @@ It can scale from toy-like forms to more complex animals.
 
 Portrait construction exposes block-in order, measurement, cranium and cheek
 structure, and the gap between visual copying and constructive understanding.
+It should be used to test block-in approaches explicitly: visual envelope and
+measurement first, cranium construction first, cheekbone-first construction, or
+another chosen order. The point is to learn which degrees of freedom must be
+fixed early.
 
 Figure and gesture drawing can be treated as compression: capture the pose,
 perspective hints, and form relationships with minimal marks, then expand only
@@ -77,6 +113,46 @@ where structure supports it.
 Scene-embedded construction asks for imaginary objects, characters, or
 creatures to be drawn into an existing scene, grid, room, or camera view. This
 uses real perspective as scaffolding.
+
+Animal and creature construction is harder than insect or box practice because
+the simplification step becomes less obvious. A good animal study should break
+the task apart: proportion guidelines, gesture, major form primitives,
+turnaround reasoning, then surface detail only at the end.
+
+## Prompt Translation
+
+Monthly challenges such as Inktober are useful only when the prompt is converted
+into a concrete construction problem. An abstract word like "dream" should not
+mean "make a polished dream picture." It should become a form task:
+
+- a dream room in two-point perspective;
+- floating islands with clear depth layers;
+- an impossible staircase with deliberate vanishing logic;
+- a dream machine built from cylinders, boxes, and joints;
+- a creature hybrid whose torso, limbs, and head are constructed from simple
+  forms;
+- a plane-window scene that forces clouds, frame, wing, and interior objects
+  into one perspective problem.
+
+The prompt is a wrapper. The actual curriculum target is still written first:
+form intersection, line quality, animal simplification, portrait block-in,
+scene perspective, or invented-object construction.
+
+## Reference Study
+
+Reference should be used to understand a subject, not to copy surface detail.
+For a useful study:
+
+- say what you are trying to infer before drawing;
+- reduce the subject to proportion, gesture, construction, and perspective
+  hints;
+- hide the reference before the memory or imagination pass;
+- reveal and mark the first structural mismatch;
+- repeat the same subject from another angle when the goal is form knowledge.
+
+Thinking out loud is useful here. Before making a mark, articulate what the mark
+is supposed to establish: axis, envelope, plane change, contour, overlap,
+gesture, or final edge.
 
 ## Feedback Sources
 
@@ -124,6 +200,9 @@ constraint.
 - Are 3D tools helping internal visualization, or outsourcing it?
 - Which errors appear first: proportion, perspective, construction, line
   confidence, or memory loss?
+- Which block-in order works best for portraits and creature construction?
+- What should be recorded after every session so progress is visible without
+  making logging burdensome?
 
 ## Source Map
 
@@ -138,4 +217,6 @@ constraint.
 - [reference study](../../../ops/artifacts/obsidian/drawing-reference-study.md)
 - [sketchbook](../../../ops/artifacts/obsidian/drawing-sketchbook.md)
 - [3d sketching](../../../ops/artifacts/obsidian/drawing-3d-sketching.md)
+- [line quality](../../../ops/artifacts/obsidian/drawing-line-quality.md)
+- [inktober](../../../ops/artifacts/obsidian/drawing-inktober.md)
 - [museum notes](../../../ops/artifacts/obsidian/drawing-ideas.md)

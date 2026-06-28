@@ -243,6 +243,6 @@ Largest unassigned mining queues:
   - Initial routing plan:
     [unassigned-drawing-mining-plan.md](unassigned-drawing-mining-plan.md)
   - Preferred first page-deepening candidates:
-    - [ ] Constructive drawing practice architecture.
+    - [x] Constructive drawing practice architecture.
     - [ ] Perspective and visualization bridge.
     - [ ] Drawing studio stack, resources, and projects.

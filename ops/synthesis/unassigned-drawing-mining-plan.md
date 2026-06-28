@@ -53,6 +53,9 @@ Priority means:
 ## Status
 
 - 2026-06-28: Created initial routing plan for `unassigned/drawing`.
+- 2026-06-28: Completed the practice architecture and tracking pass by
+  deepening
+  [Constructive Drawing Practice](../../wiki/projects/conjuration/constructive-drawing-practice.md).
 
 ## Practice Architecture And Tracking
 
@@ -72,6 +75,10 @@ Secondary destination:
 | [portrait](../artifacts/obsidian/drawing-portrait.md) | merge | P1 | Block-in order, measuring, cranium/cheek structure. |
 | [reference study](../artifacts/obsidian/drawing-reference-study.md) | merge | P1 | Understand form instead of copying; checkpoint overlays. |
 | [sketchbook](../artifacts/obsidian/drawing-sketchbook.md) | merge | P2 | Casual volume, subjects, medium choice. |
+
+Status: complete. The pass added practice tracking, checkpointed error
+isolation, line-quality rules, prompt translation, and sharper subject-track
+guidance for portraits, animals, gesture, and Inktober-style prompts.
 
 ## Perspective And Visualization Bridge
 
@@ -122,5 +129,5 @@ details.
 
 ## Next Pass
 
-Start with practice architecture and tracking, because that deepens the existing
-Constructive Drawing Practice page before adding a studio-stack page.
+The practice architecture and tracking pass is complete. Next, move to the
+perspective and visualization bridge.
