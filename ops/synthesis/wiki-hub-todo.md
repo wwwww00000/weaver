@@ -187,6 +187,17 @@ Largest unassigned mining queues:
     - [x] [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md)
       and [P12n Feature Transforms And BST](../../wiki/projects/p12n/feature-transforms-and-bst.md)
 - [ ] Route and mine `unassigned/ai`.
+  - Initial routing plan:
+    [unassigned-ai-mining-plan.md](unassigned-ai-mining-plan.md)
+  - Preferred first page-deepening candidates:
+    - [ ] Reasoning Models And Tool Use
+    - [ ] [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md)
+      and [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+    - [ ] Credit Assignment And Training Signals
+    - [ ] [P12n Sequence-Model Analogies](../../wiki/projects/p12n/sequence-model-analogies.md)
+    - [ ] [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md),
+      [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md),
+      and related Quant method pages.
 - [x] Route and mine `unassigned/cognitive`.
   - Initial routing plan:
     [unassigned-cognitive-mining-plan.md](unassigned-cognitive-mining-plan.md)
