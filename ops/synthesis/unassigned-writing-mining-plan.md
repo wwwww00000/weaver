@@ -46,6 +46,8 @@ Priority means:
 ## Status
 
 - 2026-06-28: Created initial routing plan for `unassigned/writing`.
+- 2026-06-28: Completed the Chronicle writing practice and voice pass:
+  [Writing Practice And Voice](../../wiki/projects/chronicle/writing-practice-and-voice.md).
 
 ## Chronicle Writing Practice And Voice
 
@@ -122,6 +124,5 @@ defer unless a future fiction-premise page needs a high-level motif.
 
 ## Next Pass
 
-Start with Chronicle writing practice and voice. It has the clearest destination
-and should absorb most of the reusable writing-practice material before the
-Conjuration fiction-premise pass.
+The Chronicle writing practice and voice pass is complete. Next, move to
+Conjuration fiction premises and worldwork.

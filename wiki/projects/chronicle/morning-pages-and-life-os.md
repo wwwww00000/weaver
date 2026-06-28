@@ -188,6 +188,9 @@ calibration](../whetstone/felt-sense-and-modes.md). The Whetstone-facing
 state-switching method is [Attention And State Regulation](../whetstone/attention-and-state-regulation.md).
 [Meditation And Nonduality](meditation-and-nonduality.md) covers direct
 awareness practice, concentration, nondual inquiry, and liminal capture.
+[Writing Practice And Voice](writing-practice-and-voice.md) covers the
+craft-facing side: voice masks, micro forms, style sampling, metaphor training,
+and poetic attention.
 
 ## Open Questions
 

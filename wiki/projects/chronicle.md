@@ -43,6 +43,9 @@ into usable memory.
 - [Travel And Environment Design](chronicle/travel-and-environment-design.md):
   travel mindset, micro-vacations, home project containers, personal retreats,
   and anticipation as state-design tools.
+- [Writing Practice And Voice](chronicle/writing-practice-and-voice.md):
+  voice masks, micro forms, poetic attention, metaphor training, style
+  sampling, and exercise-driven writing practice.
 - [Meditation And Nonduality](chronicle/meditation-and-nonduality.md):
   consistency-first meditation, concentration practice, nondual inquiry,
   portable awareness, liminal capture, and lucid-dreaming boundaries.
@@ -73,6 +76,10 @@ mental pages are ways to preserve a voice, lower the friction of expression,
 and keep implicit experience from disappearing. The mindfulness side keeps the
 same machinery from becoming rumination: notice the state, label the loop, and
 choose a smaller next move.
+
+The craft side should stay small and alive: daily titles, voice masks,
+metaphors, poetic attention, and short style experiments are enough to keep the
+writing channel open without turning Chronicle into a publication system.
 
 Chronicle also treats places and transitions as state design. Quiet spaces,
 night journaling, walks, transit, travel, and other breaks from routine are

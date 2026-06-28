@@ -227,7 +227,7 @@ Largest unassigned mining queues:
   - Initial routing plan:
     [unassigned-writing-mining-plan.md](unassigned-writing-mining-plan.md)
   - Preferred first page-deepening candidates:
-    - [ ] Chronicle writing practice and voice.
+    - [x] [Chronicle writing practice and voice](../../wiki/projects/chronicle/writing-practice-and-voice.md).
     - [ ] Conjuration fiction premises and worldwork.
     - [ ] Weaver/AI writing tools, only if new material remains after the
       `unassigned/ai` pass.
