@@ -49,6 +49,8 @@ Priority means:
   [Weaver As A Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md).
 - 2026-06-28: Completed the credit assignment and training-signals pass:
   [Credit Assignment And Training Signals](../../wiki/projects/genesis/credit-assignment-and-training-signals.md).
+- 2026-06-28: Completed the sequence, state-space, and gated-architectures pass:
+  [P12n Sequence-Model Analogies](../../wiki/projects/p12n/sequence-model-analogies.md).
 
 ## Reasoning Models And Tool Use
 
@@ -151,6 +153,6 @@ page unless the raw note has concrete project direction.
 
 ## Next Pass
 
-The reasoning models/tool-use, agentic tooling/Weaver, and credit-assignment
-passes are complete. Next, move to sequence architectures and nonlinear method
+The reasoning models/tool-use, agentic tooling/Weaver, credit-assignment, and
+sequence-architecture passes are complete. Next, move to nonlinear method
 spillovers.

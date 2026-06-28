@@ -194,7 +194,7 @@ Largest unassigned mining queues:
     - [x] [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md)
       and [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
     - [x] [Credit Assignment And Training Signals](../../wiki/projects/genesis/credit-assignment-and-training-signals.md)
-    - [ ] [P12n Sequence-Model Analogies](../../wiki/projects/p12n/sequence-model-analogies.md)
+    - [x] [P12n Sequence-Model Analogies](../../wiki/projects/p12n/sequence-model-analogies.md)
     - [ ] [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md),
       [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md),
       and related Quant method pages.

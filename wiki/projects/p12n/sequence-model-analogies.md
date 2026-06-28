@@ -14,6 +14,7 @@ source_bundles:
   - p12n/ai
   - p12n/quant
   - p12n/current priorities
+  - unassigned/ai
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: projects/p12n
 related:
@@ -21,6 +22,7 @@ related:
   - projects/p12n/temporal-returns-experiments
   - projects/p12n/n-linear-returns-models
   - topics/quant/temporal-evidence
+  - topics/quant/adaptive-filters-and-ema
 created: 2026-06-27
 updated: 2026-06-28
 ---
@@ -131,6 +133,22 @@ This should be the first stop before dynamic gates. If fixed decays plus
 adaptive linear mixing do not validate, a more flexible recurrence is unlikely
 to be trustworthy.
 
+A diagonal state-space model is the next boundary to understand. A scalar
+state-space duality uses one decay structure across the hidden state; a diagonal
+version lets each state channel have its own time-varying decay. Conceptually,
+this is still a bank of fading memories before it is a general recurrent
+network. That makes it a useful midpoint for p12n:
+
+- fixed diagonal decays become an interpretable memory basis;
+- learned diagonal decays become gated timescale channels;
+- readout weights can still reveal which half-lives and state channels matter;
+- full hidden-state mixing should remain a later step, because it is much
+  harder to inspect.
+
+The practical read is that many "SSM versus attention" distinctions collapse
+into how a model stores and reads from structured temporal state. P12n should
+exploit the structured-state side first.
+
 ## Linear Attention
 
 Linear attention is useful in p12n less as a transformer imitation and more as a
@@ -151,6 +169,14 @@ This has three useful interpretations:
 - a recurrent sufficient-statistics accumulator;
 - a low-rank tensor regression over current and past features;
 - a fast-weight memory with keys, queries, and scalar values.
+
+The same mechanism can be written as a recurrent prefix update: accumulate
+`phi(k_t) v_t^T` and a normalizer, then read the current output with `phi(q_t)`.
+That makes linear attention trainable with parallel prefix-scan machinery while
+still running as a streaming recurrent state at inference time. For p12n, this
+is a useful constraint: the memory is not arbitrary context. It is a low-rank
+bank of sufficient statistics whose saturation, forgetting, and normalization
+can be inspected.
 
 The optimization is structured. With some blocks frozen, the other blocks can
 often be updated by ridge-like subproblems, alternating least squares, or
@@ -202,6 +228,21 @@ Practical workarounds are:
 This makes gated-layer research useful as a feature-design lens, not as an
 argument for building a deep stack before the shallow regression analogue has
 failed.
+
+The same caution applies to gated recurrence. A minimal gated cell can be
+written as:
+
+```text
+h_t = f_t h_{t-1} + (1 - f_t) W x_t
+```
+
+If the gates are fixed, the hidden states form a temporal basis and the readout
+can be treated like an ordinary regression problem. If the gates are learned
+from current inputs, the recurrence becomes nonlinear through products over
+time. That suggests an incremental fitting route: fit fixed or externally
+defined gates first, solve the linear pieces, then consider alternating updates
+or local linearizations for the gate parameters only if the fixed-gate version
+has validation lift.
 
 ## Gates From Filtering
 
@@ -279,6 +320,17 @@ This is the bridge between modern sequence-model expressiveness and p12n's need
 for auditability. Each primitive should be removable, residualized, and tested
 for incremental validation value.
 
+The candidate ordering should be:
+
+1. fixed half-life banks and explicit product features;
+2. diagonal state channels with regularized horizon-specific readouts;
+3. low-rank linear-attention accumulators with explicit forgetting;
+4. input-driven gates over a small state bank;
+5. deeper learned recurrence only if the earlier stages fail cleanly.
+
+This keeps the modern sequence-model import concrete. The first four stages can
+all be expressed as inspectable state updates plus regression-like readouts.
+
 ## Open Questions
 
 - Which recurrence primitives actually add validation lift beyond fixed temporal
@@ -304,6 +356,9 @@ for incremental validation value.
 - [Gated Layers and Approximations](../../../ops/artifacts/chatgpt/6728c741-b2f8-8009-b3e5-c1fabd74ad94.md)
 - [Fixed RNN with Interpretable Optimization](../../../ops/artifacts/chatgpt/698c58da-57a4-83a1-9602-bead070b12bf.md)
 - [Optimization of linear attention](../../../ops/artifacts/chatgpt/693be35d-abc0-8324-94c3-829b017f3382.md)
+- [RNNs as Transformers](../../../ops/artifacts/chatgpt/68355831-4d24-8009-854b-57da7ec562f8.md)
+- [Simplified Gated RNN](../../../ops/artifacts/chatgpt/6752ad04-8df8-8009-bcf0-6001804e4628.md)
+- [State-Space Duality Explanation](../../../ops/artifacts/chatgpt/6a0a66e5-699c-83ec-a8f5-d3af30104eb1.md)
 - [RNN architecture design](../../../ops/artifacts/chatgpt/690030a3-f2d8-8323-8d98-505aaad9c238.md)
 - [Sequence Model Literature Review](../../../ops/artifacts/chatgpt/69698dfb-0798-8322-a395-371306852c5d.md)
 - [Stagewise Sequence Modeling](../../../ops/artifacts/chatgpt/6951463c-52b0-8321-b465-d273b01f9ee9.md)
