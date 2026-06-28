@@ -31,7 +31,7 @@ Priority means:
 
 | Queue | Count | First pass |
 | --- | ---: | --- |
-| Problem Solving And Skill Acquisition | 18 | Create a Whetstone child page and link to Revelation where math learning is specific. |
+| Problem Solving And Skill Acquisition | 19 | Create a Whetstone child page and link to Revelation where math learning is specific. |
 | Attention And Mental-State Regulation | 13 | Deepen Whetstone felt-sense/modes and possibly Chronicle attention hygiene. |
 | Contemplative Practice And Liminal Cognition | 11 | Split Chronicle meditation/nonduality from Whetstone state-control mechanics. |
 | Visualization And Imagination Practice | 4 | Dual-link Whetstone cognitive technique and Conjuration imagination practice. |
@@ -41,6 +41,8 @@ Priority means:
 ## Status
 
 - 2026-06-28: Created initial routing plan for `unassigned/cognitive`.
+- 2026-06-28: Completed the problem-solving and skill-acquisition pass:
+  [Whetstone problem solving and skill acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
 
 ## Problem Solving And Skill Acquisition
 
@@ -158,9 +160,10 @@ These sources have cognitive labels but are better saved for the
 
 ## Next Pass
 
-Next, run a page-creation pass for the problem-solving and skill-acquisition
+Next, run a page-deepening pass for the attention and mental-state regulation
 queue:
-[Whetstone problem solving and skill acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
+[Felt Sense And Modes](../../wiki/projects/whetstone/felt-sense-and-modes.md)
+and [Chronicle morning pages and life OS](../../wiki/projects/chronicle/morning-pages-and-life-os.md).
 
-This pass should keep Whetstone focused on trainable cognitive machinery:
-operators, drills, practice loops, transfer checks, and review artifacts.
+This pass should split state-control mechanics from journaling and life-review
+material instead of turning the queue into a generic productivity page.
