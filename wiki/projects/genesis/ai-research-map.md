@@ -15,6 +15,7 @@ source_bundles:
   - genesis/quant
   - genesis/machine learning
   - unassigned/ai
+  - unassigned/machine learning
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: projects/genesis
 related:
@@ -128,6 +129,23 @@ These belong downstream in the Quant method pages if they become implementation
 work. For Genesis, they are reminders of small experiments that connect neural
 modeling, interpretability, and efficient validation.
 
+The residual machine-learning queue adds a second backlog shelf:
+
+- AGOP/RFM as supervised geometry: use the predictor's input sensitivity to
+  learn a metric, then compare it with active subspaces, supervised metric
+  learning, and Jacobian-aligned trees.
+- Friedman-shaped interpretable deep learning: projection pursuit, MARS-like
+  splines, additive/stagewise structures, OLS block updates, and surrogate
+  analysis as ways to make neural models feel more inspectable.
+- LAR internals as reusable parts: active sets, correlation screening,
+  equiangular directions, path following, warm starts, and validation-aware
+  adaptive ridge variants.
+- Skill learning as reinforcement learning: explore variants, notice successes,
+  and deliberately replicate the conditions that produced them.
+
+These are not separate Genesis pages yet. They are candidate experiments for a
+future "interpretable small ML" pass, and many may ultimately land under Quant.
+
 ## First Research Loop
 
 A reasonable first Genesis AI research loop:
@@ -171,4 +189,9 @@ later experiments in verifiers, test-time compute, tool calling, and search.
 - [Dense Supervision in RL](../../../ops/artifacts/chatgpt/69c562d7-dfd0-839d-9aed-3c7baa9adad0.md)
 - [Cotangents and Backpropagation](../../../ops/artifacts/chatgpt/69f22f99-32a4-839c-a2b7-1b072ee23783.md)
 - [iclr2025](../../../ops/artifacts/obsidian/iclr2025.md)
+- [machine learning conferences](../../../ops/artifacts/obsidian/machine-learning-conferences.md)
+- [AGOP Matrix in Feature Learning](../../../ops/artifacts/chatgpt/697dcbfd-0ae4-839c-a2d4-539ca94e3f1e.md)
+- [Interpretable Deep Learning Models](../../../ops/artifacts/chatgpt/672ba721-c398-8009-9c8c-75e489f722b8.md)
+- [LAR Internal Components Reuse](../../../ops/artifacts/chatgpt/6752b21c-b22c-8009-9aed-f240a0fdc161.md)
+- [irl reinforcement learning](../../../ops/artifacts/obsidian/irl-reinforcement-learning.md)
 - [source inventory](../../../ops/clusters/2026-06-24/source-inventory.qmd)

@@ -11,6 +11,7 @@ categories:
   - environment-design
 source_bundles:
   - unassigned/personal
+  - unassigned/travel
   - chronicle/personal
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: projects/chronicle
@@ -140,4 +141,6 @@ reference systems.
 - [Productivity at Home Tips](../../../ops/artifacts/chatgpt/a971af01-132d-4898-bb37-98008d2b2c8f.md)
 - [Travel Mindset Shift.](../../../ops/artifacts/chatgpt/5617177d-cedc-4a76-bfe5-fc9bb7d9d7e8.md)
 - [features](../../../ops/artifacts/obsidian/travel-retreats.md)
+- [packing](../../../ops/artifacts/obsidian/nz2024.md)
+- [travel packing list](../../../ops/artifacts/obsidian/travel-packing-list.md)
 - [having something to look forward to](../../../ops/artifacts/obsidian/having-something-to-look-forward-to.md)

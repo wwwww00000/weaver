@@ -246,3 +246,14 @@ Largest unassigned mining queues:
     - [x] Constructive drawing practice architecture.
     - [x] Perspective and visualization bridge.
     - [x] Drawing studio stack, resources, and projects.
+- [x] Route and mine residual unassigned queues.
+  - Initial routing plan:
+    [residual-unassigned-mining-plan.md](residual-unassigned-mining-plan.md)
+  - Standalone topic pages:
+    - [x] [Poker](../../wiki/topics/poker.md)
+    - [x] [Reading Notes And Books](../../wiki/topics/reading-and-books.md)
+    - [x] [Music Practice And Tools](../../wiki/topics/music.md)
+  - Existing-destination closure:
+    - [x] Conjuration art and creativity tail.
+    - [x] Genesis machine-learning backlog tail.
+    - [x] Revelation, Accretion, Chronicle travel, and low-signal reference tail.

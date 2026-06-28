@@ -15,5 +15,8 @@ This wiki will hold curated notes after source triage and import decisions.
 
 ## Topics
 
+- [Music Practice And Tools](topics/music.md)
+- [Poker](topics/poker.md)
 - [Quant](topics/quant.md)
 - [Personal](topics/personal.md)
+- [Reading Notes And Books](topics/reading-and-books.md)

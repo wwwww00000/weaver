@@ -48,7 +48,9 @@ Current useful shelves:
   acrylic;
 - art reference collections and online video archives;
 - settei and design-reference sites for production art, props, and character
-  sheets.
+  sheets;
+- manga craft books and panel studies;
+- small concept-art prompts such as head, hand, prop, or creature design.
 
 The rule is to pull one resource into one exercise. A course is useful when it
 provides the next constraint, check, or reference source. Otherwise it remains a
@@ -92,6 +94,13 @@ Medium experiments should have a clear purpose. Ink and ballpoint are good for
 line confidence and casual volume. Pencil is good for block-in and correction.
 Watercolor, acrylic, and color pencil are useful when the target is color
 mixing, brush handling, edge softness, or expressive distortion.
+
+The residual art notes add one specific material preference: soft media that
+allow very light buildup under normal pressure and require deliberate pressure
+for dark marks. Candidates include woodless graphite, soft 2B or 4B leads,
+graphite powder, carbon pencils, Pierre Noire, and neutral colored pencils.
+This belongs in testing only if the medium supports the current drawing loop
+instead of becoming shopping research.
 
 ## Design And Painting Projects
 
@@ -164,3 +173,6 @@ logic
 - [projects](../../../ops/artifacts/obsidian/drawing-painting.md)
 - [inktober](../../../ops/artifacts/obsidian/drawing-inktober.md)
 - [3d sketching](../../../ops/artifacts/obsidian/drawing-3d-sketching.md)
+- [Soft Sketching Mediums](../../../ops/artifacts/chatgpt/683d4190-94b8-8009-9c8b-a4c438bd2738.md)
+- [concept art](../../../ops/artifacts/obsidian/concept-art.md)
+- [manga](../../../ops/artifacts/obsidian/manga.md)
