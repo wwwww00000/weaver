@@ -17,6 +17,7 @@ source_bundles:
   - quant/ridge
   - unassigned/quant
   - unassigned/ai
+  - unassigned/math
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: topics/quant
 related:
@@ -188,6 +189,82 @@ path. If validation failure is caused by the wrong coefficient direction, not
 only too much amplitude, scalar ridge may not be expressive enough. That is
 where feature-group penalties, spectral shrinkage, proxy targets, or learned
 post-training transforms become relevant.
+
+## Spectral Ridge And Fold Ratios
+
+The one-dimensional ridge lesson generalizes cleanly only after rotating into a
+stable basis. If:
+
+```text
+X = U Sigma V^T
+G = X^T X = V D V^T
+```
+
+then ridge shrinks the OLS coefficient in principal-coordinate `i` by:
+
+```text
+s_i(lambda) = d_i / (d_i + lambda)
+```
+
+A single `lambda` ties all `s_i` to one curve. Generalized ridge unties them:
+
+```text
+beta_i = s_i alpha_i
+lambda_i = d_i (1 / s_i - 1)
+```
+
+where `alpha_i` is the unregularized coefficient in the same basis. With
+foldwise validation, a useful diagnostic is the ratio between held-out and
+training slope estimates in each direction:
+
+```text
+r_i,k = alpha_val_i,k / alpha_train_i,k
+```
+
+Those ratios should not be consumed raw. They are noisy exactly in the weak
+directions where shrinkage matters most. Better pooling choices include median
+or trimmed means across folds, inverse-variance weights, grouped or banded
+directions, monotone smoothing over ordered principal components, and empirical
+Bayes or SURE-style shrinkage. The design question is whether the shrinker is
+allowed to express only amplitude correction, per-direction spectral correction,
+or block-level feature-family correction.
+
+For p12n, the practical use is not to hand-fit a penalty for every component.
+It is to make coefficient instability visible:
+
+- a scalar OOF shrinker fixes calibration only;
+- global ridge fixes a one-parameter spectral path;
+- per-direction or banded ridge can suppress directions that repeatedly fail
+  validation;
+- monotone or grouped pooling prevents tail components from overfitting fold
+  noise.
+
+Any fold-ratio shrinker is still a model-selection device. It should be trained
+inside the same blocked or rolling validation protocol as the base model, then
+checked on a later untouched period.
+
+## Covariance Shrinkage As Risk Control
+
+Portfolio covariance estimation is the same regularization problem in risk
+space. Raw sample covariance can make highly correlated instruments look like a
+nearly riskless spread, which encourages an optimizer to pile into fragile
+offsetting positions. A conservative covariance estimator is often more about
+preventing optimizer pathology than discovering alpha.
+
+The default shape should separate volatility and correlation timescales:
+
+- estimate volatilities on a shorter horizon so risk sizing reacts;
+- estimate correlations on a longer or more heavily averaged horizon so
+  pairwise offsets are not trusted too quickly;
+- use exponential decay or fixed lookback windows matched to the expected
+  holding period;
+- shrink correlations toward a diagonal, factor, or otherwise conservative
+  target when sample support is thin.
+
+This belongs with regularization rather than signal modeling because the
+failure mode is overconfident geometry. The optimizer reads the covariance
+matrix as a constraint surface. If that surface is too sharp in spread
+directions, it can manufacture leverage from estimation error.
 
 ## Quadratic Level Sets
 
@@ -424,6 +501,8 @@ miscalibration, unstable coefficient direction, or feature group conflict.
 - Is a low-capacity post-training generalizer useful beyond ordinary ridge?
 - Which gradient-alignment diagnostics predict blocked validation survival?
 - Should optimizer-scaled updates be the default for gradient-similarity plots?
+- What covariance shrinkage default is conservative enough for portfolio
+  construction without hiding useful risk structure?
 
 ## Source Map
 
@@ -442,6 +521,7 @@ miscalibration, unstable coefficient direction, or feature group conflict.
 - [ReLU Network Interpretability Research](../../../ops/artifacts/chatgpt/67d19849-1f64-8009-9f88-7980df924237.md)
 - [Ridge Penalty Optimization](../../../ops/artifacts/chatgpt/6876f4ac-77cc-8009-8b48-a1327e12c379.md)
 - [Robust Regression Research Directions](../../../ops/artifacts/chatgpt/67191c44-b954-8009-8e92-c5799747b9bb.md)
+- [covariance estimation](../../../ops/artifacts/obsidian/covariance-estimation.md)
 - [temporal relationship of response](../../../ops/artifacts/obsidian/generalization.md)
 - [ideas](../../../ops/artifacts/obsidian/regression.md)
 - [p12n ml](../../../ops/artifacts/obsidian/p12n-ml.md)

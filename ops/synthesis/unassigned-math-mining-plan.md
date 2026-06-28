@@ -58,6 +58,11 @@ Priority means:
   with links from [Quant](../../wiki/topics/quant.md),
   [Regression Stability And Validation](../../wiki/topics/quant/regression-stability-and-validation.md),
   and [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md).
+- 2026-06-28: Completed the ridge, convex optimization, and internal risk pass
+  by deepening
+  [Generalization And Regularization](../../wiki/topics/quant/generalization-and-regularization.md),
+  [Regression Stability And Validation](../../wiki/topics/quant/regression-stability-and-validation.md),
+  and [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md).
 
 ## Linear Regression Algebra And Solvers
 
@@ -97,6 +102,10 @@ and [Generalization And Regularization](../../wiki/topics/quant/generalization-a
 | [Optimal Ridge Penalty Computation](../artifacts/chatgpt/6876f4ab-b368-8009-9320-b72c69c8ce00.md) | merge | P1 | Analytic or efficient ridge tuning. |
 | [Ridge Penalty Optimization](../artifacts/chatgpt/6876f4ac-77cc-8009-8b48-a1327e12c379.md) | merge | P1 | Ridge penalty and KKT-style optimization. |
 | [covariance estimation](../artifacts/obsidian/covariance-estimation.md) | merge | P2 | Covariance estimation reference; may link regularization and risk. |
+
+Status: complete. The pass added spectral ridge and fold-ratio shrinkage,
+covariance shrinkage as risk control, KKT/proximal selection primitives, and
+IRLS-style one-shot fitting for sigmoid gates.
 
 ## Bilinear, Low-Rank, And Structured Regression
 
@@ -143,5 +152,5 @@ source-map/reference only unless a later page needs exact details.
 
 ## Next Pass
 
-The linear regression algebra and solvers pass is complete. Next, move to
-ridge, convex optimization, and internal risk.
+The linear regression algebra/solvers and ridge/convex/internal-risk passes are
+complete. Next, move to bilinear, low-rank, and structured regression.

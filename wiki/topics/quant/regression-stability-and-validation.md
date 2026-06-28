@@ -14,6 +14,7 @@ source_bundles:
   - p12n/math
   - p12n/machine learning
   - unassigned/quant
+  - unassigned/math
   - quant/ridge
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: topics/quant
@@ -194,6 +195,36 @@ coefficient shape and cannot be replaced by one scalar.
 
 Use OOF scaling for calibration and stacking. Use ridge or another in-model
 regularizer when the feature geometry itself is unstable.
+
+## Foldwise Shrinkage Ratios
+
+One way to inspect unstable coefficient geometry is to compare the slope learned
+on training folds with the slope implied by held-out folds. In a principal or
+otherwise orthogonalized basis:
+
+```text
+r_i,k = alpha_val_i,k / alpha_train_i,k
+```
+
+where `i` indexes the direction and `k` indexes the fold. If `r_i,k` is
+consistently below one, the direction is too large in training relative to
+validation. If it changes sign or varies wildly, the direction is probably not a
+stable signal.
+
+This is a diagnostic first. Turning ratios into penalties requires pooling and
+nested discipline:
+
+- aggregate ratios by median, trimmed mean, Huber estimate, or
+  inverse-variance weighting;
+- smooth ordered principal components when signal should decay by spectrum;
+- use groups or bands when the basis directions correspond to feature families;
+- choose the pooling rule inside training folds, then emit held-out predictions;
+- reserve a later period for final testing.
+
+The danger is subtle leakage. A ratio computed on the same held-out rows later
+used to score the model has already consumed those labels. Treat per-direction
+shrinkage exactly like feature selection or stacking: it must be cross-fitted
+before downstream validation.
 
 ## Out-Of-Fold Derived Features
 

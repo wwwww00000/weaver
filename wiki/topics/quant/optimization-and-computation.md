@@ -15,6 +15,7 @@ source_bundles:
   - quant/optimization
   - unassigned/quant
   - unassigned/ai
+  - unassigned/math
   - p12n/quant
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: topics/quant
@@ -306,6 +307,64 @@ per-asset blocks, and low-rank residual corrections. If validation gains are
 small, the blockwise diagnostic is often more useful than the fitted parameter
 matrix: it shows which feature families actually survive shrinkage.
 
+## Convex Selection Primitives
+
+Convex optimization is most useful here as a source of reusable design
+primitives: exact subproblem solves, active-set tests, proximal steps,
+screening rules, and variable splits. The key pattern is to express a desired
+inductive bias as a penalty or constraint whose local solve is cheap.
+
+Examples:
+
+- lasso and elastic net for sparse paths and warm-started feature selection;
+- group lasso for lag blocks, feature families, assets, or channels;
+- fused lasso and trend filtering for sparse changes in time-varying
+  coefficients;
+- Huber loss and iteratively reweighted least squares for robust residuals;
+- nuclear norm or low-rank constraints for factor-like cross-sectional
+  structure;
+- proximal or ADMM modules when a smooth least-squares fit and a nonsmooth
+  structural prior should be separated.
+
+KKT conditions are the main interpretability handle. For lasso:
+
+```text
+min_w 0.5 ||y - X w||^2 + lambda ||w||_1
+```
+
+with residual `r = y - X w`, the componentwise condition is:
+
+```text
+w_j != 0: X_j^T r = lambda sign(w_j)
+w_j == 0: |X_j^T r| <= lambda
+```
+
+This turns a vague gate into an exact residual-correlation test. Group lasso
+replaces the scalar threshold with a group norm:
+
+```text
+||X_g^T r||_2 <= lambda
+```
+
+for an inactive group. The same logic explains why LARS and related path
+methods can trace feature entry as the penalty changes.
+
+Smooth neural gates do not give the same global screening guarantee. If:
+
+```text
+y_hat = x (sigma(u) w)
+```
+
+then stationarity describes a local balance between residual correlation, gate
+penalty, and sigmoid saturation. It does not create exact zeros unless a
+nonsmooth penalty or explicit constraint is added. For p12n, the practical
+split is:
+
+- use KKT/proximal machinery when exact on/off selection is desired;
+- use smooth sigmoid gates when differentiable interpolation is desired;
+- treat sigmoid-gate stationarity as a diagnostic, not as a certificate of
+  global selection.
+
 ## Gauss-Newton
 
 For nonlinear least squares:
@@ -412,6 +471,42 @@ Then solve a damped ridge regression in latent space and relinearize. This is
 close in spirit to IRLS: choose a working response and weight from the current
 nonlinear state, solve a weighted least-squares problem, and keep the step
 inside a trust region.
+
+For a squared-loss sigmoid gate with fixed multiplier:
+
+```text
+y_hat_i = b_i + a_i sigma(x_i^T theta)
+```
+
+the pointwise desired gate is:
+
+```text
+q_i = (y_i - b_i) / a_i
+```
+
+after clipping into `(epsilon, 1 - epsilon)`. A one-shot initialization can fit
+the logit target:
+
+```text
+z_i = logit(q_i)
+min_theta sum_i a_i^2 q_i^2 (1 - q_i)^2 (z_i - x_i^T theta)^2
+```
+
+The weight comes from matching prediction-space squared loss under a local
+linearization of the sigmoid. Without that weight, saturated gates can dominate
+the logit regression even though they barely change prediction-space loss.
+
+The iterative Gauss-Newton version rebuilds the pseudo-target at the current
+logits:
+
+```text
+z_i = eta_i + (y_i - b_i - a_i g_i) / (a_i g_i (1 - g_i))
+weight_i = (a_i g_i (1 - g_i))^2
+```
+
+One or two refinements may be enough when the desired gates are representable
+and the multiplier is fixed. Multiple gates, learned multipliers, or saturated
+targets reintroduce identifiability and require alternating or joint solves.
 
 Sequence gates add one more requirement: per-sample gradients still need the
 backward recurrence. For a gated state
@@ -530,10 +625,12 @@ that validation and ablation are affordable.
 - [Bi-level Linear Regression](../../../ops/artifacts/chatgpt/69cfcf41-b4b0-839d-bd3b-1a3c20a6e4d5.md)
 - [Block Orthogonal LS Solvers](../../../ops/artifacts/chatgpt/68366f18-3ba4-8009-b87c-de2db683bc74.md)
 - [Branch - Meta-Optimization for Data Weighting](../../../ops/artifacts/chatgpt/69cab2fa-d744-839a-877e-4de1169a753a.md)
+- [Convex Optimization for ML](../../../ops/artifacts/chatgpt/696c37d0-2dc8-8321-b04a-cd5880291cda.md)
 - [Efficient Linear Regression Methods](../../../ops/artifacts/chatgpt/68462ac7-0d9c-8009-82de-bd0feb0b02a5.md)
 - [Exploring Parameter Space Solutions](../../../ops/artifacts/chatgpt/672c38c2-8398-8009-8978-599861ac0f0c.md)
 - [Gauss-Newton for Nonlinear Layers](../../../ops/artifacts/chatgpt/69e63991-5ef4-83a1-a9bb-cd1a23247290.md)
 - [IRLS Initialization Tricks](../../../ops/artifacts/chatgpt/6a09778e-befc-83ec-9902-b880f91fea81.md)
+- [KKT Branch · Convex Optimization for ML](../../../ops/artifacts/chatgpt/696c3b6e-f18c-8323-9762-31b04e290fd4.md)
 - [Leaky ReLU regression fit](../../../ops/artifacts/chatgpt/68c04aa7-bc9c-8328-a7ab-ce4f8b854cc9.md)
 - [Least Squares for NN](../../../ops/artifacts/chatgpt/68108d59-4888-8009-ba88-e1e9820a5728.md)
 - [Least Squares Regression Estimation](../../../ops/artifacts/chatgpt/6810edb2-1740-8009-a05e-5137df01c05e.md)
