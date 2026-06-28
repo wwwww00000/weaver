@@ -23,6 +23,12 @@ Source inventory: [source-inventory.qmd](../clusters/2026-06-24/source-inventory
 - Revelation now has a project hub plus child pages for the quantum mechanics
   spine, emergence/reverse physics, and active learning.
 - Commit: `86caf7d Synthesize Revelation wiki hub`
+- Accretion now has a project hub plus child pages for balance/portfolio
+  policy, structured products, options selling, and finance tooling.
+- Commit: `a347211 Synthesize Accretion wiki hub`
+- The initial named project hub pass is complete. Remaining synthesis work is
+  mostly queue mining from `unassigned/*` bundles into existing pages or new
+  topic candidates.
 - Keep future passes source-grounded, but do not let raw source references dominate
   the page shape. The output should read like synthesized wiki material.
 
@@ -164,3 +170,18 @@ Largest unassigned mining queues:
 - [ ] Update [wiki/index.md](../../wiki/index.md).
 - [ ] Run `git diff --check`.
 - [ ] Commit after each coherent hub or project pass.
+
+## Unassigned Mining Passes
+
+- [ ] Route and mine `unassigned/quant`.
+  - Initial routing plan:
+    [unassigned-mining-plan.md](unassigned-mining-plan.md)
+  - Preferred first page-deepening candidates:
+    - [Adaptive Filters And EMA](../../wiki/topics/quant/adaptive-filters-and-ema.md)
+    - [Temporal Returns Experiments](../../wiki/projects/p12n/temporal-returns-experiments.md)
+- [ ] Route and mine `unassigned/ai`.
+- [ ] Route and mine `unassigned/cognitive`.
+- [ ] Route and mine `unassigned/personal`.
+- [ ] Route and mine `unassigned/writing`.
+- [ ] Route and mine `unassigned/math`.
+- [ ] Route and mine `unassigned/drawing`.
