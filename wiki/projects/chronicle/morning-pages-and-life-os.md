@@ -114,6 +114,8 @@ can reuse the same loops when they become cognitive training:
 mental pages](../whetstone/cadence-and-mental-pages.md), and [felt-sense
 calibration](../whetstone/felt-sense-and-modes.md). The Whetstone-facing
 state-switching method is [Attention And State Regulation](../whetstone/attention-and-state-regulation.md).
+[Meditation And Nonduality](meditation-and-nonduality.md) covers direct
+awareness practice, concentration, nondual inquiry, and liminal capture.
 
 ## Open Questions
 

@@ -47,6 +47,9 @@ Priority means:
   [Attention And State Regulation](../../wiki/projects/whetstone/attention-and-state-regulation.md),
   with supporting updates to Whetstone, Chronicle, Felt Sense, and Morning
   Pages.
+- 2026-06-28: Completed the contemplative practice and liminal cognition pass:
+  [Meditation And Nonduality](../../wiki/projects/chronicle/meditation-and-nonduality.md),
+  with a bounded Conjuration cross-link for liminal imagery.
 
 ## Problem Solving And Skill Acquisition
 
@@ -164,9 +167,10 @@ These sources have cognitive labels but are better saved for the
 
 ## Next Pass
 
-Next, run a page-creation pass for contemplative practice and liminal cognition.
-Likely destination:
-[Chronicle meditation and nonduality](../../wiki/projects/chronicle/meditation-and-nonduality.md).
+Next, run a page-deepening pass for visualization and imagination practice:
+[Conjuration visualization and imagination training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
+and [Whetstone problem solving and skill acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
 
-This pass should split durable Chronicle practice from Whetstone state-control
-mechanics and Conjuration imagination material.
+This pass should route visualization techniques by purpose: Conjuration owns
+imagination and drawing transfer, while Whetstone owns mental workspace and
+problem-solving transfer.

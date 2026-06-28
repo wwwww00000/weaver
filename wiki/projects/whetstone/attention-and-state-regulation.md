@@ -198,6 +198,9 @@ workspace mechanics when there is no paper.
 the Chronicle-facing practice: pages, retrieval, life review, attention hygiene,
 and preserving the inner voice.
 
+[Meditation And Nonduality](../chronicle/meditation-and-nonduality.md) covers
+direct awareness, concentration practice, nondual inquiry, and liminal capture.
+
 ## Open Questions
 
 - Which state labels should be canonical enough to reuse across pages?
