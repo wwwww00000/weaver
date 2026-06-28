@@ -240,3 +240,9 @@ Largest unassigned mining queues:
     - [x] Bilinear, low-rank, and structured regression.
     - [x] Revelation math-learning resources.
 - [ ] Route and mine `unassigned/drawing`.
+  - Initial routing plan:
+    [unassigned-drawing-mining-plan.md](unassigned-drawing-mining-plan.md)
+  - Preferred first page-deepening candidates:
+    - [ ] Constructive drawing practice architecture.
+    - [ ] Perspective and visualization bridge.
+    - [ ] Drawing studio stack, resources, and projects.
