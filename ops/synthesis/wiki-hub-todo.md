@@ -20,6 +20,9 @@ Source inventory: [source-inventory.qmd](../clusters/2026-06-24/source-inventory
 - Conjuration now has a project hub plus child pages for visualization,
   constructive drawing, and sourcebook worldwork.
 - Commit: `d9c552c Synthesize Conjuration wiki hub`
+- Revelation now has a project hub plus child pages for the quantum mechanics
+  spine, emergence/reverse physics, and active learning.
+- Commit: `86caf7d Synthesize Revelation wiki hub`
 - Keep future passes source-grounded, but do not let raw source references dominate
   the page shape. The output should read like synthesized wiki material.
 
@@ -121,11 +124,20 @@ Largest unassigned mining queues:
   - Remaining work: review whether the large unassigned drawing/art queues
     should become a separate drawing topic hub or stay under Conjuration.
 
-- [ ] Build the `accretion` hub.
+- [x] Build the `accretion` hub.
   - Focus on personal finance, wealth accumulation, structured products,
     options, and personal balance-sheet thinking.
   - Mine `accretion/finance`, `unassigned/finance`, and relevant
     `unassigned/personal`.
+  - Added a project hub:
+    - [Accretion](../../wiki/projects/accretion.md)
+  - Added child pages:
+    - [Balance And Portfolio Policy](../../wiki/projects/accretion/balance-and-portfolio-policy.md)
+    - [Structured Products And Autocallables](../../wiki/projects/accretion/structured-products-and-autocallables.md)
+    - [Option Selling And Volatility Risk](../../wiki/projects/accretion/options-selling-and-volatility-risk.md)
+    - [Finance Tooling And Data](../../wiki/projects/accretion/finance-tooling-and-data.md)
+  - Remaining work: write the actual investment policy statement and decide
+    which finance tooling ideas belong in Accretion versus Genesis.
 
 - [x] Build the `revelation` hub.
   - Focus on math and physics learning, intuition building, and bridges to

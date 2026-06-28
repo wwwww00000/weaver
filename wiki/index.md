@@ -4,6 +4,7 @@ This wiki will hold curated notes after source triage and import decisions.
 
 ## Projects
 
+- [Accretion](projects/accretion.md)
 - [Chronicle](projects/chronicle.md)
 - [Conjuration](projects/conjuration.md)
 - [Genesis](projects/genesis.md)
