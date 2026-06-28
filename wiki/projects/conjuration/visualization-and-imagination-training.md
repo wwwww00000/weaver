@@ -87,6 +87,57 @@ Useful tactics include:
 This makes visualization a bidirectional practice: experience to page, and page
 back to experience.
 
+## Embodied Perspective Drills
+
+The most promising drawing-specific visualization mode is first-person and
+spatial. It is often easier to imagine an object sitting in the current room
+than to conjure a finished 2D drawing of the same object. Conjuration should
+use that strength directly.
+
+Useful drills:
+
+- place an imagined object on the actual table, then draw it from the current
+  viewpoint;
+- walk around a real object, predict an unseen angle, then check the object;
+- imagine the current room from a low, high, or side viewpoint and sketch the
+  major boxes only;
+- look out a window, then imagine the same view shifted left, raised, or
+  widened;
+- use a floor grid, desk edge, window frame, or glasses frame as an anchor for
+  field of view;
+- draw a familiar object as if it were closer to the eyes, farther away, or
+  scaled into a miniature;
+- build a short mental fly-through, then capture one frame.
+
+The goal is to connect body orientation, field of view, true angles, and
+vanishing directions. When a vanishing direction is hard to see, physically turn
+so the line is easier to judge, estimate distance or height in that simpler
+view, then turn back and place it in the drawing.
+
+## Reference And 3D Feedback
+
+Visualization practice needs ground truth. Good references for perspective
+training are not only attractive images; they are sources that make viewpoint
+changes checkable.
+
+Useful sources:
+
+- real rooms, desks, windows, hands, tools, and toys;
+- reference photos with plans, multiple views, or clear geometric structure;
+- architecture and interior-design images when they provide enough spatial
+  cues;
+- Sketchfab, Blender, SketchUp, or simple block models for controlled camera
+  changes;
+- 3D sketching tools when they let lines be drawn or inspected on arbitrary
+  planes;
+- custom staged scenes whose main purpose is perspective practice.
+
+The strongest loop is: predict first, reveal second. Build or choose a scene,
+hide the target view, draw the predicted view, then reveal the camera or
+reference and mark the perspective error. If the tool removes the need to
+visualize, it is being used too early. If it reveals the error after an honest
+attempt, it is doing its job.
+
 ## Rebuilding Imagination
 
 The imagination sources point to short daily exercises rather than heroic art
@@ -172,6 +223,8 @@ awareness-practice side of this material.
   controllable low-fidelity construction?
 - What should be tracked after each session: vividness, stability, perspective
   accuracy, line confidence, or recall?
+- Which feedback source best transfers to drawing from imagination: real
+  objects, photo references, 3D scenes, or physical models?
 
 ## Source Map
 
@@ -182,6 +235,7 @@ awareness-practice side of this material.
 - [Visualization Skill Development](../../../ops/artifacts/chatgpt/b069844b-4fb6-406c-86a3-b551c247e776.md)
 - [Visualization and Perspective Exercises](../../../ops/artifacts/chatgpt/67a0f79f-4ec8-8009-9b6d-e71fcf77298a.md)
 - [Creative Commute Exercises](../../../ops/artifacts/chatgpt/4f97f718-3907-48ae-898a-1b01f112e69c.md)
+- [Find Perspective Drawing References](../../../ops/artifacts/chatgpt/2567beed-ea30-4773-b569-c522a7106c4c.md)
 - [Micro Play Ideas](../../../ops/artifacts/chatgpt/67ed6897-9cb4-8009-bd97-1863c683a674.md)
 - [Reigniting Creative Imagination](../../../ops/artifacts/chatgpt/67aacbed-057c-8009-8b70-4ac05322e564.md)
 - [Rekindling Your Imagination](../../../ops/artifacts/chatgpt/c7c15c72-b349-44bf-b7cf-a657668aa679.md)
@@ -191,3 +245,4 @@ awareness-practice side of this material.
 - [chuu2](../../../ops/artifacts/obsidian/imagination.md)
 - [observation and visualization](../../../ops/artifacts/obsidian/drawing-observation-and-visualization.md)
 - [perspective](../../../ops/artifacts/obsidian/drawing-perspective.md)
+- [3d sketching](../../../ops/artifacts/obsidian/drawing-3d-sketching.md)

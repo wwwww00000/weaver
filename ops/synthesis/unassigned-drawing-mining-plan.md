@@ -56,6 +56,9 @@ Priority means:
 - 2026-06-28: Completed the practice architecture and tracking pass by
   deepening
   [Constructive Drawing Practice](../../wiki/projects/conjuration/constructive-drawing-practice.md).
+- 2026-06-28: Completed the perspective and visualization bridge pass by
+  deepening
+  [Visualization And Imagination Training](../../wiki/projects/conjuration/visualization-and-imagination-training.md).
 
 ## Practice Architecture And Tracking
 
@@ -98,6 +101,10 @@ Secondary destination:
 | [Modes of Mental Visualization](../artifacts/chatgpt/a00ee50c-d8cd-426c-b746-0d71f2a840e1.md) | merge | P2 | Visualization mode taxonomy; already source-mapped. |
 | [3d sketching](../artifacts/obsidian/drawing-3d-sketching.md) | dual-link | P2 | 3D sketching tools as feedback and spatial practice. |
 
+Status: complete. The pass added embodied first-person perspective drills,
+reference and 3D feedback loops, and a clearer predict-first/reveal-second
+protocol for image-to-page translation.
+
 ## Studio Stack, Resources, And Projects
 
 Primary destination:
@@ -129,5 +136,5 @@ details.
 
 ## Next Pass
 
-The practice architecture and tracking pass is complete. Next, move to the
-perspective and visualization bridge.
+The practice architecture/tracking and perspective/visualization bridge passes
+are complete. Next, move to the drawing studio stack, resources, and projects.
