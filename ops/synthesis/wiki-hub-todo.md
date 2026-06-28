@@ -178,6 +178,7 @@ Largest unassigned mining queues:
     [unassigned-mining-plan.md](unassigned-mining-plan.md)
   - Preferred first page-deepening candidates:
     - [x] [Adaptive Filters And EMA](../../wiki/topics/quant/adaptive-filters-and-ema.md)
+    - [x] [Temporal Evidence](../../wiki/topics/quant/temporal-evidence.md)
     - [Temporal Returns Experiments](../../wiki/projects/p12n/temporal-returns-experiments.md)
 - [ ] Route and mine `unassigned/ai`.
 - [ ] Route and mine `unassigned/cognitive`.

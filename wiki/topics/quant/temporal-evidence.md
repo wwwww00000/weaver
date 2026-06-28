@@ -23,7 +23,7 @@ related:
   - projects/p12n/n-linear-returns-models
   - topics/quant/regression-stability-and-validation
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Temporal Evidence
@@ -146,6 +146,27 @@ Useful plots:
 - cumulative positive-lag scores;
 - within-block versus cross-block congruence ratios.
 
+## Spectral View
+
+ACF-like evidence summaries also have a frequency-domain view. At the population
+level, autocovariance and spectral density are Fourier pairs. At the finite
+sample level, the raw periodogram is the squared magnitude of the FFT of the
+series, and equivalently the Fourier transform of the biased sample
+autocovariance sequence.
+
+For temporal evidence this means there are two equivalent diagnostic surfaces:
+
+- lag-domain curves, which show whether evidence repeats at specific delays;
+- frequency-domain curves, which show whether evidence is concentrated in slow
+  drift, periodic structure, or broad noisy bands.
+
+The convention matters. The exact finite-sample identity uses the biased
+autocovariance normalization. If an unbiased ACF is used first, the Bartlett
+triangular factor must be restored before comparing directly with a raw
+periodogram. For wiki purposes, the practical rule is simpler: use lag plots for
+interpretability, and use FFT/periodogram views when many lags or periodic
+effects need to be inspected cheaply.
+
 ## Temporal Hat Smoothers
 
 Temporal filtering of evidence induces a modified hat smoother.
@@ -209,6 +230,42 @@ enough that the drift worth studying is mostly in `X^T y`. That is often the
 right first approximation in low-SNR financial settings, but it should be
 checked by blockwise covariance diagnostics.
 
+## Weighted Covariance Diagnostics
+
+The evidence view separates two questions:
+
+- Is the predictor covariance geometry stable enough to reuse a global
+  preconditioner?
+- Does the predictor-target cross moment `X^T y` persist over time?
+
+Weighted covariance notes are useful because many adaptive methods implicitly
+replace `X^T X` with a local or gated version:
+
+```text
+C_w = X^T W X
+q_w = X^T W y
+```
+
+If weights are based on time, regime, or a gate, the left-hand matrix can drift.
+When covariates are roughly centered and symmetric, some gates preserve the
+population uncentered second moment up to scale. That supports the approximation
+of using one global covariance inverse while allowing `q_w` to vary. The
+approximation is weaker when gates have intercepts, features are skewed, or the
+expert model includes a separate weighted mean/intercept.
+
+The useful diagnostic is therefore not only blockwise return predictability.
+Also compare block or gate covariances:
+
+```text
+C_b = X_b^T X_b
+q_b = X_b^T y_b
+```
+
+If `C_b` changes slowly but `q_b` changes sharply, temporal evidence can focus
+on cross-moment stability. If `C_b` changes materially, blockwise whitening,
+diagonal normalization, or full local weighted OLS may be needed before the
+evidence curves are trusted.
+
 ## Learnable Lag And EMA Kernels
 
 For free lag weights, use:
@@ -237,6 +294,60 @@ y_hat_t = sum_m theta_m psi_{t,m}
 
 This turns "which evidence timescale matters?" into a small regression problem
 over a bank of causal temporal-evidence predictions.
+
+## Horizon Decomposition
+
+Forecasting horizons should be treated as another axis of temporal evidence.
+If a full target is a sum of disjoint future slices:
+
+```text
+Y = sum_k Y_k
+```
+
+then fitting each slice separately and summing the predictions is exactly
+equivalent to fitting the summed target in plain linear least squares or ridge
+when the same features and penalties are used. The decomposition helps only when
+it changes the effective hypothesis class, regularization, representation
+learning, or final recombination.
+
+That makes horizon-specific evidence a diagnostic rather than a free
+generalization improvement. Useful checks:
+
+- score each horizon slice separately and inspect whether signal decays or
+  changes sign;
+- compare equal-sum prediction against validation-weighted recombination of
+  horizon heads;
+- residualize short horizons before claiming that a longer horizon contains
+  independent signal;
+- inspect residual covariance between horizon heads to see whether aggregate
+  targets hide cancellation.
+
+For p12n this is important because a negative full-horizon test `R^2` can coexist
+with a healthy short-horizon signal. In that regime, multi-output targets are
+most useful when they expose which pieces of the horizon deserve weight, not
+when they mechanically split the target.
+
+## Validation Split Families
+
+The same evidence primitives support several validation protocols:
+
+- random or ordinary k-fold splits are mostly a leakage diagnostic for ordered
+  data;
+- leave-one-out and blocked CV can be read as deleting self-influence from the
+  hat matrix, with scalar or block renormalization;
+- rolling-origin and expanding-window splits ask whether past evidence transfers
+  to future data;
+- sliding-window splits ask whether recent evidence is better than older
+  evidence;
+- purged or gap-based splits reduce overlap leakage when targets or features use
+  trailing and forward windows;
+- moving-block or stationary bootstrap variants estimate uncertainty while
+  preserving local serial dependence.
+
+There is no single best split before the deployment question is fixed. The
+temporal-evidence layer should therefore expose lag, block, and horizon
+structure first, then choose the validation protocol that tests the intended
+use case.
 
 ## Efficient Computation
 
@@ -303,8 +414,14 @@ not a replacement for the project-specific experiment log.
 ## Source Map
 
 - [Temporal Cross-Validation Unification](../../../ops/artifacts/chatgpt/69ec7a41-1fb0-839b-ad3c-7c0a3c6800c0.md)
+- [ACF FFT Periodogram Relationship](../../../ops/artifacts/chatgpt/69e20396-a318-839a-b481-08b08af67331.md)
+- [Autocorrelation and Feature Selection](../../../ops/artifacts/chatgpt/68542eff-a634-8009-86fd-ce165272e33f.md)
+- [Forecast Horizon Generalization](../../../ops/artifacts/chatgpt/69dce9bb-bd10-8399-987b-c262e6f85e63.md)
+- [Weighted Sample Covariance](../../../ops/artifacts/chatgpt/69d680de-e1f8-8399-bb11-84e2daaa63ec.md)
 - [p^2 Branch - Temporal Cross-Validation Unification](../../../ops/artifacts/chatgpt/69ef5eea-aed0-839c-88cb-b70b24e63a44.md)
 - [Autocorrelation Based Regression](../../../ops/artifacts/chatgpt/69dc435b-3bd8-839b-9ae5-06021df8d193.md)
 - [Sparse-lag AR Models](../../../ops/artifacts/chatgpt/6a0950af-853c-83ec-9b55-472bb305fd38.md)
 - [Returns Model Design](../../../ops/artifacts/chatgpt/69eaa7ea-ca34-839c-a770-0c47bb62edba.md)
+- [covariance estimation](../../../ops/artifacts/obsidian/covariance-estimation.md)
+- [temporal relationship of response](../../../ops/artifacts/obsidian/generalization.md)
 - [2026-W25 weekly project context](../../../ops/artifacts/obsidian/weekly-2026-W25.md)

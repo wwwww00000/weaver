@@ -49,6 +49,8 @@ Status:
 
 - 2026-06-28: Completed first page-deepening pass for
   [adaptive filters and EMA](../../wiki/topics/quant/adaptive-filters-and-ema.md).
+- 2026-06-28: Completed temporal evidence and covariance pass for
+  [temporal evidence](../../wiki/topics/quant/temporal-evidence.md).
 
 ### Adaptive Filters And EMA
 
@@ -214,9 +216,11 @@ later targeted page.
 
 ## Next Pass
 
-Next, run a page-deepening pass for
-[temporal returns experiments](../../wiki/projects/p12n/temporal-returns-experiments.md).
+Next, run a page-deepening pass for the structured returns and p12n signal
+study queue:
+[temporal returns experiments](../../wiki/projects/p12n/temporal-returns-experiments.md)
+and [structured return models](../../wiki/topics/quant/structured-return-models.md).
 
-The temporal-returns pass is more project-relevant than the adaptive-filter
+The structured-returns pass is more project-relevant than the adaptive-filter
 pass, but it will require more care to avoid mixing signal study, execution
 policy, and reusable return-model structure.
