@@ -18,6 +18,7 @@ source_bundles:
   - genesis/project context
   - unassigned/ai
   - unassigned/cognitive
+  - unassigned/personal
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 created: 2026-06-28
 updated: 2026-06-28
@@ -51,6 +52,9 @@ compute-efficient learning.
 - [Credit Assignment And Training Signals](genesis/credit-assignment-and-training-signals.md):
   cotangent shaping, dense supervision, branch/path credit routing, and small
   deep-learning experiments.
+- [Agency And Building Practice](genesis/agency-and-building-practice.md):
+  10x agency, studio-like portfolio work, weekly sprint rhythm, focal points,
+  product discovery, and systems-literacy hobbies.
 
 ## Current Shape
 
@@ -111,4 +115,5 @@ practice content should live with those projects.
 - [Project Genesis Roadmap](../../ops/artifacts/chatgpt/67eeb281-c574-8009-8563-e8286c940bb0.md)
 - [LLM Wiki Project Planning](../../ops/artifacts/chatgpt/6a379f1a-a974-83ec-901a-a9c6f958030c.md)
 - [Taste and agency in AI](../../ops/artifacts/chatgpt/689b6e60-1688-8322-95a3-6848c2ab85c5.md)
+- [10x Agency Mindset](../../ops/artifacts/chatgpt/679c3939-bc78-8009-9658-ecc5ae02766a.md)
 - [source inventory](../../ops/clusters/2026-06-24/source-inventory.qmd)

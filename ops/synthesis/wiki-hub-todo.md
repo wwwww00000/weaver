@@ -218,7 +218,8 @@ Largest unassigned mining queues:
     [unassigned-personal-mining-plan.md](unassigned-personal-mining-plan.md)
   - Preferred first page-deepening candidates:
     - [x] [Endurance and running training](../../wiki/topics/personal/endurance-and-running-training.md).
-    - [ ] Whetstone/Genesis agency and high-leverage skill pages.
+    - [x] [Agency and building practice](../../wiki/projects/genesis/agency-and-building-practice.md)
+      plus Whetstone high-leverage skill link.
     - [ ] Chronicle life operations and inner voice pages.
     - [ ] Travel, home, and environment life-operations material.
     - [ ] Conjuration/creativity spillovers, mostly deferred to later queues.

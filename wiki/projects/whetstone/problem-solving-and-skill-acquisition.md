@@ -12,6 +12,7 @@ categories:
   - skill-acquisition
 source_bundles:
   - unassigned/cognitive
+  - unassigned/personal
   - whetstone/cognitive
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: projects/whetstone
@@ -134,6 +135,13 @@ This is deliberate practice, reflective practice, self-monitoring, and kaizen
 under one roof. The useful Whetstone move is microanalysis: after a failure,
 name the specific fault rather than judging the entire attempt.
 
+High-leverage skill acquisition should be treated as a portfolio choice, not
+only as a drill design problem. A skill is high leverage when it increases the
+rate at which future projects can be built, tested, explained, or learned. The
+current Genesis-adjacent candidates are AI product prototyping, strategic
+experimentation, data-driven explanation, deliberate practice design, and
+product narrative.
+
 Examples:
 
 - drawing: visualize the line before drawing it;
@@ -230,6 +238,10 @@ creative transfer.
 is the Revelation-specific application of these principles to texts,
 derivations, exercises, prerequisites, and mathematical fatigue.
 
+[Agency And Building Practice](../genesis/agency-and-building-practice.md)
+owns the Genesis-facing version: agency, product discovery, focal points, and
+visible shipped artifacts.
+
 ## Open Questions
 
 - Which problem-solving operators should become the first Whetstone drill set?
@@ -256,6 +268,7 @@ derivations, exercises, prerequisites, and mathematical fatigue.
 - [Mind Gym Workout Plan](../../../ops/artifacts/chatgpt/68122dfb-d4dc-8009-a6a0-ddcff4693eca.md)
 - [Cognitive training analogy](../../../ops/artifacts/chatgpt/68f1e100-d078-8324-8bb1-232d951a71fa.md)
 - [Efficient Skill Acquisition Strategies](../../../ops/artifacts/chatgpt/5563ad7d-f855-4ee5-8e6e-20e97d04bbab.md)
+- [High-leverage Skill Acquisition](../../../ops/artifacts/chatgpt/68123594-eeac-8009-8163-b659b79f4126.md)
 - [Metacognition Enhances Skill Acquisition](../../../ops/artifacts/chatgpt/1b354d00-21dd-4348-9de0-f51d78260a2c.md)
 - [Previsualization for Skill Acquisition](../../../ops/artifacts/chatgpt/bbdfbb2e-feb6-4d99-8785-1c76619161f4.md)
 - [Self-Improvement through Skill Analysis](../../../ops/artifacts/chatgpt/d0dc26f6-cd63-4b4e-aa45-457c8f12185f.md)

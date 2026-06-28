@@ -54,6 +54,10 @@ Priority means:
 - 2026-06-28: Created initial routing plan for `unassigned/personal`.
 - 2026-06-28: Completed the endurance and running training pass:
   [Endurance And Running Training](../../wiki/topics/personal/endurance-and-running-training.md).
+- 2026-06-28: Completed the agency, career, and high-leverage skill pass:
+  [Agency And Building Practice](../../wiki/projects/genesis/agency-and-building-practice.md),
+  with a Whetstone link from
+  [Problem Solving And Skill Acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
 
 ## Endurance And Running Training
 
@@ -157,5 +161,5 @@ Primary destinations:
 
 ## Next Pass
 
-The endurance and running training pass is complete. Next, move to the agency,
-career, and high-leverage skill queue.
+The endurance/running and agency/high-leverage skill passes are complete. Next,
+move to Chronicle life operations and inner voice.
