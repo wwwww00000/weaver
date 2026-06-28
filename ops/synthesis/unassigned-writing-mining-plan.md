@@ -39,15 +39,19 @@ Priority means:
 | Queue | Count | First pass |
 | --- | ---: | --- |
 | Chronicle Writing Practice And Voice | 13 | Create or deepen a Chronicle child page for writing practice, voice, and poetic attention. |
-| Conjuration Fiction Premises And Worldwork | 10 | Deepen Sourcebook Worldwork or create a fiction-premise page if the concepts are large enough. |
+| Conjuration Fiction Premises And Worldwork | 11 | Deepen Sourcebook Worldwork or create a fiction-premise page if the concepts are large enough. |
 | Weaver And AI Writing Tools | 2 | Route to Genesis Weaver/agentic tooling only if new tool interface insights remain. |
-| Defer Or High-Level Only | 3 | Keep sensitive or thin premise notes out of detailed synthesis unless reframed safely. |
+| Defer Or High-Level Only | 2 | Keep sensitive premise notes out of detailed synthesis unless reframed safely. |
 
 ## Status
 
 - 2026-06-28: Created initial routing plan for `unassigned/writing`.
 - 2026-06-28: Completed the Chronicle writing practice and voice pass:
   [Writing Practice And Voice](../../wiki/projects/chronicle/writing-practice-and-voice.md).
+- 2026-06-28: Completed the Conjuration fiction premises and worldwork pass:
+  [Fiction Premises And Motif Catalog](../../wiki/projects/conjuration/fiction-premises-and-motif-catalog.md),
+  with a boundary link from
+  [Sourcebook Worldwork](../../wiki/projects/conjuration/sourcebook-worldwork.md).
 
 ## Chronicle Writing Practice And Voice
 
@@ -99,6 +103,7 @@ when a source is mainly imagery or persona practice.
 | [revolution](../artifacts/obsidian/revolution.md) | merge | P2 | Political/story premise. |
 | [story ideas](../artifacts/obsidian/story-ideas.md) | merge | P1 | Existing worldwork source already referenced; inspect for remaining details. |
 | [worldbuilding](../artifacts/obsidian/writing-books.md) | merge | P1 | Worldbuilding book/source note already referenced by Sourcebook Worldwork. |
+| [unique skill](../artifacts/obsidian/unique-skill.md) | merge | P2 | RPG-like self/persona skill frame; useful for motif catalog. |
 
 ## Weaver And AI Writing Tools
 
@@ -120,9 +125,9 @@ defer unless a future fiction-premise page needs a high-level motif.
 | --- | --- | --- | --- |
 | [infohazard terrorism](../artifacts/obsidian/infohazard-terrorism.md) | defer | P3 | Sensitive premise; do not expand operational detail. |
 | [lethal injection](../artifacts/obsidian/lethal-injection.md) | defer | P3 | Dark/sensitive premise; high-level fiction motif only if needed. |
-| [unique skill](../artifacts/obsidian/unique-skill.md) | defer | P2 | Could overlap Conjuration imagination/persona work; inspect with fiction-premise page. |
 
 ## Next Pass
 
-The Chronicle writing practice and voice pass is complete. Next, move to
-Conjuration fiction premises and worldwork.
+The Chronicle writing practice/voice and Conjuration fiction-premise passes
+are complete. Next, review Weaver and AI writing tools, then decide whether
+the two deferred notes need any high-level archive-only handling.

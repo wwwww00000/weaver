@@ -50,6 +50,9 @@ make visual imagination trainable.
 - [Sourcebook Worldwork](conjuration/sourcebook-worldwork.md): solo sourcebook
   tourism, lore-as-travel-guide practice, oracles, journaling, and party-based
   imaginative writing.
+- [Fiction Premises And Motif Catalog](conjuration/fiction-premises-and-motif-catalog.md):
+  premise cards, speculative rules, local concept catalogs, mythic inversions,
+  and scene tests for story seeds.
 
 ## Current Shape
 
@@ -84,6 +87,10 @@ The worldwork loop starts with constraints: read or choose source material,
 extract places, factions, sensory anchors, mysteries, and characters, then use
 light randomness or journaling to explore a scene without fully authoring the
 outcome in advance.
+
+The premise loop starts with a raw idea: identify the core impossibility,
+social pressure, visual anchor, and first scene, then decide whether it is a
+story seed, voice miniature, drawing prompt, or archive-only fragment.
 
 ## Boundaries
 

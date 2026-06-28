@@ -105,6 +105,16 @@ Sourcebook worldwork should feed visual practice. A scene log can produce:
 This keeps the writing side connected to Conjuration instead of becoming a
 separate fiction project.
 
+## Relationship To Premise Work
+
+[Fiction Premises And Motif Catalog](fiction-premises-and-motif-catalog.md)
+owns raw internal story seeds, speculative rules, concept catalogs, and scene
+tests. Sourcebook worldwork owns the opposite direction: start from an external
+setting or sourcebook and use it as a travel guide into scenes.
+
+The two pages can feed each other. A premise can be tested inside a sourcebook
+style sandbox, and a sourcebook scene can generate a reusable motif card.
+
 ## Open Questions
 
 - Which genre sourcebooks are most useful for this mode: fantasy, sci-fi,
