@@ -44,6 +44,9 @@ Priority means:
 - 2026-06-28: Completed the reasoning models and tool-use pass:
   [Reasoning Models And Tool Use](../../wiki/projects/genesis/reasoning-models-and-tool-use.md),
   with links from the Genesis hub, AI research map, and agentic tooling.
+- 2026-06-28: Completed the agentic tooling and Weaver interfaces pass:
+  [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md) and
+  [Weaver As A Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md).
 
 ## Reasoning Models And Tool Use
 
@@ -146,6 +149,6 @@ page unless the raw note has concrete project direction.
 
 ## Next Pass
 
-The reasoning models and tool-use pass is complete. Next, deepen agentic
-tooling and Weaver interfaces before moving to credit assignment, sequence
-architectures, and nonlinear method spillovers.
+The reasoning models/tool-use and agentic tooling/Weaver passes are complete.
+Next, move to credit assignment, sequence architectures, and nonlinear method
+spillovers.

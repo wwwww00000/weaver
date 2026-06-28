@@ -79,6 +79,71 @@ episodes, episodes can promote durable findings into modules, and modules can
 roll up into hubs. The point is not to preserve every interaction; it is to
 preserve the information that should shape future work.
 
+## Compiled Modules, Not Conversations
+
+The core interaction should eventually feel less like chatting into a transcript
+and more like editing a knowledge base with an agent.
+
+A conversation is useful as an ephemeral work surface, but it is a poor durable
+object. It is sequential, noisy, and optimized for immediate back-and-forth
+rather than future loading. Weaver should instead preserve a hierarchy of
+description levels:
+
+- raw trace: tool outputs, failed attempts, chat fragments, and local
+  exploration;
+- episode summary: what happened in one session or branch;
+- module: reusable concept, procedure, decision, invariant, or open question;
+- index: curated map that tells future humans and agents what to load.
+
+Compaction is therefore not just shortening text. It is promotion. A session can
+leave behind an episode summary plus pointers to raw evidence. Stable pieces can
+be promoted into modules. Modules can be linked from project indexes, process
+docs, or task templates. The raw transcript remains auditable, but the active
+context should be compiled from the higher layers first.
+
+This is the main difference between Weaver and an append-only chat log. The
+question is not "what happened before?" but "which durable modules should shape
+the next task?"
+
+## Module Retrieval And Packing
+
+Module retrieval should be agent-assisted, but not purely agent-decided.
+
+The deterministic compiler should always include mandatory context:
+
+- the current task frame;
+- pinned constraints;
+- project glossary entries;
+- relevant process docs;
+- recent decisions and open questions;
+- any user-specified source artifacts.
+
+The agent can then use retrieval tools to request additional modules by query,
+link neighborhood, project, category, or source bundle. A QMD-style local search
+backend is a plausible substrate because it can search markdown notes and expose
+candidate modules without hiding provenance. Search alone is not the memory
+policy, though. The compiler still decides what fits in the working set and what
+stays as a reloadable pointer.
+
+Useful memory operations:
+
+```text
+search_modules(query, scope, k)
+open_module(id)
+pin_module(id)
+create_module(type, title, body, links)
+update_module(id, patch)
+push_frame(title, goal, inputs)
+compact_frame(id)
+archive_trace(frame_id)
+reload_pointer(id)
+link_modules(a, b)
+```
+
+The model should feel like it is manipulating a small context operating system,
+not rummaging through a folder. But the operating system must remain visible in
+markdown and git.
+
 ## Semantic Notes As Interface
 
 The semantic-notetaking source suggests a useful bridge between freeform
@@ -124,6 +189,12 @@ The current implementation is deliberately narrower:
 That is enough to test the first claim: a compiled wiki with explicit source
 maps should be more useful than raw vault search or rereading old ChatGPT
 threads.
+
+The next implementable slice should still be small: a context compiler over one
+project folder, using typed markdown notes, explicit task frames, QMD-style
+retrieval, and selective write-back of summaries, decisions, modules, and open
+questions. Code execution, subagents, and custom UI can wait until the memory
+semantics are proven.
 
 ## Possible Tool Surface
 
@@ -182,6 +253,10 @@ delegated agents.
   explicit task frames, or an agent tool for module loading?
 - Should semantic tags remain a human notation convention first, or become a
   parser-backed command surface?
+- What are the exact promotion rules from raw trace to episode summary to
+  module to index?
+- Which context items must be loaded deterministically, and which should be
+  agent-selected through retrieval?
 - How should modules advertise when they are relevant to a task?
 - Which information should be pinned deterministically, and which should be
   retrieved through agent judgment?
@@ -197,4 +272,5 @@ delegated agents.
 - [genesis overview](../../../ops/artifacts/obsidian/genesis.md)
 - [Context Management in LLMs](../../../ops/artifacts/chatgpt/69acf566-8c94-839f-9dc5-9e4931ab63ba.md)
 - [LLM Note-taking Tools](../../../ops/artifacts/chatgpt/67e29c1d-88f4-8009-b717-e92513a6543e.md)
+- [LLM Coding Workflows](../../../ops/artifacts/chatgpt/6a31f45a-f0e0-83ec-8a47-08c0e09e206c.md)
 - [source inventory](../../../ops/clusters/2026-06-24/source-inventory.qmd)

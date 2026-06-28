@@ -94,6 +94,45 @@ REPL tool can be enough when the notebook UI itself is incidental. For P12n-like
 research, durable code should still move back into modules, tests, and CLI smoke
 commands after the exploratory loop stabilizes.
 
+## Data Science Workbenches
+
+The practical workflow should keep modules, CLIs, and tests as the durable
+spine while adding a thin interactive workbench for exploration.
+
+The useful pattern:
+
+- permanent code lives in modules;
+- Typer or similar CLIs expose repeatable operations;
+- tests and tiny smoke commands make agent verification cheap;
+- scratch analysis happens in text-first notebooks, scripts, marimo, or a
+  persistent kernel;
+- successful scratch work is promoted back into modules and tests.
+
+This preserves the agent's strengths: editing files, running commands, reading
+diffs, and iterating from failures. A persistent kernel is still valuable when
+data loading is expensive or plots matter, but it should be treated as scratch
+state rather than as the source of truth.
+
+For plot-heavy exploratory analysis, the key requirement is not a notebook
+file. It is a tool surface that can execute against live state, return rich
+outputs, and let the model inspect plots or tables before deciding the next
+analysis step. A Jupyter-backed MCP server is one way to expose that. A smaller
+stateful Python execution tool may be enough when notebook editing is
+incidental.
+
+Useful command surfaces for agentic ML work:
+
+```text
+myproj dev load-sample --limit 1000
+myproj dev fit-one-batch --config configs/tiny.yaml
+myproj dev inspect-feature returns_ema --sample tiny
+myproj kernel exec --name dev "df.head()"
+```
+
+The point is to give the agent fast, bounded feedback loops. Full data rebuilds,
+production backtests, and credentialed actions should stay outside the default
+tool surface unless explicitly approved.
+
 ## Editor Substrates
 
 VS Code is a practical substrate because it already provides commands,
@@ -123,6 +162,12 @@ The durable harness properties are:
 - task frames that can be delegated to subagents;
 - repeatable verification commands.
 
+The harness should distinguish a custom tool from an MCP server. A tool is the
+operation the agent invokes. MCP is a packaging and connection protocol that can
+make those operations discoverable across clients. For a private Genesis
+prototype, a direct tool can be simpler; MCP becomes valuable when the same
+kernel, vault, or command surface should be reused by multiple agent clients.
+
 The agent should be able to modify tools and workflows, but through ordinary
 repo changes and tests. Recursive improvement is useful only when it remains
 auditable.
@@ -147,4 +192,5 @@ auditable.
 - [Emacs of Agentic Harnesses](../../../ops/artifacts/chatgpt/69b809c3-7408-839c-a568-49bbf0275cea.md)
 - [Agentic Workflows in ML](../../../ops/artifacts/chatgpt/69b6e7ae-cac0-8398-b6bf-506df883700b.md)
 - [LLM Coding Workflows](../../../ops/artifacts/chatgpt/6a31f45a-f0e0-83ec-8a47-08c0e09e206c.md)
+- [Context Management in LLMs](../../../ops/artifacts/chatgpt/69acf566-8c94-839f-9dc5-9e4931ab63ba.md)
 - [All-In-One Text Editor](../../../ops/artifacts/chatgpt/39df03c2-2958-44ff-bac3-e23440a5ae5e.md)
