@@ -70,6 +70,13 @@ glossary files, normalizes obvious category typos, and writes
 includes candidate synthesis bundles keyed by `project/category` and simple
 lexical topic hints for unassigned artifacts.
 
+## Project Status
+
+Current project state lives in [ops/status/dashboard.md](ops/status/dashboard.md)
+with one editable status card per project under `ops/status/projects/`. The
+schema is documented in
+[ops/status/project-card-schema.md](ops/status/project-card-schema.md).
+
 ## Development
 
 ```bash
