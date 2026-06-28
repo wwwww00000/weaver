@@ -13,6 +13,7 @@ source_bundles:
   - p12n/quant
   - p12n/current priorities
   - p12n/project context
+  - unassigned/quant
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: projects/p12n
 related:
@@ -22,7 +23,7 @@ related:
   - topics/quant/structured-return-models
   - topics/quant/regression-stability-and-validation
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Temporal Returns Experiments
@@ -92,6 +93,7 @@ Targets:
 - one-step or short-horizon returns;
 - multi-horizon dense returns;
 - horizon sums or utility-aligned return mixtures;
+- market-residualized or cross-sectionally demeaned returns;
 - order returns and fill-aware execution targets.
 
 Validation:
@@ -118,6 +120,30 @@ Validation:
 This workflow keeps the exploratory step cheap and explicit. It also prevents
 the n-linear architecture from becoming a dumping ground for every weakly
 positive lagged feature.
+
+## Target Setup
+
+The first experiment fork is target definition, not model architecture.
+
+Candidate targets:
+
+- raw forward returns, if directional exposure is allowed and common movement is
+  part of the desired signal;
+- cross-sectionally demeaned returns, if the target book is relative value or
+  market-neutral within the traded universe;
+- market or sector residualized returns, if common factors are nuisance
+  variation;
+- dense horizon returns, if the goal is to learn where predictability lives
+  across the future path;
+- summed or utility-weighted horizons, if the deployment rule only consumes a
+  scalar forecast;
+- fill-aware passive-order returns, if the trading action is an order tuple
+  rather than a symbol-level directional position.
+
+These should be compared as different supervised problems. A raw-return model
+can look useful because it predicts a common move that the final portfolio will
+hedge away. A residualized model can look weaker by ordinary `R^2` while being
+better aligned with the trade.
 
 ## Temporal Evidence
 
@@ -149,6 +175,51 @@ Once a temporal basis appears stable, the reusable modeling layer is
 [Structured Return Models](../../topics/quant/structured-return-models.md).
 Validation protocol choices live in [Regression Stability And
 Validation](../../topics/quant/regression-stability-and-validation.md).
+
+## Forecast Realization
+
+Lagged-return experiments should distinguish a rolling horizon from a fixed
+endpoint. At time `t`, the dense targets might be:
+
+```text
+[r_{t+1}, r_{t+2}, ..., r_{t+H}]
+```
+
+After one bar realizes, the remaining forecast to the original endpoint is not
+the same object as a new `H`-step rolling forecast. This matters when inspecting
+multi-horizon coefficients or deciding whether the model should behave like a
+convolutional lag filter or a recurrent state update.
+
+A useful experiment is to track innovation updates:
+
+```text
+surprise_{t+1} = r_{t+1} - r_hat_{t+1|t}
+r_hat_{t+2|t+1} = r_hat_{t+2|t} + gain * surprise_{t+1}
+```
+
+If a forecasted first step occurs as expected, the remaining cumulative forecast
+to the same endpoint shrinks because one term is now realized, while the fixed
+endpoint forecast should change only through surprise. This is a practical way
+to separate "prediction was realized" from "the state has new information."
+
+## Basis And Horizon Tests
+
+For the current lag study, the high-value tests are:
+
+- direct summed-horizon regression versus dense multi-horizon regression summed
+  after prediction;
+- horizon-head recombination selected only on validation data;
+- projection of multi-horizon predictions onto the horizon-sum direction;
+- separate short-lag, medium-lag, and round-minute basis families, then
+  residualized incremental tests;
+- Toeplitz-projected or tapered covariance estimates as a low-variance
+  stationary baseline;
+- frequency or DCT views of lag filters to detect high-frequency mean reversion
+  versus slower persistence.
+
+The goal is not to prove that the world is stationary. It is to get a cheap
+baseline for what stationary second-order structure would imply, then inspect
+where live crypto data departs from it.
 
 ## Round-Minute Effects
 
@@ -184,6 +255,38 @@ The stronger versions can come later:
 The design rule is the same as for other temporal features: first show that a
 fixed decay family has stable incremental value, then spend complexity on making
 the decay adaptive.
+
+## Execution-Aware Targets
+
+P12n ultimately trades actions, not abstract return labels. For passive
+execution, the prediction tuple can expand from:
+
+```text
+(time, symbol)
+```
+
+to:
+
+```text
+(time, symbol, side, edge)
+```
+
+The useful decomposition is:
+
+- probability of fill within the decision interval;
+- conditional return given fill;
+- expected action value after fees, spread, and adverse selection;
+- liquidity or edge normalization that makes symbols comparable.
+
+This should not replace the return signal study, but it should constrain which
+return targets survive. A forecast that predicts mid returns but has no edge
+after passive fill probability and conditional fill return is not an execution
+signal.
+
+One reasonable first pass is to treat normalized edge, side, symbol, volatility,
+spread, and liquidity as features in a shared model, then compare it with
+edge-bucketed models only if the shared model misses obvious monotone or
+threshold structure.
 
 ## Relationship To N-Linear Models
 
@@ -223,3 +326,11 @@ structure, residualization, and validation are handled correctly.
 - [Returns Model Design](../../../ops/artifacts/chatgpt/69eaa7ea-ca34-839c-a770-0c47bb62edba.md)
 - [Sparse-lag AR Models](../../../ops/artifacts/chatgpt/6a0950af-853c-83ec-9b55-472bb305fd38.md)
 - [Temporal Model Design](../../../ops/artifacts/chatgpt/6a08121e-703c-83ec-b7e5-3eac501ba732.md)
+- [Branch - Lagged Returns Prediction](../../../ops/artifacts/chatgpt/69e73c9f-6c8c-839e-bcc2-5e6695180ba8.md)
+- [Lagged Returns Prediction](../../../ops/artifacts/chatgpt/69e23cd4-d9bc-839c-b2e9-63e62b275d18.md)
+- [Impulse Forecasting Explanation](../../../ops/artifacts/chatgpt/69cccd65-5520-839f-aecd-e5420a505bc7.md)
+- [Pooling Branch - Impulse Forecasting Explanation](../../../ops/artifacts/chatgpt/69cfd775-8a8c-839d-8746-8e40e2b149a3.md)
+- [Market Making PnL Estimate](../../../ops/artifacts/chatgpt/686d210c-45d8-8009-b076-ed3216006e96.md)
+- [Predicting Asset Returns](../../../ops/artifacts/chatgpt/69983c39-aac0-839a-a0a9-c23e8d7d6aab.md)
+- [Predicting Returns and Fills](../../../ops/artifacts/chatgpt/6710eaf9-ec70-8009-b573-28274dc3d163.md)
+- [Returns Forecasting with Regression](../../../ops/artifacts/chatgpt/69983e0f-e664-839b-88fb-408fd5249246.md)

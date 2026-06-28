@@ -13,6 +13,7 @@ categories:
 source_bundles:
   - p12n/quant
   - p12n/uncategorized
+  - unassigned/quant
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: topics/quant
 related:
@@ -21,7 +22,7 @@ related:
   - topics/quant/temporal-evidence
   - topics/quant/optimization-and-computation
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Structured Return Models
@@ -40,6 +41,34 @@ y_hat[t, i] = sum_j sum_l W[i, j, l] x[t - l, j]
 That formulation is too flexible for low-SNR return data. It can fit local
 noise, absorb redundant predictors, and make validation behavior hard to
 interpret. The useful pattern is to constrain `W` before estimation.
+
+## Stationary Baseline
+
+For a single stationary return series, the population linear regression from a
+past lag window to future returns is already structured. With:
+
+```text
+x_t = [r_t, r_{t-1}, ..., r_{t-p+1}]
+y_t = [r_{t+1}, ..., r_{t+H}]
+```
+
+the predictor covariance is Toeplitz and the predictor-target covariance is a
+shifted autocovariance surface:
+
+```text
+Sigma_xx[i, j] = gamma(|i - j|)
+Sigma_xy[i, h] = gamma(h + i)
+B = Sigma_xx^{-1} Sigma_xy
+```
+
+This is the Wiener-Hopf or Yule-Walker view of the return model. It says that
+some banded or diagonal-looking structure in multi-horizon coefficient matrices
+is not accidental. It is the regression form of shift-invariant autocovariance.
+
+The caveat is that the clean Toeplitz object is the covariance surface, not
+necessarily the fitted coefficient matrix. The inverse covariance partials out
+competing lags, so a shared lag relation can appear in different coefficients
+after being screened by a different information basis.
 
 ## Base Atom
 
@@ -112,6 +141,74 @@ alone, jointly, and after residualization against the other basis predictions.
 This matters because different lag filters may be distinct in parameter space
 but highly correlated in prediction space.
 
+## Realization And State
+
+There are two different temporal objects that should not be conflated:
+
+- the target kernel, which defines what future returns are being aggregated;
+- the predictor realization, which defines how past signal remains available to
+  future predictions.
+
+For example, a forward discounted target can satisfy:
+
+```text
+z_t = y_t + lambda z_{t+1}
+```
+
+but that identity does not make a model remember a past input impulse. Memory
+comes from the predictor state:
+
+```text
+s_t = rho s_{t-1} + x_t
+y_hat_t = c s_t
+```
+
+If a recent signal should keep affecting forecasts after the original event, the
+model needs lagged inputs, EMA states, or another recurrent realization. The
+target smoothing alone does not provide that state.
+
+This matters for multi-horizon returns. The forecast for a fixed endpoint and
+the forecast for a rolling horizon are different objects. When a one-step return
+realizes as expected, the remaining cumulative forecast to the same endpoint
+shrinks because one future term is now known. The endpoint forecast itself is
+updated only by the innovation in the new observation.
+
+## Amortized Local Regression
+
+A useful bridge between structured return models and sequence-model analogies is
+to treat a fixed temporal mask as a memory operator. Let:
+
+```text
+c_t = sum_s L[t, s] y_s x_s
+y_hat_t = x_t^T M c_t
+```
+
+With a causal all-ones mask, `c_t` is a prefix target-feature memory. With a
+sliding window, it is a trailing `X^T y` state. With exponential weights, it is
+an EMA memory. Once `c_t` is built, fitting the fused query-key matrix `M` is
+ordinary least squares on lifted features:
+
+```text
+phi_t = c_t kron x_t
+```
+
+This is an amortized version of sliding-window regression. Local OLS would use:
+
+```text
+beta_t = G_t^{-1} c_t
+```
+
+where `G_t` is the local feature Gram. The amortized model learns one global
+operator:
+
+```text
+beta_t = M c_t
+```
+
+It is attractive when local covariance geometry is stable enough that a shared
+preconditioner works, while the local target-feature cross moment carries the
+interesting drift.
+
 ## Additional Axes
 
 The same structure can extend beyond target asset, predictor asset, and lag.
@@ -133,6 +230,21 @@ W[i, j, l, m] = sum_r u_r[i] v_r[j] a_r[l] c_r[m]
 where `m` indexes an extra mode such as regime, horizon, or feature family. In
 practice, diagonal self effects should usually stay outside the low-rank tensor
 so they do not need to be rediscovered through shared factors.
+
+This page uses "low rank" in the practical tensor-regression sense. Candidate
+coefficient structures include:
+
+- CP factors, where each atom is a product of one vector per mode;
+- Tucker factors, where each mode has its own rank and a small interaction core;
+- tensor-train factors when there are many small modes;
+- sparse plus low-rank decompositions when a few edges coexist with broad
+  shared factors.
+
+For return models, the natural modes are target asset, predictor asset, lag,
+horizon, feature family, and regime. The reason to use these structures is not
+only computational. They make it possible to ask whether a pattern is a
+diagonal self effect, a cross-asset factor, a horizon profile, or a regime gate
+instead of treating all coefficients as unrelated.
 
 An asset-embedding variant is:
 
@@ -215,6 +327,28 @@ Useful checks:
 The first atom may dominate in low-SNR data. That is not a failure by itself.
 Later atoms should be kept only when they add stable validation signal.
 
+## Target Alignment
+
+If the scored objective is the sum of future returns, the direct population
+linear target is:
+
+```text
+s_t = 1^T y_t
+b_sum = Sigma_xx^{-1} Sigma_xy 1
+```
+
+The full multi-target coefficient matrix is still useful for diagnostics,
+regularization, and horizon-shape discovery, but modes orthogonal to the horizon
+sum direction do not directly help the summed-return score. A practical
+compromise is to fit multi-target or low-rank horizon structure, then always
+evaluate the projection that will actually be traded.
+
+For multi-asset settings, target alignment also includes common-factor handling.
+Raw returns, cross-sectionally demeaned returns, market-residualized returns,
+and fill-aware execution returns are different supervised problems. The model
+structure should follow the target that matches the intended book: directional,
+relative value, hedged alpha, or passive-execution payoff.
+
 ## Relationship To P12n
 
 [N-Linear Returns Models](../../projects/p12n/n-linear-returns-models.md) is
@@ -247,3 +381,10 @@ geometry before committing to a particular structured return model.
 - [Solving for Beta](../../../ops/artifacts/chatgpt/6a1718c0-976c-83ec-83df-0e71575a25a0.md)
 - [Sparse-lag AR Models](../../../ops/artifacts/chatgpt/6a0950af-853c-83ec-9b55-472bb305fd38.md)
 - [Temporal Model Design](../../../ops/artifacts/chatgpt/6a08121e-703c-83ec-b7e5-3eac501ba732.md)
+- [Autocorrelation Based Regression](../../../ops/artifacts/chatgpt/69dc435b-3bd8-839b-9ae5-06021df8d193.md)
+- [Bilinear Autoregressive LSQ](../../../ops/artifacts/chatgpt/6a200ef7-f71c-83ec-8c98-cceb472c5baa.md)
+- [Comparing Financial Return Models](../../../ops/artifacts/chatgpt/67d307e8-d668-8009-8008-4a8eb7d5ba55.md)
+- [Hierarchical AR Models](../../../ops/artifacts/chatgpt/69dc4552-db34-839e-8d02-50ff207486f8.md)
+- [Impulse Forecasting Explanation](../../../ops/artifacts/chatgpt/69cccd65-5520-839f-aecd-e5420a505bc7.md)
+- [Low-Rank Tensor Regression](../../../ops/artifacts/chatgpt/68639f33-2858-8009-8a85-351d48135a5a.md)
+- [Returns Forecasting with Regression](../../../ops/artifacts/chatgpt/69983e0f-e664-839b-88fb-408fd5249246.md)
