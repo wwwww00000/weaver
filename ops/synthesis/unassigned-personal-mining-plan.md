@@ -52,6 +52,8 @@ Priority means:
 ## Status
 
 - 2026-06-28: Created initial routing plan for `unassigned/personal`.
+- 2026-06-28: Completed the endurance and running training pass:
+  [Endurance And Running Training](../../wiki/topics/personal/endurance-and-running-training.md).
 
 ## Endurance And Running Training
 
@@ -155,5 +157,5 @@ Primary destinations:
 
 ## Next Pass
 
-Start with Endurance And Running Training because it is coherent, source-backed,
-and lacks an existing destination page.
+The endurance and running training pass is complete. Next, move to the agency,
+career, and high-leverage skill queue.

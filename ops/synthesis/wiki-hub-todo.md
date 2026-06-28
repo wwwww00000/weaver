@@ -217,7 +217,7 @@ Largest unassigned mining queues:
   - Initial routing plan:
     [unassigned-personal-mining-plan.md](unassigned-personal-mining-plan.md)
   - Preferred first page-deepening candidates:
-    - [ ] Endurance and running training page.
+    - [x] [Endurance and running training](../../wiki/topics/personal/endurance-and-running-training.md).
     - [ ] Whetstone/Genesis agency and high-leverage skill pages.
     - [ ] Chronicle life operations and inner voice pages.
     - [ ] Travel, home, and environment life-operations material.
