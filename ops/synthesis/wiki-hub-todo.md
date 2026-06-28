@@ -232,4 +232,11 @@ Largest unassigned mining queues:
     - [x] Weaver/AI writing tools, only if new material remains after the
       `unassigned/ai` pass.
 - [ ] Route and mine `unassigned/math`.
+  - Initial routing plan:
+    [unassigned-math-mining-plan.md](unassigned-math-mining-plan.md)
+  - Preferred first page-deepening candidates:
+    - [ ] Quant linear regression algebra and solvers.
+    - [ ] Ridge, convex optimization, and internal risk.
+    - [ ] Bilinear, low-rank, and structured regression.
+    - [ ] Revelation math-learning resources.
 - [ ] Route and mine `unassigned/drawing`.
