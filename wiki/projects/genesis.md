@@ -17,6 +17,7 @@ source_bundles:
   - genesis/current priorities
   - genesis/project context
   - unassigned/ai
+  - unassigned/cognitive
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 created: 2026-06-28
 updated: 2026-06-28
@@ -57,6 +58,12 @@ the system used to make Genesis readable. That is useful as long as it stays
 honest: deterministic tooling handles source triage and provenance, while agent
 synthesis remains visible through markdown pages, task templates, and git diffs.
 
+Taste and agency are part of the Genesis frame. AI can cheapen generic
+execution, but it does not decide what is worth building or force anything to
+ship. Genesis should therefore cultivate comparative judgment, small release
+loops, decision logs, and constraints that turn ambient ideas into visible
+artifacts.
+
 The research side should be treated as a portfolio of small, testable
 experiments rather than a generic attempt to "do AI research." The most
 promising themes are verifier-grounded tasks, typed tool use, neuro-symbolic
@@ -96,4 +103,5 @@ practice content should live with those projects.
 - [2026-W25 weekly project context](../../ops/artifacts/obsidian/weekly-2026-W25.md)
 - [Project Genesis Roadmap](../../ops/artifacts/chatgpt/67eeb281-c574-8009-8563-e8286c940bb0.md)
 - [LLM Wiki Project Planning](../../ops/artifacts/chatgpt/6a379f1a-a974-83ec-901a-a9c6f958030c.md)
+- [Taste and agency in AI](../../ops/artifacts/chatgpt/689b6e60-1688-8322-95a3-6848c2ab85c5.md)
 - [source inventory](../../ops/clusters/2026-06-24/source-inventory.qmd)

@@ -187,7 +187,7 @@ Largest unassigned mining queues:
     - [x] [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md)
       and [P12n Feature Transforms And BST](../../wiki/projects/p12n/feature-transforms-and-bst.md)
 - [ ] Route and mine `unassigned/ai`.
-- [ ] Route and mine `unassigned/cognitive`.
+- [x] Route and mine `unassigned/cognitive`.
   - Initial routing plan:
     [unassigned-cognitive-mining-plan.md](unassigned-cognitive-mining-plan.md)
   - Preferred first page-deepening candidates:
@@ -198,7 +198,7 @@ Largest unassigned mining queues:
     - [x] [Chronicle Meditation And Nonduality](../../wiki/projects/chronicle/meditation-and-nonduality.md)
     - [x] [Conjuration Visualization And Imagination Training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
       and Whetstone visualization notes.
-    - [ ] [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+    - [x] [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
       and Whetstone semantic-notetaking notes.
 - [ ] Route and mine `unassigned/personal`.
 - [ ] Route and mine `unassigned/writing`.

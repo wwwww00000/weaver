@@ -59,6 +59,40 @@ Good tags are small, nonjudgmental, and paired with a control move.
 The tag is a handle, not an essay. During deep work, tagging should happen at
 transitions, checkpoints, and stuck points rather than on every thought.
 
+## Semantic Notation Kit
+
+Think tags can extend from mental-state labels into note notation. The useful
+rule is still the same: a tag should route attention or future action.
+
+A small handwritten or markdown tag set:
+
+- `<idea>`: candidate seed;
+- `<question>`: thing to resolve;
+- `<next>`: smallest action;
+- `<experiment>`: thing to try and observe;
+- `<tension>`: sticky emotional or conceptual knot;
+- `<seed>`: capture only;
+- `<develop>`: spend attention here now.
+
+Add only a few inline operators:
+
+- `C0` to `C3`: confidence level;
+- `E1` to `E3`: energy required;
+- `distill:` one-line compression;
+- `fork:` list options, then choose one;
+- `invert:` state the opposite;
+- `test:` name the evidence that would change the view.
+
+The workflow should stay light:
+
+1. Write freely.
+2. Tag only fragments that pop.
+3. Afterward, skim tags instead of rereading the whole page.
+4. Promote one to three items into a next action, project note, wiki page, or
+   experiment.
+
+This makes notation a cognitive prosthetic rather than a taxonomy project.
+
 ## Problem-Solving Operators
 
 Think tags become more useful when they point to specific operators:
@@ -96,6 +130,10 @@ surfing, and state routing. Whetstone uses them as cognitive-control handles.
 The same tag can serve both projects when it preserves awareness and improves
 the next move.
 
+[Weaver As A Knowledge System](../genesis/weaver-as-knowledge-system.md) owns
+the downstream compilation layer: extracting tagged fragments into durable
+notes, project pages, and agent-loadable context.
+
 ## Open Questions
 
 - Which tag set is small enough to remember under stress?
@@ -112,4 +150,5 @@ the next move.
 - [Improving Metacognitive Abilities](../../../ops/artifacts/chatgpt/695fcd4d-4fd0-8321-9bf3-a5e8009f213a.md)
 - [MetaCognitive Strategies Research](../../../ops/artifacts/chatgpt/67deb138-63c8-8009-b862-da9c39511fab.md)
 - [Increasing agency and awareness](../../../ops/artifacts/chatgpt/690bf7e2-ced0-8322-85b1-715da4c9e0dd.md)
+- [Semantic Notetaking Systems](../../../ops/artifacts/chatgpt/6985b8d3-8a14-839c-aa84-7f617c78ad3e.md)
 - [whetstone overview](../../../ops/artifacts/obsidian/whetstone.md)

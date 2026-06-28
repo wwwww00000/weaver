@@ -53,6 +53,9 @@ Priority means:
 - 2026-06-28: Completed the visualization and imagination practice pass:
   [Conjuration visualization and imagination training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
   and [Whetstone problem solving and skill acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
+- 2026-06-28: Completed the knowledge systems and agency spillover pass:
+  [Genesis Weaver as knowledge system](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+  and [Whetstone think tags and metacognition](../../wiki/projects/whetstone/think-tags-and-metacognition.md).
 
 ## Problem Solving And Skill Acquisition
 
@@ -170,9 +173,6 @@ These sources have cognitive labels but are better saved for the
 
 ## Next Pass
 
-Next, run the knowledge systems and agency spillover pass:
-[Genesis Weaver as knowledge system](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
-and [Whetstone think tags and metacognition](../../wiki/projects/whetstone/think-tags-and-metacognition.md).
-
-This pass should route semantic-notetaking material mainly to Genesis/Weaver,
-with only the cognitive-control pieces landing in Whetstone.
+No further `unassigned/cognitive` synthesis pass is queued. The personal life
+operations spillovers are deferred to `unassigned/personal`, where they can be
+handled with the rest of the personal operations material.

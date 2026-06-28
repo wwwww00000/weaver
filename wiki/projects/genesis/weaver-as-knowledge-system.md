@@ -19,6 +19,7 @@ parent: projects/genesis
 related:
   - projects/genesis
   - projects/genesis/agentic-tooling
+  - projects/whetstone/think-tags-and-metacognition
 created: 2026-06-28
 updated: 2026-06-28
 ---
@@ -78,6 +79,38 @@ episodes, episodes can promote durable findings into modules, and modules can
 roll up into hubs. The point is not to preserve every interaction; it is to
 preserve the information that should shape future work.
 
+## Semantic Notes As Interface
+
+The semantic-notetaking source suggests a useful bridge between freeform
+Chronicle-style pages and Weaver-style compilation: inline tags that mark
+sentences or paragraphs without forcing the whole note into a rigid template.
+
+Examples:
+
+- `<idea>`: candidate seed;
+- `<question>`: unresolved inquiry;
+- `<next>`: smallest actionable step;
+- `<experiment>`: thing to try and observe;
+- `<tension>`: affective or conceptual knot;
+- `<seed>`: capture only;
+- `<develop>`: expand this now or during review.
+
+These tags are not only labels. They are extraction handles. A morning page,
+work note, or handwritten page can remain mostly stream of consciousness while
+tagged fragments become easier to skim, lift into atomic notes, convert into
+projects, or hand to an agent as structured context.
+
+The strongest version is a semantic macro: a tag implies a next operation.
+
+- `<distill>` produces a short summary.
+- `<fork>` produces options and chooses one.
+- `<prove>` asks for evidence, counterexample, or test.
+- `<resolve>` produces a decision rule or next action.
+
+This turns notation into a light interface for cognition and later tooling.
+Weaver should preserve the markdown-first form, but the tags can eventually
+become parser-friendly affordances for search, extraction, and agent commands.
+
 ## Current V0
 
 The current implementation is deliberately narrower:
@@ -91,6 +124,41 @@ The current implementation is deliberately narrower:
 That is enough to test the first claim: a compiled wiki with explicit source
 maps should be more useful than raw vault search or rereading old ChatGPT
 threads.
+
+## Possible Tool Surface
+
+The Weaver source note points beyond static compilation toward a headless or
+TUI-friendly knowledge work surface:
+
+- open and edit notes from a command-driven interface;
+- route ChatGPT or agent outputs directly into note buffers;
+- expose semantic tags, sentence ranges, and sections as addressable objects;
+- use QMD-style search or summaries for retrieval without hiding provenance;
+- connect notebook or Jupyter-like kernels when plots and experiments matter;
+- promote repeated flows into typed commands rather than one-off chats.
+
+This belongs under Genesis because it is a buildable interface project. It also
+belongs under Weaver because the interface should be shaped by the markdown
+knowledge model, not bolted on after the fact.
+
+## Taste And Agency
+
+In an AI-saturated workflow, raw generation and competent execution get cheaper.
+Genesis still needs human taste and agency.
+
+Weaver can support taste by preserving comparative judgment: best examples,
+why they work, what felt generic, and which principles survived review. It can
+support agency by turning ambient ideas into small shipped artifacts, visible
+decision logs, and reviewable next actions.
+
+The knowledge system should therefore not only answer "what did I think?" It
+should also answer:
+
+- what did I choose to pursue;
+- why did it seem worth pursuing;
+- what artifact did it become;
+- what feedback changed the direction;
+- what should be copied, rejected, or deviated from next time.
 
 ## Synthesis Role
 
@@ -112,6 +180,8 @@ delegated agents.
 
 - What is the first concrete context-compiler prototype: QMD-backed retrieval,
   explicit task frames, or an agent tool for module loading?
+- Should semantic tags remain a human notation convention first, or become a
+  parser-backed command surface?
 - How should modules advertise when they are relevant to a task?
 - Which information should be pinned deterministically, and which should be
   retrieved through agent judgment?
@@ -121,7 +191,9 @@ delegated agents.
 ## Source Map
 
 - [LLM Wiki Project Planning](../../../ops/artifacts/chatgpt/6a379f1a-a974-83ec-901a-a9c6f958030c.md)
+- [Semantic Notetaking Systems](../../../ops/artifacts/chatgpt/6985b8d3-8a14-839c-aa84-7f617c78ad3e.md)
 - [weaver note](../../../ops/artifacts/obsidian/weaver.md)
+- [Taste and agency in AI](../../../ops/artifacts/chatgpt/689b6e60-1688-8322-95a3-6848c2ab85c5.md)
 - [genesis overview](../../../ops/artifacts/obsidian/genesis.md)
 - [Context Management in LLMs](../../../ops/artifacts/chatgpt/69acf566-8c94-839f-9dc5-9e4931ab63ba.md)
 - [LLM Note-taking Tools](../../../ops/artifacts/chatgpt/67e29c1d-88f4-8009-b717-e92513a6543e.md)
