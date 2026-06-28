@@ -47,6 +47,9 @@ make visual imagination trainable.
 - [Constructive Drawing Practice](conjuration/constructive-drawing-practice.md):
   form construction, perspective, previsualization, reference study, line
   quality, and feedback loops with observation or 3D tools.
+- [Drawing Studio Stack And Projects](conjuration/drawing-studio-stack-and-projects.md):
+  drawing resources, courses, software ideas, supplies, medium experiments,
+  reference strategy, and project prompts.
 - [Sourcebook Worldwork](conjuration/sourcebook-worldwork.md): solo sourcebook
   tourism, lore-as-travel-guide practice, oracles, journaling, and party-based
   imaginative writing.
@@ -122,5 +125,7 @@ visualization, or AI-assisted creative workflows.
 - [Visualization Training Techniques](../../ops/artifacts/chatgpt/67c86245-df84-8009-8c9e-491c8c9b6844.md)
 - [Creative Commute Exercises](../../ops/artifacts/chatgpt/4f97f718-3907-48ae-898a-1b01f112e69c.md)
 - [Edison's Pen Inspiration](../../ops/artifacts/chatgpt/37e6cc50-f4d0-48c3-851c-1151ef27c0c2.md)
+- [drawing software](../../ops/artifacts/obsidian/drawing-software.md)
+- [drawing courses](../../ops/artifacts/obsidian/drawing-courses.md)
 - [Solo D&D Lore Exploration](../../ops/artifacts/chatgpt/69f6fc64-4b84-83a0-8ec4-0b95c761306d.md)
 - [source inventory](../../ops/clusters/2026-06-24/source-inventory.qmd)

@@ -59,6 +59,10 @@ Priority means:
 - 2026-06-28: Completed the perspective and visualization bridge pass by
   deepening
   [Visualization And Imagination Training](../../wiki/projects/conjuration/visualization-and-imagination-training.md).
+- 2026-06-28: Completed the studio stack, resources, and projects pass by
+  creating
+  [Drawing Studio Stack And Projects](../../wiki/projects/conjuration/drawing-studio-stack-and-projects.md)
+  and linking it from [Conjuration](../../wiki/projects/conjuration.md).
 
 ## Practice Architecture And Tracking
 
@@ -124,6 +128,10 @@ Secondary destination:
 | [projects](../artifacts/obsidian/drawing-painting.md) | merge | P2 | Painting, color, medium experiments, customization projects. |
 | [inspiration prompt](../artifacts/obsidian/drawing-inktober.md) | merge | P2 | Inktober/trip/plane-window prompt; construction challenge source. |
 
+Status: complete. The pass created a support page for resources, digital tools,
+materials, medium experiments, design and painting projects, and reference
+strategy.
+
 ## Already Mined Or Reference Tail
 
 Primary destination:
@@ -134,7 +142,12 @@ details.
 | --- | --- | --- | --- |
 | [museum notes](../artifacts/obsidian/drawing-ideas.md) | skip | P3 | Already mined into Constructive Drawing Practice; may reappear in art queue. |
 
+Status: complete. This source is represented in
+[Constructive Drawing Practice](../../wiki/projects/conjuration/constructive-drawing-practice.md)
+and can be revisited during the later `unassigned/art` pass if needed.
+
 ## Next Pass
 
-The practice architecture/tracking and perspective/visualization bridge passes
-are complete. Next, move to the drawing studio stack, resources, and projects.
+`unassigned/drawing` is complete for this initial mining pass. Future work
+should be just-in-time review, or the later `unassigned/art` and
+`unassigned/creativity` queues.
