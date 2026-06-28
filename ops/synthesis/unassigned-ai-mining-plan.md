@@ -41,6 +41,9 @@ Priority means:
 ## Status
 
 - 2026-06-28: Created initial routing plan for `unassigned/ai`.
+- 2026-06-28: Completed the reasoning models and tool-use pass:
+  [Reasoning Models And Tool Use](../../wiki/projects/genesis/reasoning-models-and-tool-use.md),
+  with links from the Genesis hub, AI research map, and agentic tooling.
 
 ## Reasoning Models And Tool Use
 
@@ -75,7 +78,7 @@ Primary destinations:
 ## Credit Assignment And Training Signals
 
 Primary destination:
-[Credit Assignment And Training Signals](../../wiki/projects/genesis/credit-assignment-and-training-signals.md).
+Credit Assignment And Training Signals, a planned Genesis child page.
 
 Secondary destination:
 [AI Research Map](../../wiki/projects/genesis/ai-research-map.md).
@@ -143,7 +146,6 @@ page unless the raw note has concrete project direction.
 
 ## Next Pass
 
-Start with Reasoning Models And Tool Use because it adds a missing Genesis child
-page and gives the agentic tooling/context-management sources a clearer AI
-systems frame. Then deepen agentic tooling and Weaver interfaces before moving
-to credit assignment, sequence architectures, and nonlinear method spillovers.
+The reasoning models and tool-use pass is complete. Next, deepen agentic
+tooling and Weaver interfaces before moving to credit assignment, sequence
+architectures, and nonlinear method spillovers.

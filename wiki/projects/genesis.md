@@ -45,6 +45,9 @@ compute-efficient learning.
 - [AI Research Map](genesis/ai-research-map.md): the research-side map around
   ARC-AGI, neuro-symbolic systems, tool-use training, test-time compute, and
   smaller optimization experiments.
+- [Reasoning Models And Tool Use](genesis/reasoning-models-and-tool-use.md):
+  the model-behavior view of tool use, context-transforming actions, training
+  signals, and hobby-scale experiments.
 
 ## Current Shape
 
@@ -93,7 +96,7 @@ practice content should live with those projects.
   notebook controller, command palette, context compiler, or Obsidian
   replacement surface?
 - Which AI research thread is most worth a first reproducible repo: ARC-AGI
-  DSL/search, toy GRPO/verifier loops, or small optimization alternatives?
+  DSL/search, toy context-action RL loops, or small optimization alternatives?
 - How much of the synthesis process should remain human-directed versus
   delegated to generated task envelopes and subagents?
 

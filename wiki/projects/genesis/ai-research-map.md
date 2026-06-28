@@ -20,6 +20,7 @@ parent: projects/genesis
 related:
   - projects/genesis
   - projects/genesis/agentic-tooling
+  - projects/genesis/reasoning-models-and-tool-use
   - topics/quant/generalization-and-regularization
   - topics/quant/optimization-and-computation
 created: 2026-06-28
@@ -71,6 +72,11 @@ semi-symbolic environments. Tool calls, constrained decoding, code execution,
 verifiers, notebook kernels, and typed workspaces push systems toward the
 neuro-symbolic end because model outputs are interpreted, checked, and acted on
 by external machinery.
+
+The model-behavior view is split out in
+[Reasoning Models And Tool Use](reasoning-models-and-tool-use.md). This page
+keeps the research-program map; the child page keeps the action-space,
+tool-calling, RL, distillation, and world-model notes.
 
 The training-side map includes:
 
@@ -139,4 +145,8 @@ later experiments in verifiers, test-time compute, tool calling, and search.
 - [RL techniques overview](../../../ops/artifacts/chatgpt/68d944f9-4a38-8322-a529-a719912bc84f.md)
 - [Deep Learning Optimization Alternatives](../../../ops/artifacts/chatgpt/69a06096-458c-839c-a1d6-a94cf2917aa6.md)
 - [Gated Linear Experts Training](../../../ops/artifacts/chatgpt/699e4ba2-0544-83a1-ac7b-8df05bfee5d9.md)
+- [LLM Token Generation Insight](../../../ops/artifacts/chatgpt/69c55877-4974-839c-9c83-428afc7312a3.md)
+- [Reasoning LLM Components Overview](../../../ops/artifacts/chatgpt/6829fc1b-bd8c-8009-96d7-e19bdccbfe0d.md)
+- [Tool calling in LLMs](../../../ops/artifacts/chatgpt/689b43ca-b158-8328-8f70-890af13a106f.md)
+- [World Models vs LLMs](../../../ops/artifacts/chatgpt/69c2c3f3-e24c-8399-aecc-4c2c9fd54dd5.md)
 - [source inventory](../../../ops/clusters/2026-06-24/source-inventory.qmd)

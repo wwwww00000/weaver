@@ -190,7 +190,7 @@ Largest unassigned mining queues:
   - Initial routing plan:
     [unassigned-ai-mining-plan.md](unassigned-ai-mining-plan.md)
   - Preferred first page-deepening candidates:
-    - [ ] Reasoning Models And Tool Use
+    - [x] [Reasoning Models And Tool Use](../../wiki/projects/genesis/reasoning-models-and-tool-use.md)
     - [ ] [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md)
       and [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
     - [ ] Credit Assignment And Training Signals

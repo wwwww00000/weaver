@@ -19,6 +19,7 @@ parent: projects/genesis
 related:
   - projects/genesis
   - projects/genesis/weaver-as-knowledge-system
+  - projects/genesis/reasoning-models-and-tool-use
   - projects/p12n/experiment-infrastructure
 created: 2026-06-28
 updated: 2026-06-28
