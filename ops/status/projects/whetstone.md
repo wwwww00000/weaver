@@ -61,5 +61,6 @@ skill-acquisition loops.
 ## Links
 
 - [Whetstone wiki](../../../wiki/projects/whetstone.md)
+- [Weaver status](weaver.md)
 - [Chronicle status](chronicle.md)
 - [Revelation status](revelation.md)

@@ -1,9 +1,9 @@
 ---
-title: Weaver As A Knowledge System
+title: Weaver
 status: draft
-page_type: concept
+page_type: project-hub
 projects:
-  - genesis
+  - weaver
 categories:
   - ai
   - knowledge-management
@@ -15,19 +15,25 @@ source_bundles:
   - unassigned/ai
   - unassigned/cognitive
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
-parent: projects/genesis
 related:
   - projects/genesis
   - projects/genesis/agentic-tooling
   - projects/whetstone/think-tags-and-metacognition
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
-# Weaver As A Knowledge System
+# Weaver
 
-Weaver is the Genesis subproject for turning messy personal knowledge sources
-into a maintained, compiled wiki.
+Weaver is the top-level project for turning messy personal knowledge sources
+into a maintained, compiled wiki and eventually a context compiler for future
+human-agent work.
+
+It started inside Genesis because it is also a buildable AI-adjacent system.
+It is now a peer project: Genesis owns the broader building, agency, AI
+research, and agentic tooling frame; Weaver owns the knowledge workflow,
+compiled-memory model, source provenance, wiki synthesis process, and future
+context-loading machinery.
 
 The central problem is not raw storage. Obsidian notes, weekly notes, idea
 dumps, project todos, and ChatGPT conversations already store plenty of text.
@@ -196,6 +202,25 @@ retrieval, and selective write-back of summaries, decisions, modules, and open
 questions. Code execution, subagents, and custom UI can wait until the memory
 semantics are proven.
 
+## Weekly And Editor Workflow Trial
+
+The stale "projects overview" section in weekly notes is a signal that project
+state should not be maintained by copy-pasting week to week. Project hubs and
+status cards should own that state instead. Weekly notes can shrink toward
+dated deltas, review prompts, and promotion queues that point back to current
+project cards.
+
+There is also growing momentum toward reducing or dropping Obsidian usage.
+Most ordinary note and wiki work may be viable inside Neovim with markdown
+rendering, repo-local search, git diffs, and lightweight project/status files.
+`render-markdown.nvim` is a plausible rendering layer, with additional plugins
+or small Weaver tools filling in navigation and review operations.
+
+The main Obsidian feature still in active use is the periodic-notes calendar
+view. Before replacing Obsidian, run the current Weaver workflow for a few
+weeks and then review what remains missing: calendar navigation, weekly note
+creation, backlinks, search, task capture, mobile capture, or visual browsing.
+
 ## Possible Tool Surface
 
 The Weaver source note points beyond static compilation toward a headless or
@@ -208,14 +233,15 @@ TUI-friendly knowledge work surface:
 - connect notebook or Jupyter-like kernels when plots and experiments matter;
 - promote repeated flows into typed commands rather than one-off chats.
 
-This belongs under Genesis because it is a buildable interface project. It also
-belongs under Weaver because the interface should be shaped by the markdown
+This overlaps with Genesis because it is a buildable interface project. The
+Weaver-specific requirement is that the interface be shaped by the markdown
 knowledge model, not bolted on after the fact.
 
-## Taste And Agency
+## Relationship To Genesis
 
 In an AI-saturated workflow, raw generation and competent execution get cheaper.
-Genesis still needs human taste and agency.
+Genesis still needs human taste and agency, while Weaver should make that taste
+and agency easier to preserve across time.
 
 Weaver can support taste by preserving comparative judgment: best examples,
 why they work, what felt generic, and which principles survived review. It can
@@ -265,12 +291,12 @@ delegated agents.
 
 ## Source Map
 
-- [LLM Wiki Project Planning](../../../ops/artifacts/chatgpt/6a379f1a-a974-83ec-901a-a9c6f958030c.md)
-- [Semantic Notetaking Systems](../../../ops/artifacts/chatgpt/6985b8d3-8a14-839c-aa84-7f617c78ad3e.md)
-- [weaver note](../../../ops/artifacts/obsidian/weaver.md)
-- [Taste and agency in AI](../../../ops/artifacts/chatgpt/689b6e60-1688-8322-95a3-6848c2ab85c5.md)
-- [genesis overview](../../../ops/artifacts/obsidian/genesis.md)
-- [Context Management in LLMs](../../../ops/artifacts/chatgpt/69acf566-8c94-839f-9dc5-9e4931ab63ba.md)
-- [LLM Note-taking Tools](../../../ops/artifacts/chatgpt/67e29c1d-88f4-8009-b717-e92513a6543e.md)
-- [LLM Coding Workflows](../../../ops/artifacts/chatgpt/6a31f45a-f0e0-83ec-8a47-08c0e09e206c.md)
-- [source inventory](../../../ops/clusters/2026-06-24/source-inventory.qmd)
+- [LLM Wiki Project Planning](../../ops/artifacts/chatgpt/6a379f1a-a974-83ec-901a-a9c6f958030c.md)
+- [Semantic Notetaking Systems](../../ops/artifacts/chatgpt/6985b8d3-8a14-839c-aa84-7f617c78ad3e.md)
+- [weaver note](../../ops/artifacts/obsidian/weaver.md)
+- [Taste and agency in AI](../../ops/artifacts/chatgpt/689b6e60-1688-8322-95a3-6848c2ab85c5.md)
+- [genesis overview](../../ops/artifacts/obsidian/genesis.md)
+- [Context Management in LLMs](../../ops/artifacts/chatgpt/69acf566-8c94-839f-9dc5-9e4931ab63ba.md)
+- [LLM Note-taking Tools](../../ops/artifacts/chatgpt/67e29c1d-88f4-8009-b717-e92513a6543e.md)
+- [LLM Coding Workflows](../../ops/artifacts/chatgpt/6a31f45a-f0e0-83ec-8a47-08c0e09e206c.md)
+- [source inventory](../../ops/clusters/2026-06-24/source-inventory.qmd)

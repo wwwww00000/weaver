@@ -46,7 +46,7 @@ Priority means:
   with links from the Genesis hub, AI research map, and agentic tooling.
 - 2026-06-28: Completed the agentic tooling and Weaver interfaces pass:
   [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md) and
-  [Weaver As A Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md).
+  [Weaver](../../wiki/projects/weaver.md).
 - 2026-06-28: Completed the credit assignment and training-signals pass:
   [Credit Assignment And Training Signals](../../wiki/projects/genesis/credit-assignment-and-training-signals.md).
 - 2026-06-28: Completed the sequence, state-space, and gated-architectures pass:
@@ -80,7 +80,7 @@ Secondary destinations:
 
 Primary destinations:
 [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md) and
-[Weaver As A Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md).
+[Weaver](../../wiki/projects/weaver.md).
 
 | Artifact | Action | Priority | Note |
 | --- | --- | --- | --- |

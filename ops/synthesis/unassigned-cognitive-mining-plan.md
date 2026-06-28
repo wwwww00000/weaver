@@ -54,7 +54,7 @@ Priority means:
   [Conjuration visualization and imagination training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
   and [Whetstone problem solving and skill acquisition](../../wiki/projects/whetstone/problem-solving-and-skill-acquisition.md).
 - 2026-06-28: Completed the knowledge systems and agency spillover pass:
-  [Genesis Weaver as knowledge system](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+  [Weaver](../../wiki/projects/weaver.md)
   and [Whetstone think tags and metacognition](../../wiki/projects/whetstone/think-tags-and-metacognition.md).
 
 ## Problem Solving And Skill Acquisition
@@ -149,7 +149,7 @@ and [Whetstone problem solving and skill acquisition](../../wiki/projects/whetst
 ## Knowledge Systems And Agency Spillovers
 
 Primary destinations:
-[Genesis Weaver as knowledge system](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+[Weaver](../../wiki/projects/weaver.md)
 and [Whetstone think tags and metacognition](../../wiki/projects/whetstone/think-tags-and-metacognition.md).
 
 | Artifact | Action | Priority | Note |

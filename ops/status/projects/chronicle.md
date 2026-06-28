@@ -66,5 +66,6 @@ a diary.
 ## Links
 
 - [Chronicle wiki](../../../wiki/projects/chronicle.md)
+- [Weaver status](weaver.md)
 - [Whetstone status](whetstone.md)
 - [Conjuration status](conjuration.md)

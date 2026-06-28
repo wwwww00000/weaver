@@ -11,6 +11,7 @@ This wiki will hold curated notes after source triage and import decisions.
 - [Obelisk](projects/obelisk.md)
 - [P12n](projects/p12n.md)
 - [Revelation](projects/revelation.md)
+- [Weaver](projects/weaver.md)
 - [Whetstone](projects/whetstone.md)
 
 ## Topics

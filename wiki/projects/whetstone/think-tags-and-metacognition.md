@@ -130,9 +130,8 @@ surfing, and state routing. Whetstone uses them as cognitive-control handles.
 The same tag can serve both projects when it preserves awareness and improves
 the next move.
 
-[Weaver As A Knowledge System](../genesis/weaver-as-knowledge-system.md) owns
-the downstream compilation layer: extracting tagged fragments into durable
-notes, project pages, and agent-loadable context.
+[Weaver](../weaver.md) owns the downstream compilation layer: extracting tagged
+fragments into durable notes, project pages, and agent-loadable context.
 
 ## Open Questions
 

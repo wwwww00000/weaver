@@ -11,8 +11,8 @@ Source inventory: [source-inventory.qmd](../clusters/2026-06-24/source-inventory
 - Commit: `722a68d Split Obelisk wiki into child pages`
 - P12n now has a project hub plus six child pages, and Quant has a topic hub
   plus seven method pages.
-- Genesis now has a project hub plus child pages for Weaver, agentic tooling,
-  and AI research.
+- Genesis now has a project hub plus child pages for agentic tooling and AI
+  research. Weaver has since been promoted to a top-level project hub.
 - Commit: `d4f0d31 Synthesize Genesis wiki hub`
 - Chronicle and Whetstone now have paired project hubs plus child pages for
   pages/life OS, think tags, cadence, and felt sense.
@@ -58,6 +58,10 @@ Project-scale queues from the current inventory:
 | 6 | `revelation` | 6 | `revelation/math`, `revelation/physics`, `unassigned/math`, `unassigned/physics` |
 | 7 | `conjuration` | 4 | `unassigned/drawing`, `unassigned/creativity`, `unassigned/art`, `unassigned/writing` |
 
+Weaver was promoted after this inventory was generated, so its initial source
+count is mostly folded into `genesis/tech`, `genesis/personal`, and
+`unassigned/ai` in this table.
+
 Largest unassigned mining queues:
 
 | Queue | Artifact Count | Likely Destinations |
@@ -86,7 +90,7 @@ Largest unassigned mining queues:
   - Likely child pages:
     - [AI research map](../../wiki/projects/genesis/ai-research-map.md)
     - [agentic tools and coding workflows](../../wiki/projects/genesis/agentic-tooling.md)
-    - [Weaver as a knowledge-work system](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+    - [Weaver](../../wiki/projects/weaver.md)
     - ARC-AGI, reinforcement learning, and neurosymbolic experiments are
       currently grouped under the AI research map.
     - building, agency, and taste formation remains a possible later child
@@ -192,7 +196,7 @@ Largest unassigned mining queues:
   - Preferred first page-deepening candidates:
     - [x] [Reasoning Models And Tool Use](../../wiki/projects/genesis/reasoning-models-and-tool-use.md)
     - [x] [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md)
-      and [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+      and [Weaver](../../wiki/projects/weaver.md)
     - [x] [Credit Assignment And Training Signals](../../wiki/projects/genesis/credit-assignment-and-training-signals.md)
     - [x] [P12n Sequence-Model Analogies](../../wiki/projects/p12n/sequence-model-analogies.md)
     - [x] [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md),
@@ -211,7 +215,7 @@ Largest unassigned mining queues:
     - [x] [Chronicle Meditation And Nonduality](../../wiki/projects/chronicle/meditation-and-nonduality.md)
     - [x] [Conjuration Visualization And Imagination Training](../../wiki/projects/conjuration/visualization-and-imagination-training.md)
       and Whetstone visualization notes.
-    - [x] [Weaver As Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+    - [x] [Weaver](../../wiki/projects/weaver.md)
       and Whetstone semantic-notetaking notes.
 - [x] Route and mine `unassigned/personal`.
   - Initial routing plan:

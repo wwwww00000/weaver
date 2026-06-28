@@ -1,7 +1,7 @@
 # Weaver State And Next Steps
 
 Date: 2026-06-21
-Updated: 2026-06-28
+Updated: 2026-06-29
 
 This note supersedes the initial `HANDOFF.md` as the current working state for
 the Weaver repo.
@@ -90,8 +90,15 @@ Important project code names:
   meditation.
 - `conjuration`: imagination building, creativity, and drawing.
 - `revelation`: math and physics learning.
-- `genesis`: building things, exercising agency, AI-adjacent work, and AI
-  research.
+- `genesis`: building things, exercising agency, agentic tooling, AI-adjacent
+  work, and AI research.
+- `weaver`: source triage, compiled wiki synthesis, status surfaces,
+  provenance, and future context compilation.
+
+Weaver was promoted from a Genesis child page into a top-level project on
+2026-06-29. Historical triage files, generated manifests, and copied artifacts
+were left as records of the original classification; current routing should use
+the updated project glossaries and status cards.
 
 ## Synthesis State
 
@@ -108,6 +115,7 @@ The named project hub pass is complete:
 - [Conjuration](../../wiki/projects/conjuration.md)
 - [Revelation](../../wiki/projects/revelation.md)
 - [Genesis](../../wiki/projects/genesis.md)
+- [Weaver](../../wiki/projects/weaver.md)
 
 Major topic hubs and supporting pages now exist under:
 
@@ -137,11 +145,17 @@ The current synthesis audit trail is:
 - the per-queue mining plans in `ops/synthesis/`
 - `ops/process/wiki-synthesis-playbook.md`
 - `ops/process/wiki-synthesis-task-template.md`
+- `ops/process/project-promotion-checklist.md`
 
 ## Current Workflow
 
 The source wrappers and raw transcripts remain the provenance layer. The wiki
 is the curated layer. Future work should preserve that separation.
+
+Current project state lives in [ops/status/dashboard.md](../status/dashboard.md)
+and the per-project cards under `ops/status/projects/`. Status cards own live
+focus, decisions, next actions, and promotion candidates; wiki pages own durable
+synthesized knowledge.
 
 Use this workflow for new material:
 

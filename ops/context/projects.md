@@ -16,7 +16,10 @@ organize concepts, methods, domains, and reusable ideas.
 - `chronicle`: morning pages, journaling, creative writing, mindfulness, and meditation.
 - `conjuration`: imagination building, creativity, and drawing.
 - `revelation`: math and physics learning.
-- `genesis`: building things, exercising agency, AI-adjacent work, and AI research.
+- `genesis`: building things, exercising agency, agentic tooling, AI-adjacent
+  work, and AI research.
+- `weaver`: personal knowledge-system project for source triage, compiled wiki
+  synthesis, status surfaces, provenance, and future context compilation.
 
 ## Synthesis Guidance
 

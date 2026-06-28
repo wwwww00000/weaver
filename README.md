@@ -76,6 +76,8 @@ Current project state lives in [ops/status/dashboard.md](ops/status/dashboard.md
 with one editable status card per project under `ops/status/projects/`. The
 schema is documented in
 [ops/status/project-card-schema.md](ops/status/project-card-schema.md).
+When a child page or informal workstream becomes a top-level project, follow
+[ops/process/project-promotion-checklist.md](ops/process/project-promotion-checklist.md).
 
 ## Development
 

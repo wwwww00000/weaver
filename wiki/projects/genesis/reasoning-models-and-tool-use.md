@@ -17,7 +17,7 @@ parent: projects/genesis
 related:
   - projects/genesis/ai-research-map
   - projects/genesis/agentic-tooling
-  - projects/genesis/weaver-as-knowledge-system
+  - projects/weaver
 created: 2026-06-28
 updated: 2026-06-28
 ---

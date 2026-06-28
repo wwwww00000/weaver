@@ -54,7 +54,7 @@ Priority means:
   [Sourcebook Worldwork](../../wiki/projects/conjuration/sourcebook-worldwork.md).
 - 2026-06-28: Completed the Weaver/AI writing tools cleanup:
   `LLM Note-taking Tools` was already mined into
-  [Weaver As A Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md),
+  [Weaver](../../wiki/projects/weaver.md),
   and `Switching Cognitive Modes` was merged into
   [Writing Practice And Voice](../../wiki/projects/chronicle/writing-practice-and-voice.md).
 
@@ -113,7 +113,7 @@ when a source is mainly imagery or persona practice.
 ## Weaver And AI Writing Tools
 
 Primary destinations:
-[Weaver As A Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md)
+[Weaver](../../wiki/projects/weaver.md)
 and [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md).
 
 | Artifact | Action | Priority | Note |

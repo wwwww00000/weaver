@@ -18,7 +18,7 @@ source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: projects/genesis
 related:
   - projects/genesis
-  - projects/genesis/weaver-as-knowledge-system
+  - projects/weaver
   - projects/genesis/reasoning-models-and-tool-use
   - projects/p12n/experiment-infrastructure
 created: 2026-06-28

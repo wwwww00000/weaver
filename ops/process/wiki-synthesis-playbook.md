@@ -35,6 +35,15 @@ Use the smallest page type that fits the material.
 Project hubs should be short. They should not carry every detail from a bundle
 once child pages exist.
 
+## Project Promotion
+
+Use [project-promotion-checklist.md](project-promotion-checklist.md) when a
+child page, topic page, source stream, or informal work label becomes a
+top-level project. Promotion must update project glossaries, the wiki hub,
+status cards, dashboard, indexes, parent-page boundaries, and current process
+links. Do not rewrite historical generated manifests only to reflect a later
+classification decision.
+
 ## Frontmatter
 
 Every wiki page should have YAML frontmatter.

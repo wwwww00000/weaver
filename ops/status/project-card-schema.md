@@ -74,3 +74,10 @@ truth.
 
 Older weekly context should be captured through git history or a future rolling
 weekly note. Do not let project cards become long journals.
+
+## New Projects
+
+When a label is promoted into a top-level project, add its status card in the
+same change as the wiki hub and dashboard row. Follow
+[../process/project-promotion-checklist.md](../process/project-promotion-checklist.md)
+for the full promotion procedure.

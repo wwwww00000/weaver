@@ -21,13 +21,13 @@ source_bundles:
   - unassigned/personal
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Genesis
 
-Genesis is the active project for building things, exercising agency, and
-turning AI-adjacent curiosity into working systems.
+Genesis is the active project for building things, exercising agency, agentic
+tooling, and turning AI-adjacent curiosity into working systems.
 
 The project has two centers. One is practical: become able to build useful
 software products quickly, with modern web tools and coding agents as force
@@ -37,9 +37,9 @@ compute-efficient learning.
 
 ## Map
 
-- [Weaver As A Knowledge System](genesis/weaver-as-knowledge-system.md):
-  the compiled-memory project that turns messy notes, chats, and source
-  artifacts into durable wiki pages.
+- [Weaver](weaver.md): the peer project that turns messy notes, chats, source
+  artifacts, and project state into durable wiki pages and eventually
+  agent-loadable context.
 - [Agentic Tooling](genesis/agentic-tooling.md): agent harnesses, live
   computational workbenches, notebook controllers, editor substrates, and the
   command-oriented tool ideas that make AI-assisted work compounding.
@@ -63,10 +63,11 @@ just an idea about AI tools; it is a concrete interface, harness, evaluator,
 workflow, note system, or small research experiment that makes future work
 easier.
 
-The self-referential core is Weaver. Weaver is both a project under Genesis and
-the system used to make Genesis readable. That is useful as long as it stays
-honest: deterministic tooling handles source triage and provenance, while agent
-synthesis remains visible through markdown pages, task templates, and git diffs.
+Weaver is now a top-level sibling project rather than a Genesis child. Genesis
+still overlaps with Weaver when the work is about agentic tooling, AI-assisted
+interfaces, or building the system, but Weaver owns the knowledge workflow:
+source triage, provenance, wiki synthesis, status surfaces, and context
+compilation.
 
 Taste and agency are part of the Genesis frame. AI can cheapen generic
 execution, but it does not decide what is worth building or force anything to
@@ -93,15 +94,14 @@ long-form learning roadmaps belong in Revelation.
 
 Use Chronicle, Whetstone, and Conjuration for journaling, cognition practice,
 and imagination or drawing. Genesis may build tools for them, but the durable
-practice content should live with those projects.
+practice content should live with those projects. Use [Weaver](weaver.md) for
+knowledge-system mechanics, source ingestion, status dashboards, and
+agent-loadable context.
 
 ## Open Questions
 
-- What is the smallest useful Weaver context-compiler loop beyond the current
-  explicit synthesis process?
 - Which agent tooling experiment should become the first standalone build:
-  notebook controller, command palette, context compiler, or Obsidian
-  replacement surface?
+  notebook controller, command palette, agent harness, or AI research workbench?
 - Which AI research thread is most worth a first reproducible repo: ARC-AGI
   DSL/search, toy context-action RL loops, cotangent-routing diagnostics, or
   small optimization alternatives?

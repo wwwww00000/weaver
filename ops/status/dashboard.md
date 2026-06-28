@@ -16,7 +16,8 @@ a scanning surface.
 | Chronicle | active | Pages, mindfulness, writing, meditation, weekly review, and state-preserving routines. | [status](projects/chronicle.md) | [wiki](../../wiki/projects/chronicle.md) |
 | Conjuration | active | Visualization, constructive drawing, imagination drills, and sourcebook worldwork. | [status](projects/conjuration.md) | [wiki](../../wiki/projects/conjuration.md) |
 | Revelation | active | Quantum mechanics spine, differential-geometry satellite, and active math/physics learning. | [status](projects/revelation.md) | [wiki](../../wiki/projects/revelation.md) |
-| Genesis | active | Weaver, agentic tooling, AI research, and building-practice loops. | [status](projects/genesis.md) | [wiki](../../wiki/projects/genesis.md) |
+| Genesis | active | Agentic tooling, AI research, agency, and building-practice loops. | [status](projects/genesis.md) | [wiki](../../wiki/projects/genesis.md) |
+| Weaver | active | Source triage, compiled wiki synthesis, status surfaces, and context compilation. | [status](projects/weaver.md) | [wiki](../../wiki/projects/weaver.md) |
 
 ## Archive
 

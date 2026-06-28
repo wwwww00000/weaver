@@ -36,6 +36,13 @@ projects:
       - Keep learning roadmaps, conceptual questions, and durable explanations.
   genesis:
     status: active
-    description: Building things, exercising agency, AI-adjacent work, and AI research.
+    description: Building things, exercising agency, agentic tooling, AI-adjacent work, and AI research.
     synthesis_notes:
-      - Treat Weaver itself and AI research/building notes as part of this project unless better classified elsewhere.
+      - Use for general building, agency, AI research, and agentic tooling work.
+      - Route knowledge-system, wiki synthesis, source-triage, provenance, and context-compiler material to Weaver unless the note is primarily about a broader AI/tooling build.
+  weaver:
+    status: active
+    description: Personal knowledge-system project for source triage, compiled wiki synthesis, status surfaces, provenance, and future context compilation.
+    synthesis_notes:
+      - Use for notes about this repository, source ingestion, wiki synthesis, context compilation, semantic note structures, status cards, weekly-review integration, and agent-loadable memory.
+      - Keep deterministic tooling and provenance concerns distinct from broader Genesis agent-tooling ideas.

@@ -12,6 +12,7 @@ You are working in the Weaver repository.
 First read:
 - AGENTS.md
 - ops/process/wiki-synthesis-playbook.md
+- ops/process/project-promotion-checklist.md
 - ops/context/project-glossary.yaml
 - ops/context/chatgpt-project-glossary.yaml
 - ops/clusters/2026-06-24/source-inventory.qmd
@@ -65,6 +66,8 @@ Constraints:
 - Cross-link project pages and reusable method pages.
 - Do not import skipped or sensitive material.
 - Do not add LLM calls, vector indexes, databases, or automatic synthesis code.
+- If the task promotes a concept or child page to a top-level project, follow
+  `ops/process/project-promotion-checklist.md`.
 
 Checks before completion:
 - Run `git diff --check`.
@@ -117,8 +120,9 @@ Project and category context:
 Expected output:
 - Hub page: wiki/projects/genesis.md
 - Child pages:
-  - wiki/projects/genesis/weaver-as-knowledge-system.md
   - wiki/projects/genesis/agentic-tooling.md
+- Related project pages:
+  - wiki/projects/weaver.md
 - Topic or method pages:
   - wiki/topics/ai-tools.md if the reusable material is large enough
 - Planning file updates:

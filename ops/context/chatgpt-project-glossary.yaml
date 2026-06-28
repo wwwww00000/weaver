@@ -44,8 +44,9 @@ chatgpt_projects:
   g-p-69514ed5937481919fe67ebdba6bda97:
     inferred_name: weaver-agentic-wiki-ai-ide
     project_labels:
+      - weaver
       - genesis
-    description: Weaver, LLM wiki planning, AI IDEs, agent harnesses, tool calling, MCP, and text editor/tool archetypes.
+    description: Weaver, LLM wiki planning, AI IDEs, agent harnesses, tool calling, MCP, and text editor/tool archetypes. Route knowledge-system and wiki/context-compilation material to Weaver; keep broader agent tooling under Genesis as needed.
     confidence: high
   g-p-68bbc348f5bc81918c12515f9b4f7931:
     inferred_name: generalization-regularization-validation
