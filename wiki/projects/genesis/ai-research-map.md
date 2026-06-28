@@ -21,6 +21,7 @@ related:
   - projects/genesis
   - projects/genesis/agentic-tooling
   - projects/genesis/reasoning-models-and-tool-use
+  - projects/genesis/credit-assignment-and-training-signals
   - topics/quant/generalization-and-regularization
   - topics/quant/optimization-and-computation
 created: 2026-06-28
@@ -103,6 +104,8 @@ or research-playground setting:
 - gated linear experts trained by alternating least squares, hard assignments,
   EM-style responsibilities, or tree-like routing;
 - gradient generalization, validation-aware updates, and regularization ideas.
+- cotangent shaping and branch/path credit routing, split into
+  [Credit Assignment And Training Signals](credit-assignment-and-training-signals.md).
 
 These should mostly become reusable methods under [Quant](../../topics/quant.md)
 or broader ML method pages when they are about regression, validation, and
@@ -149,4 +152,7 @@ later experiments in verifiers, test-time compute, tool calling, and search.
 - [Reasoning LLM Components Overview](../../../ops/artifacts/chatgpt/6829fc1b-bd8c-8009-96d7-e19bdccbfe0d.md)
 - [Tool calling in LLMs](../../../ops/artifacts/chatgpt/689b43ca-b158-8328-8f70-890af13a106f.md)
 - [World Models vs LLMs](../../../ops/artifacts/chatgpt/69c2c3f3-e24c-8399-aecc-4c2c9fd54dd5.md)
+- [Credit Assignment Scaling](../../../ops/artifacts/chatgpt/69f36da9-8d1c-83a0-8d24-8180ac364ad8.md)
+- [Dense Supervision in RL](../../../ops/artifacts/chatgpt/69c562d7-dfd0-839d-9aed-3c7baa9adad0.md)
+- [Cotangents and Backpropagation](../../../ops/artifacts/chatgpt/69f22f99-32a4-839c-a2b7-1b072ee23783.md)
 - [source inventory](../../../ops/clusters/2026-06-24/source-inventory.qmd)

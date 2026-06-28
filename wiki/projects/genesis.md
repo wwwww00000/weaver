@@ -48,6 +48,9 @@ compute-efficient learning.
 - [Reasoning Models And Tool Use](genesis/reasoning-models-and-tool-use.md):
   the model-behavior view of tool use, context-transforming actions, training
   signals, and hobby-scale experiments.
+- [Credit Assignment And Training Signals](genesis/credit-assignment-and-training-signals.md):
+  cotangent shaping, dense supervision, branch/path credit routing, and small
+  deep-learning experiments.
 
 ## Current Shape
 
@@ -96,7 +99,8 @@ practice content should live with those projects.
   notebook controller, command palette, context compiler, or Obsidian
   replacement surface?
 - Which AI research thread is most worth a first reproducible repo: ARC-AGI
-  DSL/search, toy context-action RL loops, or small optimization alternatives?
+  DSL/search, toy context-action RL loops, cotangent-routing diagnostics, or
+  small optimization alternatives?
 - How much of the synthesis process should remain human-directed versus
   delegated to generated task envelopes and subagents?
 

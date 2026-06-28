@@ -47,6 +47,8 @@ Priority means:
 - 2026-06-28: Completed the agentic tooling and Weaver interfaces pass:
   [Agentic Tooling](../../wiki/projects/genesis/agentic-tooling.md) and
   [Weaver As A Knowledge System](../../wiki/projects/genesis/weaver-as-knowledge-system.md).
+- 2026-06-28: Completed the credit assignment and training-signals pass:
+  [Credit Assignment And Training Signals](../../wiki/projects/genesis/credit-assignment-and-training-signals.md).
 
 ## Reasoning Models And Tool Use
 
@@ -81,7 +83,7 @@ Primary destinations:
 ## Credit Assignment And Training Signals
 
 Primary destination:
-Credit Assignment And Training Signals, a planned Genesis child page.
+[Credit Assignment And Training Signals](../../wiki/projects/genesis/credit-assignment-and-training-signals.md).
 
 Secondary destination:
 [AI Research Map](../../wiki/projects/genesis/ai-research-map.md).
@@ -149,6 +151,6 @@ page unless the raw note has concrete project direction.
 
 ## Next Pass
 
-The reasoning models/tool-use and agentic tooling/Weaver passes are complete.
-Next, move to credit assignment, sequence architectures, and nonlinear method
+The reasoning models/tool-use, agentic tooling/Weaver, and credit-assignment
+passes are complete. Next, move to sequence architectures and nonlinear method
 spillovers.
