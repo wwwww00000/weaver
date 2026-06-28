@@ -16,6 +16,7 @@ source_bundles:
   - quant/generalization
   - quant/ridge
   - unassigned/quant
+  - unassigned/ai
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: topics/quant
 related:
@@ -210,6 +211,35 @@ choosing among distinct basins. In linear models, generalization usually comes
 from how the solution is selected within this geometry: minimum norm, ridge,
 sparse path, grouped shrinkage, or validation-calibrated transform.
 
+## Kernel And Tangent-Feature View
+
+The NTK view is useful here as a bridge between neural networks and ordinary
+regularized regression. Near initialization, a network can be linearized as:
+
+```text
+f_theta(x) ~= f_theta0(x) + J_x (theta - theta0)
+```
+
+The tangent feature is `J_x`, and the kernel is the inner product
+`K(x, x') = J_x J_x'^T`. Gradient descent writes residuals into the parameter
+displacement as a combination of training-example tangent features. Prediction
+then reads that displacement back through kernel similarities.
+
+For p12n, the actionable lesson is not to rely on the NTK regime. It is to
+recognize when a model is effectively fixed-feature regression. Random features,
+reservoir states, fixed RBF centers, frozen neural features, and linearized
+blocks all need the same generalization controls:
+
+- ridge or spectral shrinkage on the readout;
+- validation-aware early stopping when iterative fitting is used;
+- leverage and self-influence checks;
+- inspection of which kernel or feature modes are being fit;
+- caution around low-eigenvalue modes that look like high-frequency noise.
+
+Early stopping and ridge are both spectral filters in this view. They learn
+large-eigenvalue, smoother modes first and suppress harder, lower-eigenvalue
+target components.
+
 ## Sparse Feature Regularization
 
 Unit-variance scaling can under-regularize sparse features when zeros mean
@@ -347,6 +377,29 @@ For p12n this is mostly a cautionary analogy: if a learned smoother appears to
 generalize, inspect its self-influence, locality, and validation protocol rather
 than comparing parameter counts directly with OLS.
 
+## Interpretable ReLU And Additive Structure
+
+Shallow ReLU networks are piecewise-linear models. That gives several
+regularization and interpretation handles before reaching for a generic deep
+network:
+
+- decompose predictions into main effects and low-order interactions through
+  functional ANOVA or additive-surrogate fits;
+- constrain the architecture to GAM or GA2M-style components when
+  interpretability is required by design;
+- grow hinge or ReLU units stagewise against residuals so each added basis
+  function has a visible role;
+- inspect local linear regions or activation patterns as regime-specific linear
+  models;
+- distill a trained component into splines, trees, or additive basis functions
+  when the exact network is too hard to read.
+
+The p12n rule should be conservative: if a shallow ReLU block is valuable, first
+ask whether its effect can be expressed as hinge bases, product bins, local
+linear regimes, or additive components with comparable validation performance.
+Only the residual value beyond those interpretable forms should justify the
+opaque block.
+
 ## Validation-Aware Regularization Loop
 
 A pragmatic regularization loop for quant experiments:
@@ -382,8 +435,11 @@ miscalibration, unstable coefficient direction, or feature group conflict.
 - [Sparse Features in Ridge](../../../ops/artifacts/chatgpt/69cff0f3-96b8-839e-8380-caf5d0b911b6.md)
 - [Branch - Proxy-target training in regression](../../../ops/artifacts/chatgpt/69d5ed83-dbb4-83a1-b4fd-1f878f014cf9.md)
 - [Flat vs Sharp Minima in Linear Regression](../../../ops/artifacts/chatgpt/67b3134f-cf50-8009-9265-a47222f57525.md)
+- [Interpretable Deep Learning Models](../../../ops/artifacts/chatgpt/672ba721-c398-8009-9c8c-75e489f722b8.md)
 - [Mahalanobis vs Linear Regression](../../../ops/artifacts/chatgpt/68480c76-7cbc-8009-aca1-4934960c1980.md)
+- [NTK Kernel Representation Explanation](../../../ops/artifacts/chatgpt/69ed7a30-5620-83a1-bbdf-aee44f9ad3fb.md)
 - [Optimal Ridge Penalty Computation](../../../ops/artifacts/chatgpt/6876f4ab-b368-8009-9320-b72c69c8ce00.md)
+- [ReLU Network Interpretability Research](../../../ops/artifacts/chatgpt/67d19849-1f64-8009-9f88-7980df924237.md)
 - [Ridge Penalty Optimization](../../../ops/artifacts/chatgpt/6876f4ac-77cc-8009-8b48-a1327e12c379.md)
 - [Robust Regression Research Directions](../../../ops/artifacts/chatgpt/67191c44-b954-8009-8e92-c5799747b9bb.md)
 - [temporal relationship of response](../../../ops/artifacts/obsidian/generalization.md)

@@ -13,6 +13,7 @@ categories:
 source_bundles:
   - p12n/quant
   - unassigned/quant
+  - unassigned/ai
   - quant/histogram
   - quant/ridge
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
@@ -20,6 +21,7 @@ parent: topics/quant
 related:
   - projects/p12n/feature-transforms-and-bst
   - topics/quant/temporal-evidence
+  - topics/quant/optimization-and-computation
 created: 2026-06-27
 updated: 2026-06-28
 ---
@@ -62,6 +64,66 @@ scalar, then look up a learned vector or a piecewise-linear encoding. The useful
 lesson is not that the embedding must be trained by a neural net. It is that a
 scalar can be turned into a local basis with ordered support, and a regularized
 linear readout can learn the nonlinear shape.
+
+## Fixed Feature-Map Ladder
+
+Many "deep learning alternatives" are useful here only after they are translated
+into a fixed or lightly fitted feature map followed by a convex readout.
+
+The conservative ladder is:
+
+- GAM-style histogram, spline, or piecewise-linear main effects;
+- MARS-style hinge functions and selected low-order interactions;
+- RBF, Fourier, wavelet, or distance-to-center basis features;
+- rule, shallow-tree, or leaf-ID features with regularized linear weights;
+- sparse polynomial and product bases;
+- reservoir, random-feature, or fixed state-space transforms with a ridge
+  readout.
+
+The boundary is important. If the basis functions are fixed, the final solve is
+ordinary ridge or constrained least squares. If centers, knots, rules,
+reservoirs, or thresholds are learned from the target, the procedure becomes an
+outer-loop selection problem and needs out-of-fold handling.
+
+## RBF And Local Basis Features
+
+RBF features are local smoothers written as a linear model:
+
+```text
+f(x) = sum_j beta_j phi(||x - c_j|| / sigma_j)
+```
+
+They are useful when a feature effect is smooth but too local for a global
+polynomial. The centers can come from:
+
+- quantiles or fixed grids for one-dimensional features;
+- k-means or mini-batch k-means for multivariate state;
+- Latin-hypercube or random data-point sampling for exploratory bases;
+- greedy residual improvement when center selection itself is being studied.
+
+RBFs should usually be treated like splines with more flexible geometry. Once
+the centers and widths are fixed, the coefficient fit is just ridge. Learning
+the centers turns the method into nonlinear optimization, so p12n should first
+try fixed or cross-fitted centers and only then consider adaptive centers.
+
+## Hinge And ReLU Bases
+
+A shallow ReLU unit is a hinge basis:
+
+```text
+max(w^T x + c, 0)
+```
+
+With fixed `w` and `c`, it is just another column in the design matrix. With a
+one-dimensional input and a positive orientation, a candidate threshold `t`
+gives the through-origin feature `max(a * (x - t), 0)`, where the optimal
+nonnegative slope can be solved from suffix statistics. That makes threshold
+sweeps, binned threshold candidates, and MARS-like hinge additions attractive
+before training a generic neural layer.
+
+The modeling lesson is the same as for RBFs: promote ReLU units as interpretable
+basis functions only when their thresholds, projections, and validation gains
+are inspectable.
 
 ## Product Bins
 
@@ -114,6 +176,17 @@ This is fast, but collisions are not free. Frequent or high-signal keys should
 either get collision-free treatment or be protected by a hot-key dictionary,
 minimal-perfect hash, or explicit feature table. Rare buckets should usually be
 shrunk toward a prior rather than deleted.
+
+For time-indexed nonlinearities, hashing can also approximate attention-like
+convolutions while staying linear in parameters:
+
+```text
+hash(current_bin, past_bin, lag_bucket) * past_value
+```
+
+This lets current content, past content, and relative lag choose a sparse
+coefficient. Signed hashing, separate hash spaces by feature family, and count
+diagnostics become important because collisions reduce interpretability.
 
 Target-aware hashing is a supervised grouping problem. Safer versions include:
 
@@ -338,6 +411,7 @@ parts of the toolbox are currently active.
 ## Source Map
 
 - [Boosting components loop](../../../ops/artifacts/chatgpt/6957de3f-9af0-8322-9487-410fe60d459d.md)
+- [Alternative Models for Non-linearities](../../../ops/artifacts/chatgpt/672e2c3c-fdb8-8009-bc12-e39f9281128b.md)
 - [Base Learner Options TS](../../../ops/artifacts/chatgpt/6830a950-368c-8009-ab4b-c7baf293dd2e.md)
 - [ML Regression with Product Bins](../../../ops/artifacts/chatgpt/6871e0bb-14a8-8009-a8c9-fbf8690c0430.md)
 - [Non-linear Feature Transformations](../../../ops/artifacts/chatgpt/674b3994-918c-8009-9724-e8dd5d984766.md)
@@ -346,6 +420,8 @@ parts of the toolbox are currently active.
 - [Histogram smoother to B-spline](../../../ops/artifacts/chatgpt/697db20f-cd94-839d-a687-af61e186b9c9.md)
 - [Faster histogram alternatives](../../../ops/artifacts/chatgpt/68501c0c-6f4c-8009-b40a-1f39f1799091.md)
 - [Feature Hashing Alternatives](../../../ops/artifacts/chatgpt/68382bfb-6f44-8009-a58e-7a6a8bf15ad8.md)
+- [Modern RBF Network Developments](../../../ops/artifacts/chatgpt/672c1906-c84c-8009-9acf-bad5dee5522e.md)
+- [Nonlinear Regression with RBFs](../../../ops/artifacts/chatgpt/14a7c2eb-c92f-4a9a-b85a-5d9bcfbbfe20.md)
 - [Fitting Functional ANOVA Models](../../../ops/artifacts/chatgpt/678f78e8-7f04-8009-8be1-1e12a5dee954.md)
 - [Iterative Greedy Feature Selection](../../../ops/artifacts/chatgpt/69eb6c3d-c5d8-839e-97e0-8caedc8c6584.md)
 - [Linear Model with Nonlinearity](../../../ops/artifacts/chatgpt/d55275c4-b7fe-4cd7-bcce-d66d0c3f1c68.md)

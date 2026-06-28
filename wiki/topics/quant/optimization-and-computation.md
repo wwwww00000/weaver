@@ -14,6 +14,7 @@ source_bundles:
   - quant/computation
   - quant/optimization
   - unassigned/quant
+  - unassigned/ai
   - p12n/quant
 source_inventory: ops/clusters/2026-06-24/source-inventory.qmd
 parent: topics/quant
@@ -21,6 +22,7 @@ related:
   - topics/quant/regression-stability-and-validation
   - topics/quant/temporal-evidence
   - topics/quant/structured-return-models
+  - topics/quant/tabular-nonlinearities
   - projects/p12n/experiment-infrastructure
 created: 2026-06-27
 updated: 2026-06-28
@@ -359,6 +361,39 @@ If `g` is affine, one Gauss-Newton step is the exact least-squares solution. If
 true locally. The number of useful relinearizations is then tied to how many
 activation boundaries the update crosses.
 
+Layer-wise analytical training fits into a small taxonomy:
+
+- fixed hidden features with a closed-form output readout, as in ELMs, RBF
+  networks, reservoirs, and fixed state-space feature banks;
+- alternating minimization where each block is linear after the other blocks are
+  frozen;
+- piecewise-linear activation-region solves, where the active set is fixed and
+  the block becomes ordinary least squares;
+- inverse-link or IRLS-style working responses for smooth nonlinear heads.
+
+The first two are usually the most useful for p12n because they preserve a
+large exact inner solve and expose clean validation diagnostics.
+
+One-dimensional ReLU and leaky-ReLU units are a useful special case. For a
+positive-threshold form:
+
+```text
+y_hat = max(a * (x - t), 0), a >= 0
+```
+
+any fixed threshold `t` gives a through-origin least-squares fit on the active
+set. With suffix summaries over rows where `x > t`:
+
+```text
+denom = sum (x_i - t)^2
+numer = sum (x_i - t) y_i
+a = max(numer / denom, 0)
+```
+
+The SSE improvement is `numer^2 / denom` when `numer > 0`. That makes candidate
+threshold sweeps and binned threshold histograms exact for the endpoint
+candidates being evaluated, without gradient descent.
+
 Smooth saturating nonlinearities need more care. A tiny Jacobian can make the
 local regression say that the layer has no leverage even when a finite move in
 latent space would help. For sigmoid-like heads, a better regression target is
@@ -494,6 +529,7 @@ that validation and ablation are affordable.
 - [Exploring Parameter Space Solutions](../../../ops/artifacts/chatgpt/672c38c2-8398-8009-8978-599861ac0f0c.md)
 - [Gauss-Newton for Nonlinear Layers](../../../ops/artifacts/chatgpt/69e63991-5ef4-83a1-a9bb-cd1a23247290.md)
 - [IRLS Initialization Tricks](../../../ops/artifacts/chatgpt/6a09778e-befc-83ec-9902-b880f91fea81.md)
+- [Leaky ReLU regression fit](../../../ops/artifacts/chatgpt/68c04aa7-bc9c-8328-a7ab-ce4f8b854cc9.md)
 - [Least Squares for NN](../../../ops/artifacts/chatgpt/68108d59-4888-8009-ba88-e1e9820a5728.md)
 - [Least Squares Regression Estimation](../../../ops/artifacts/chatgpt/6810edb2-1740-8009-a05e-5137df01c05e.md)
 - [Linear Regression Hessian Approximation](../../../ops/artifacts/chatgpt/69d09be4-a6e8-83a0-8ea9-6ef0cbf1c7f1.md)

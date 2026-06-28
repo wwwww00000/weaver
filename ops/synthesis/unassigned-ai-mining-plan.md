@@ -51,6 +51,10 @@ Priority means:
   [Credit Assignment And Training Signals](../../wiki/projects/genesis/credit-assignment-and-training-signals.md).
 - 2026-06-28: Completed the sequence, state-space, and gated-architectures pass:
   [P12n Sequence-Model Analogies](../../wiki/projects/p12n/sequence-model-analogies.md).
+- 2026-06-28: Completed the nonlinear function classes and interpretability pass:
+  [Tabular Nonlinearities And Feature Search](../../wiki/topics/quant/tabular-nonlinearities.md),
+  [Optimization And Computation](../../wiki/topics/quant/optimization-and-computation.md), and
+  [Generalization And Regularization](../../wiki/topics/quant/generalization-and-regularization.md).
 
 ## Reasoning Models And Tool Use
 
@@ -153,6 +157,7 @@ page unless the raw note has concrete project direction.
 
 ## Next Pass
 
-The reasoning models/tool-use, agentic tooling/Weaver, credit-assignment, and
-sequence-architecture passes are complete. Next, move to nonlinear method
-spillovers.
+The reasoning models/tool-use, agentic tooling/Weaver, credit-assignment,
+sequence-architecture, and nonlinear method-spillover passes are complete. Next,
+decide whether the two resource/backlog notes add concrete project direction or
+should remain deferred.
