@@ -1,6 +1,6 @@
 ---
 title: Weaver
-status: draft
+status: reviewed
 page_type: project-hub
 projects:
   - weaver

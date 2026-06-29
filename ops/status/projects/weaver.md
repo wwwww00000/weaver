@@ -30,6 +30,7 @@ and agent-assisted synthesis.
   first synthesis pass are complete.
 - Repo-native inbox notes were ingested and synthesized into Foundation and
   structured-context pages.
+- Weaver project hub was reviewed and promoted out of draft status.
 
 ## Decisions
 
