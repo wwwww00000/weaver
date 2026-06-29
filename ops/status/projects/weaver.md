@@ -53,6 +53,8 @@ and agent-assisted synthesis.
 - Prototype the smallest useful context-compiler loop over one project.
 - Use the structured-context page as the design reference for context packs,
   session-close state deltas, affordance cards, and memory hygiene.
+- Work through the Weaver workflow todo for semantic tagging, manual context
+  packs, and a fresh wiki-context conversation prototype.
 - Tighten frontmatter and project/status-card conventions after a few live
   review cycles.
 - Keep project-promotion mechanics documented and repeatable.
@@ -78,12 +80,14 @@ and agent-assisted synthesis.
 
 - Stable weekly-note and status-card workflow decisions.
 - Context-compiler object model and minimal prototype design.
+- Lessons from manual context-pack and session-close prototypes.
 - Project promotion, demotion, and boundary conventions that survive use.
 - Validation rules for frontmatter, links, status cards, and source maps.
 
 ## Links
 
 - [Weaver wiki](../../../wiki/projects/weaver.md)
+- [Weaver workflow todo](../../plans/weaver-workflow-todo.md)
 - [Genesis status](genesis.md)
 - [Foundation status](foundation.md)
 - [Chronicle status](chronicle.md)
