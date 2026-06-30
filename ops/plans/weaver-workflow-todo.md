@@ -21,6 +21,8 @@ Use these references first:
 
 - [ ] Hold a design conversation on semantic tagging and retrieval before
   adding code.
+  - Working note:
+    [Weaver Structure And Retrieval Design Note](weaver-structure-and-retrieval.md)
   - Decide the first object vocabulary: likely `claim`, `decision`, `todo`,
     `question`, `affordance`, `invariant`, `failure_mode`, `source`, and
     `state_delta`.
